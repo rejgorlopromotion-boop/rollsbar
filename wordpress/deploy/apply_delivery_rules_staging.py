@@ -6,7 +6,7 @@ from apply_storefront_ux_staging import verify
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'qa/visual-results/delivery-rules'
 BASE='921698e085263f23493e8f757aa0e7c1b561946c'
-PREVIOUS_APP='cb0cc321cc7cf0cfa1de231955b1a16a2b22bb2a'
+PREVIOUS_APP='30c7402c345b58cbfdf6c966b7bf3f1e12d78d29'
 CHANGED=[transport.PLUGIN+p for p in [
  'data/delivery-minimum.json','includes/class-rollsbar-delivery-minimum.php',
  'includes/class-rollsbar-delivery-checkout.php','includes/class-rollsbar-native-delivery-method.php',

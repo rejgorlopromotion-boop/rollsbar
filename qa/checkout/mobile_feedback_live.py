@@ -27,7 +27,7 @@ try:
     add_first_simple_product(p);settle_native(p);p.goto(BASE+'/checkout/',wait_until='domcontentloaded')
     address=p.locator('#shipping-address_1');address.wait_for()
     with p.expect_response(lambda r:'/address-suggestions' in r.url and parse_qs(urlsplit(r.url).query).get('query')==['Гагарина 1']) as suggested:address.fill('Гагарина 1')
-    display=suggested.value.json()['suggestions'][0]['display'];p.wait_for_function('(v)=>document.querySelector(".rollsbar-address-suggestions__item")?.textContent===v',arg=display)
+    suggestion_data=suggested.value.json();require(suggested.value.status==200 and bool(suggestion_data.get('suggestions')),'provider returns actual house suggestions: '+str({'status':suggested.value.status,'body':suggestion_data if not suggestion_data.get('suggestions') else {'count':len(suggestion_data['suggestions'])}}));display=suggestion_data['suggestions'][0]['display'];p.wait_for_function('(v)=>document.querySelector(".rollsbar-address-suggestions__item")?.textContent===v',arg=display)
     with p.expect_response(lambda r:'/address-resolve' in r.url and r.request.method=='POST') as resolved:p.locator('.rollsbar-address-suggestions__item').first.click()
     require(resolved.value.json()['delivery']['minimum']==1200,'real verified delivery minimum1200')
     p.locator('#shipping-phone').fill('89781234567');p.locator('#order-rollsbar-privacy-consent').check();settle_native(p)
@@ -37,6 +37,9 @@ try:
     notice=p.locator('.rollsbar-minimum-notice');notice.wait_for(state='visible');p.wait_for_function('wp.data.select("wc/store/checkout").isIdle()')
     flat=re.sub(r'\s','',notice.inner_text());require('1200' in flat and '780' in flat,'top warning states actual minimum and780 shortfall for420 cart')
     require(p.evaluate('window.__rbMinPosts')==0,'known below-minimum cart blocked before native POST assembly')
+    # Woo idle does not imply the deferred custom focus/scroll callback has run.
+    p.wait_for_function('''()=>{const e=document.querySelector('.rollsbar-minimum-notice'),r=e?.getBoundingClientRect(),d=e?.closest('[data-rollsbar-modal]').getBoundingClientRect();return e===document.activeElement&&r.top>=d.top&&r.bottom<=d.bottom}''')
+    settle_native(p)
     require(notice.evaluate('e=>{const r=e.getBoundingClientRect(),d=e.closest("[data-rollsbar-modal]").getBoundingClientRect();return r.top>=d.top&&r.bottom<=d.bottom}'),'post-click focus lands on visible explanation')
     p.locator('[data-rollsbar-modal="1"]').evaluate('e=>e.scrollTop=0')
     require(notice.evaluate('e=>{let r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight}'),'warning visible even when Woo scrolls to modal top')
