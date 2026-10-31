@@ -1,13 +1,13 @@
 # RollsBar Issue Register
 
 Status owner: RollsBar Coordinator
-Last updated: 2026-10-30
+Last updated: 2026-10-31
 
 This file is the durable source of truth for unresolved / deferred RollsBar defects and follow-up work. New confirmed issues should be recorded here instead of living only in chat. Do not reopen items marked DONE without new evidence.
 
 ## RB-027 — Mobile staggered card footers and invisible top minimum explanation
 
-Status: IN PROGRESS — owner authorized2026-10-31. Mobile footer auto margin overridden by8px; reproduced up to33.625px row misalignment in Chromium/WebKit. Native custom minimum validation scrolled away from submit feedback. Restore aligned mobile flex footers and show the same shortfall above checkout after submit attempt, retaining native blocking/consent/callback rules. Five-width live verification pending; see `MOBILE_CARD_MINIMUM_FEEDBACK_2026-10-31.md`. Production forbidden; no submitted orders authorized.
+Status: DONE - staging 2026-10-31. Mobile footer alignment fixed (local Chromium/WebKit 0px deltas at 320/390/430/700); exact minimum/shortfall now visible above checkout after submit and beside button, with native blocking/consent/callback rules retained. Application/marker 3edb1726673ab1761d1094589f95e99f8fb2f866, backup 20261031T181213Z; apply 41228141874/finalize 41230709507 SUCCESS, browser_verified. Focused live5/native5/policy2/fulfillment2/clientUX5/provider20/map5/adversarial3/reference5/storefront5/controls5/stability6 PASS. All 125 artifact PNGs inspected; no baseline relaxation or business-rule/catalog/media changes. See `MOBILE_CARD_MINIMUM_FEEDBACK_2026-10-31.md` and JSON. No submitted orders or production access/mutation.
 
 ## RB-026 â€” Client remarks follow-up for pizza choices navigation and delivery presentation
 

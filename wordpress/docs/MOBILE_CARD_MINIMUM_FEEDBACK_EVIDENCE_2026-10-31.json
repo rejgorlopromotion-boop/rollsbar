@@ -1,0 +1,1542 @@
+{
+  "status": "STAGING_PASS",
+  "application_sha": "3edb1726673ab1761d1094589f95e99f8fb2f866",
+  "marker": "3edb1726673ab1761d1094589f95e99f8fb2f866",
+  "receipt_phase": "browser_verified",
+  "apply_run": 41228141874,
+  "finalize_run": 41230709507,
+  "backup": "20261031T181213Z",
+  "artifact": {
+    "run": "41228141874",
+    "id": 13053695290,
+    "zip_sha256": "4b6c02423fba3c2ee19005a5389b28914a83860de8cbedaf2ba28b2003c05f2f",
+    "verified": true,
+    "files": 163
+  },
+  "reviewed_manifest": "4b23626ce5910fcb1091a59345af1d1036ea6964bd4eda6a8a9554f4d4bb2c52",
+  "gates": [
+    {
+      "file": "delivery-rules/evidence.json",
+      "status": "AUTOMATED_PASS_AWAITING_SCREENSHOT_REVIEW",
+      "cases": 5
+    },
+    {
+      "file": "mobile-feedback/evidence.json",
+      "status": "PASS",
+      "cases": 5
+    },
+    {
+      "file": "checkout-policy/evidence.json",
+      "status": "PASS",
+      "cases": 2
+    },
+    {
+      "file": "fulfillment/evidence.json",
+      "status": "PASS",
+      "cases": 2
+    },
+    {
+      "file": "client-ux/evidence.json",
+      "status": "PASS",
+      "cases": 5
+    },
+    {
+      "file": "delivery-rules/address-evidence.json",
+      "status": "PASS",
+      "cases": 20
+    },
+    {
+      "file": "delivery-rules/map/evidence.json",
+      "status": "PASS",
+      "cases": 5
+    },
+    {
+      "file": "delivery-rules/adversarial-evidence.json",
+      "status": "PASS",
+      "cases": 3
+    },
+    {
+      "file": "delivery-reference/evidence.json",
+      "status": "MODAL_CHROME_PASS_CONTENT_CHANGED_BY_OWNER",
+      "cases": 5
+    },
+    {
+      "file": "storefront-ux-staging/original-browser.json",
+      "status": "PASS",
+      "cases": 5
+    },
+    {
+      "file": "storefront-ux-staging/browser.json",
+      "status": "PASS",
+      "cases": 5
+    },
+    {
+      "file": "storefront-ux-staging/interaction/browser.json",
+      "status": "PASS",
+      "cases": 6
+    }
+  ],
+  "focused_live": {
+    "status": "PASS",
+    "mode": "live",
+    "release_sha": "3edb1726673ab1761d1094589f95e99f8fb2f866",
+    "checks": [
+      {
+        "width": 1440,
+        "status": "PASS",
+        "mobile_rows": "desktop unchanged",
+        "minimum": 1200,
+        "cart": 420,
+        "shortfall": 780,
+        "qualified_cart": 1260,
+        "checkout_posts": 0
+      },
+      {
+        "width": 701,
+        "status": "PASS",
+        "mobile_rows": "desktop unchanged",
+        "minimum": 1200,
+        "cart": 420,
+        "shortfall": 780,
+        "qualified_cart": 1260,
+        "checkout_posts": 0
+      },
+      {
+        "width": 700,
+        "status": "PASS",
+        "mobile_rows": [
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          }
+        ],
+        "minimum": 1200,
+        "cart": 420,
+        "shortfall": 780,
+        "qualified_cart": 1260,
+        "checkout_posts": 0
+      },
+      {
+        "width": 390,
+        "status": "PASS",
+        "mobile_rows": [
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          }
+        ],
+        "minimum": 1200,
+        "cart": 420,
+        "shortfall": 780,
+        "qualified_cart": 1260,
+        "checkout_posts": 0
+      },
+      {
+        "width": 320,
+        "status": "PASS",
+        "mobile_rows": [
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          },
+          {
+            "footerDelta": 0,
+            "priceDelta": 0
+          }
+        ],
+        "minimum": 1200,
+        "cart": 420,
+        "shortfall": 780,
+        "qualified_cart": 1260,
+        "checkout_posts": 0
+      }
+    ],
+    "submitted_orders": 0
+  },
+  "local_rows_before": [
+    {
+      "name": "chromium",
+      "width": 320,
+      "bad": 28,
+      "maxFooter": 33.625,
+      "maxPrice": 33.625,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya",
+              "bottom": 578.46875,
+              "price": 537.46875
+            },
+            {
+              "id": "rolls-filadelfiya-s-ugrem",
+              "bottom": 595.28125,
+              "price": 554.28125
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kani",
+              "bottom": 1119.03125,
+              "price": 1078.03125
+            },
+            {
+              "id": "rolls-kaliforniya-klassicheskaya",
+              "bottom": 1135.84375,
+              "price": 1094.84375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kaliforniya-s-kopchennym-lososem",
+              "bottom": 1422.9375,
+              "price": 1381.9375
+            },
+            {
+              "id": "rolls-kaliforniya-s-krabom",
+              "bottom": 1406.125,
+              "price": 1365.125
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        }
+      ]
+    },
+    {
+      "name": "chromium",
+      "width": 390,
+      "bad": 23,
+      "maxFooter": 22.3125,
+      "maxPrice": 22.3125,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya",
+              "bottom": 621.71875,
+              "price": 580.71875
+            },
+            {
+              "id": "rolls-filadelfiya-s-ugrem",
+              "bottom": 638.53125,
+              "price": 597.53125
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya-s-krevetkoy",
+              "bottom": 940.0625,
+              "price": 899.0625
+            },
+            {
+              "id": "rolls-krasnyy-drakon",
+              "bottom": 923.25,
+              "price": 882.25
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kani",
+              "bottom": 1224.78125,
+              "price": 1183.78125
+            },
+            {
+              "id": "rolls-kaliforniya-klassicheskaya",
+              "bottom": 1241.59375,
+              "price": 1200.59375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        }
+      ]
+    },
+    {
+      "name": "chromium",
+      "width": 430,
+      "bad": 19,
+      "maxFooter": 22.3125,
+      "maxPrice": 22.3125,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya-s-krevetkoy",
+              "bottom": 958.96875,
+              "price": 917.96875
+            },
+            {
+              "id": "rolls-krasnyy-drakon",
+              "bottom": 942.15625,
+              "price": 901.15625
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kani",
+              "bottom": 1261.546875,
+              "price": 1220.546875
+            },
+            {
+              "id": "rolls-kaliforniya-klassicheskaya",
+              "bottom": 1278.359375,
+              "price": 1237.359375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kaliforniya-s-kopchennym-lososem",
+              "bottom": 1597.75,
+              "price": 1556.75
+            },
+            {
+              "id": "rolls-kaliforniya-s-krabom",
+              "bottom": 1580.9375,
+              "price": 1539.9375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        }
+      ]
+    },
+    {
+      "name": "chromium",
+      "width": 700,
+      "bad": 5,
+      "maxFooter": 5.5,
+      "maxPrice": 5.5,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "pizza-margarita",
+              "bottom": 6747.640625,
+              "price": 6706.640625
+            },
+            {
+              "id": "pizza-pepperoni",
+              "bottom": 6742.140625,
+              "price": 6701.140625
+            }
+          ],
+          "footerDelta": 5.5,
+          "priceDelta": 5.5
+        },
+        {
+          "row": [
+            {
+              "id": "pizza-pepperoni",
+              "bottom": 9767.90625,
+              "price": 9726.90625
+            },
+            {
+              "id": "sets-filadelfiya-set",
+              "bottom": 9773.40625,
+              "price": 9732.40625
+            }
+          ],
+          "footerDelta": 5.5,
+          "priceDelta": 5.5
+        },
+        {
+          "row": [
+            {
+              "id": "sets-hit-set",
+              "bottom": 10191.015625,
+              "price": 10150.015625
+            },
+            {
+              "id": "baked-zapechennye-roll-s-lososem",
+              "bottom": 10196.515625,
+              "price": 10155.515625
+            }
+          ],
+          "footerDelta": 5.5,
+          "priceDelta": 5.5
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "width": 320,
+      "bad": 28,
+      "maxFooter": 33.625,
+      "maxPrice": 33.625,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya",
+              "bottom": 578.46875,
+              "price": 537.46875
+            },
+            {
+              "id": "rolls-filadelfiya-s-ugrem",
+              "bottom": 595.28125,
+              "price": 554.28125
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kani",
+              "bottom": 1119.03125,
+              "price": 1078.03125
+            },
+            {
+              "id": "rolls-kaliforniya-klassicheskaya",
+              "bottom": 1135.84375,
+              "price": 1094.84375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kaliforniya-s-kopchennym-lososem",
+              "bottom": 1422.9375,
+              "price": 1381.9375
+            },
+            {
+              "id": "rolls-kaliforniya-s-krabom",
+              "bottom": 1406.125,
+              "price": 1365.125
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "width": 390,
+      "bad": 23,
+      "maxFooter": 22.3125,
+      "maxPrice": 22.3125,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya",
+              "bottom": 621.71875,
+              "price": 580.71875
+            },
+            {
+              "id": "rolls-filadelfiya-s-ugrem",
+              "bottom": 638.53125,
+              "price": 597.53125
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya-s-krevetkoy",
+              "bottom": 940.0625,
+              "price": 899.0625
+            },
+            {
+              "id": "rolls-krasnyy-drakon",
+              "bottom": 923.25,
+              "price": 882.25
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kani",
+              "bottom": 1224.78125,
+              "price": 1183.78125
+            },
+            {
+              "id": "rolls-kaliforniya-klassicheskaya",
+              "bottom": 1241.59375,
+              "price": 1200.59375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "width": 430,
+      "bad": 19,
+      "maxFooter": 22.3125,
+      "maxPrice": 22.3125,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "rolls-filadelfiya-s-krevetkoy",
+              "bottom": 958.96875,
+              "price": 917.96875
+            },
+            {
+              "id": "rolls-krasnyy-drakon",
+              "bottom": 942.15625,
+              "price": 901.15625
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kani",
+              "bottom": 1261.546875,
+              "price": 1220.546875
+            },
+            {
+              "id": "rolls-kaliforniya-klassicheskaya",
+              "bottom": 1278.359375,
+              "price": 1237.359375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        },
+        {
+          "row": [
+            {
+              "id": "rolls-kaliforniya-s-kopchennym-lososem",
+              "bottom": 1597.75,
+              "price": 1556.75
+            },
+            {
+              "id": "rolls-kaliforniya-s-krabom",
+              "bottom": 1580.9375,
+              "price": 1539.9375
+            }
+          ],
+          "footerDelta": 16.8125,
+          "priceDelta": 16.8125
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "width": 700,
+      "bad": 5,
+      "maxFooter": 5.5,
+      "maxPrice": 5.5,
+      "examples": [
+        {
+          "row": [
+            {
+              "id": "pizza-margarita",
+              "bottom": 6747.640625,
+              "price": 6706.640625
+            },
+            {
+              "id": "pizza-pepperoni",
+              "bottom": 6742.140625,
+              "price": 6701.140625
+            }
+          ],
+          "footerDelta": 5.5,
+          "priceDelta": 5.5
+        },
+        {
+          "row": [
+            {
+              "id": "pizza-pepperoni",
+              "bottom": 9767.90625,
+              "price": 9726.90625
+            },
+            {
+              "id": "sets-filadelfiya-set",
+              "bottom": 9773.40625,
+              "price": 9732.40625
+            }
+          ],
+          "footerDelta": 5.5,
+          "priceDelta": 5.5
+        },
+        {
+          "row": [
+            {
+              "id": "sets-hit-set",
+              "bottom": 10191.015625,
+              "price": 10150.015625
+            },
+            {
+              "id": "baked-zapechennye-roll-s-lososem",
+              "bottom": 10196.515625,
+              "price": 10155.515625
+            }
+          ],
+          "footerDelta": 5.5,
+          "priceDelta": 5.5
+        }
+      ]
+    }
+  ],
+  "local_rows_after": [
+    {
+      "name": "chromium",
+      "width": 320,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "chromium",
+      "width": 390,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "chromium",
+      "width": 430,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "chromium",
+      "width": 700,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "webkit",
+      "width": 320,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "webkit",
+      "width": 390,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "webkit",
+      "width": 430,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    },
+    {
+      "name": "webkit",
+      "width": 700,
+      "bad": 0,
+      "maxFooter": 0,
+      "maxPrice": 0,
+      "examples": []
+    }
+  ],
+  "shadow_preview_status": "PASS",
+  "changed_app_file_hashes": {
+    "wordpress/wp-content/themes/rollsbar-theme/assets/css/app.css": "e5b7a9b353f9d9b7ee4dd9d603cc04c94559fe60cb8039c6e7739b3d6415ef34",
+    "wordpress/wp-content/plugins/rollsbar-core/assets/js/checkout.js": "db23f5af4cb3063858b4c1cb7a9e5056ba731b17574a9c402aa2bee7deeab5bd",
+    "wordpress/wp-content/plugins/rollsbar-core/assets/css/checkout.css": "106e5615d8e913ee4272589f2a60cdb23724389e57045ee4488abb757bcd9e34"
+  },
+  "screenshots_inspected": {
+    "checkout-policy/policy-1440.png": "f13e93eaf918509c4db2087f894efb3a0553a1ac4fe9ed013c46095891fd0ba9",
+    "checkout-policy/policy-390.png": "a5fdcf1933b9baaa06ae701847fdce519e0900a9bb8f98176205076f32dc09f2",
+    "client-ux/delivery-1440.png": "33b1e2b84781909e068ff54110c63e45f85b4a38eb068aad67a0332b6b78ee13",
+    "client-ux/delivery-320.png": "c7a13c013e30da0310297e2c0522bbf3e51e0486e99e9da84b902cb80aa34c63",
+    "client-ux/delivery-390.png": "de5503a04f168cc30ae7b009c63800d72b67f21e0ab9e885d9b1b8ea58362afe",
+    "client-ux/delivery-700.png": "869d81dc2ba175ecdf8e95d10e5a1ae393cf750979b72baec72b95dbccf3ecb9",
+    "client-ux/delivery-701.png": "5f0fc8e1f0abe8a712ff77258ecdc85f0045b8a65fc1a6a157f18b89373853ea",
+    "client-ux/menu-1440.png": "e45822b39e11364958ef249633ab7f7502c177dc87380250c829f26e6b1e6f7d",
+    "client-ux/menu-320.png": "d58c046df94dc427f9d8e4a663df8486e27968ffacf76230bd22bc05fbf6c21d",
+    "client-ux/menu-390.png": "ea39fc2f959ae399b2fa5576e21640f4b370d59e3436ece19c0ea49595ce6e20",
+    "client-ux/menu-700.png": "59ac5992c3d21c7df55498fb7f42d8d8ccdb546c30dcffa79108b6f1e7db7884",
+    "client-ux/menu-701.png": "8b573d846a117cb46db79b78b07defc44334380416a00a048f30df8e91b80e6b",
+    "client-ux/pizza-1440.png": "038452096f80c0343892887bdda109bb6f66813966cc9a642afe6c23730a34fd",
+    "client-ux/pizza-320.png": "5aa3c949fb70bc64b407b48a07d88055239268e779f260fb22fa97082f82f06d",
+    "client-ux/pizza-390.png": "285298a7ad9673e7e1613820e2693fe92a87510be123357995bb83d4ee3c11a4",
+    "client-ux/pizza-700.png": "e8a8258a5b15e376df7dd2f06e4add963f37fdf42002b86ccdd264cd5fa3c9b4",
+    "client-ux/pizza-701.png": "931ca3a98373254a9af005f2a0e276a66e0223c5eca735a7603d3b821ed5cd04",
+    "delivery-reference/candidate-1440.png": "2e52d739d2358da281a23198763532d4fa4dd0bb045cd60bd34fd3c452187692",
+    "delivery-reference/candidate-320.png": "523c5907c77665c6a9bce855289df5b225f9e3f9a33d0dba34c5051473a51d7d",
+    "delivery-reference/candidate-390.png": "37c0b4529f05e1c972f424755eb04eaf456926edefd102423fb231f4e8993902",
+    "delivery-reference/candidate-700.png": "327c5373869f42e30a73683277a956e891262e7a54f1c0692c1a56de6b8dd47f",
+    "delivery-reference/candidate-701.png": "20662d4b981d2909d47f566b770f05693860f2a4d1bf260de97af667ce67b67c",
+    "delivery-reference/diff-1440.png": "91fa4db12231bbe3cd5e82823595832019e5cc2af7af0b16b9ea9488c30ee54e",
+    "delivery-reference/diff-320.png": "a06009841f2a06d1908a8865904b9cd18ebd459d992fde7d63912393a3d19ce8",
+    "delivery-reference/diff-390.png": "59779faa3180de70e42496278e20bdfe8ece11630670659946d5d3a7006571f9",
+    "delivery-reference/diff-700.png": "1deed381b3998728362500df97e20192a8b58b5d779de72a4c5d4a15fc29ba40",
+    "delivery-reference/diff-701.png": "aaef89704c7ca19fcf012a0611a2859ba6ecea7d05f8312b3d9c6fad08c867af",
+    "delivery-reference/reference-1440.png": "b18ce19cff33c748f4f3556ea90b342725ae64714ad5eaeaf69e82bfc53d55ec",
+    "delivery-reference/reference-320.png": "b3061b21452220ad924e5b780e002143cc3d83c5a9f125c6798de8f96a8b6588",
+    "delivery-reference/reference-390.png": "cf6d221aa32aeac08ac66a44da1255ab919cfb69796bea50494d793160a48409",
+    "delivery-reference/reference-700.png": "98fec09bde3b14445b573dc86baf227007a8cccedcf4edd2c4aabc00187312c9",
+    "delivery-reference/reference-701.png": "97a26f62a19d2bf33cd27a4e9eb95d686c82a9983d519675761ff3f247551ded",
+    "delivery-rules/address-14.png": "a1c70b5b4f595a2f16f7f08654bb8423932dd848d23e789f8e4c8473708f3d5c",
+    "delivery-rules/address-15.png": "e92cc36d5fb6cdebc38fdb3517753d4d099655c5d0a08e456442cb84047a4e4f",
+    "delivery-rules/address-16.png": "51a567eb34a653ff57f2aecec34db9b2b8546ea7193ce3e9e57552490b54d7b0",
+    "delivery-rules/address-17.png": "65051cfccfd3bd3bf97161e8f394b7b90f00944c642f33e4a8042a0bd76b9caf",
+    "delivery-rules/address-18.png": "2bfadd93acd560cbec60021c85a051384c1ead48373fea30a888a73f5beca04e",
+    "delivery-rules/address-19.png": "510e719a113ec9b4134f51d400cd4c6776654d1d61eb4fb1e0942ff607c49cab",
+    "delivery-rules/address-20.png": "b0550b160481e68daf437aab30d8c8798b86bd4b1a7095cfc0841a21a6ae59f7",
+    "delivery-rules/adversarial-320.png": "48600e955214c1bb006e051b57ce32125b3bfc3b6528fdea1a59ae4e097b8335",
+    "delivery-rules/adversarial-700.png": "c7cd0c122c07a523c2968e424c6048e9a329f794a0941e33b7fe3cf3d63da7c3",
+    "delivery-rules/adversarial-701.png": "3e52f2df6b892b00f9002032334bd0cd174ca18cebd12eec1ce63cf17b4f37d4",
+    "delivery-rules/consent-feedback/consent-1440.png": "3ed9fa716f72847dcd353373f75d1a2c2c744ac9d1c2d33e66c1137f1a854027",
+    "delivery-rules/consent-feedback/consent-320.png": "6d75cac03621fad942a398c66f84a046eb235bf2184d8a3c729830fe9cdb6ab5",
+    "delivery-rules/consent-feedback/consent-390.png": "c2853ab0f134f88c4d1eb13cac89dda4d80e8352f62434de7a7f8e4e8a7d870a",
+    "delivery-rules/consent-feedback/consent-700.png": "114bb8bf37a97f4d882873d6a285361694bd1ac5788c00f733c44cd67f71585f",
+    "delivery-rules/consent-feedback/consent-701.png": "abbec887ce639d7f671a26f514e3409765e211a7e7fa72c6f395b2bf033a5c10",
+    "delivery-rules/delivery-1440.png": "55fedd5e91494e8e0c8157dfaea3da080e19fef4e0dbcdbd8376cee62a4e69b0",
+    "delivery-rules/delivery-320.png": "ed3f4fd748995ee834939a93cc11202a86982d3d46eb2d7c75b7f641912dcb22",
+    "delivery-rules/delivery-390.png": "793b3ccd0d3fd186a3f1f5c3fdddd51f5eb39e341ff7d529397d94ee18a490e8",
+    "delivery-rules/delivery-700.png": "ccbc59afea9122582b0e86e06aba1e74483f6a6b71341776c20a6ccf81bba97f",
+    "delivery-rules/delivery-701.png": "5137dc956c3e568b6bf96786ff41db188706134acaef6ee37b4cb0438a45b466",
+    "delivery-rules/map/map-1440.png": "0dde71612c3d898d932f1e6147181438b33af6fe6a98656e8c5f56cacdd01a7a",
+    "delivery-rules/map/map-320.png": "6a95fb1a5d66ecc63275ec8574d27efeaecd0123b0fa615351345dfae1a83a36",
+    "delivery-rules/map/map-390.png": "7baeab36708e8f1c481e46ed27317b9aef27a010c6ca31b261347fdaa3a985b4",
+    "delivery-rules/map/map-700.png": "489ca29aff8bd3dd21aeb99f39fb93683a2ae5460df6a9ac96e51b4b2f90d01c",
+    "delivery-rules/map/map-701.png": "baed681837255534c13316c40c5ea17e6be5abcbe3215c06e86a5c5381c1e065",
+    "delivery-rules/pickup-1440.png": "d0a2e0f411acc1125b188c09c74661e99870403738d9491ce819f834ba689bb7",
+    "delivery-rules/pickup-320.png": "18a5e58c3081455d933bff0d4de1a73a135b2a6f44fa9e65dc5c152b93d0527b",
+    "delivery-rules/pickup-390.png": "928a1e96e294cea8a632a135b0784fde5b85df70d3fa9c6577d49c63e36e7526",
+    "delivery-rules/pickup-700.png": "4f27b34d57cbe7addc80e1b609e57c5cb9de057b997e81e329a5be14cb3e8764",
+    "delivery-rules/pickup-701.png": "98370ef9426c8d2ffe182faedb85de695bbaffd15a610aa27df91ad029ee7cb1",
+    "fulfillment/local-address-1440.png": "041483dd14da39f7e2e3296f70ad5822a86ad512ff64cad630495ca6880625b6",
+    "fulfillment/local-address-390.png": "47107d571a2bca4532b683ae90099045dc54cd72beda8296bc8c5a332e55bc3d",
+    "fulfillment/qualified-1440.png": "fe686727ed70a9e5044f68c789d6890ca7db40bf01c511dbabd0fcc6b3c1132a",
+    "fulfillment/qualified-390.png": "ad4793ae65a89cbedb77804f010c16a2b3fa09cf6d4ed7822a5743110a15308c",
+    "mobile-feedback/cards-1440.png": "8cd300ef3058a2682abf50f2c8594830260b13f15bda97217127752f4c046fbc",
+    "mobile-feedback/cards-320.png": "3086cb11aeb5e2419a3691d51cc94ef4ba5bd3cf8cbdbcd6199223716bda7e34",
+    "mobile-feedback/cards-390.png": "32d6c523a5e9cf608232a86894e742564ed331787809f6f543eba0f2f233edfd",
+    "mobile-feedback/cards-700.png": "2a62c6b920e628d4bdd22ede442a5d7ccbcb12e26817d74f0a986769f5444ab1",
+    "mobile-feedback/cards-701.png": "2b563f2455439a348f3586e1c2d72abaefdc18d9700e7a1f55b35b22e37ffd51",
+    "mobile-feedback/minimum-button-1440.png": "72ffb0df338496bd6a5f87e0699d8b30793c9a1307aff422bd94fba1ae450555",
+    "mobile-feedback/minimum-button-320.png": "93c2807fa2cc9da2d6326255237fa3924b2375eb2393b2c1ebd91868b6e54454",
+    "mobile-feedback/minimum-button-390.png": "cd7159533c7c549c487293486944994d0cfa4a3682ca0b5a0a9718727040832b",
+    "mobile-feedback/minimum-button-700.png": "6d97ff780d193fae7a005698817b193f5ac1245e62054466e37097901333f8b0",
+    "mobile-feedback/minimum-button-701.png": "d2b608c662b9f6a2a0d86657854f139bf76a069c53b9ea3b408d4552c4f507ce",
+    "mobile-feedback/minimum-top-1440.png": "67cfd950eaaf51a60ecbba7fd4a6b6b85a66558cd51af547c5245b11f58ece3b",
+    "mobile-feedback/minimum-top-320.png": "9d4595050fdf616167a19734267a6ef9507c72328bf9f8a597ec841704393687",
+    "mobile-feedback/minimum-top-390.png": "f6fbcfe3d04657cc07a9852ac8138e0b5ec5ee693cc0df4a1a9b8c3a7ccf36b7",
+    "mobile-feedback/minimum-top-700.png": "5b3efa74aefdffef5547edbba00c0f01d4276cd943aac374a53d028f58aab2c4",
+    "mobile-feedback/minimum-top-701.png": "5c35b072ad98d34edd90c686fa13bfac16066c147439b27fe2f103bdbd729d55",
+    "storefront-ux-staging/chromium-1440x900-details-quantity.png": "b5ef8836ab06b4b35dfde39f585d6f36bd302d93ea4ff3543a89609a20928c9b",
+    "storefront-ux-staging/chromium-1440x900-multi-word-search.png": "d238fe3a5557c3e46d9e989ffc2d4e58c41ea4096964a98bca3818bd89ad0ccc",
+    "storefront-ux-staging/chromium-1440x900-scrolled-controls.png": "2eb55c330a30349f93999df437054cae2cb1ef3e47536d59cae262407eda5b2b",
+    "storefront-ux-staging/chromium-320x568-details-quantity.png": "d58a9fcfde93928a4a21bfb5f9f37d97447b2727bc827493ee35328da7543f81",
+    "storefront-ux-staging/chromium-320x568-multi-word-search.png": "2115f3a6060348d5427f345d3b188b04b692d9ccd255eb74d6c93fbea633664a",
+    "storefront-ux-staging/chromium-320x568-scrolled-controls.png": "c061896a8cece2c7c5429a4e34bfa32b01cf6350d75dce4bac1031e17c54d378",
+    "storefront-ux-staging/chromium-390x844-details-quantity.png": "1f5d8929d7fe114ee0f603d5579e0f05a567449fbaa1f94e416d90bb30e43b23",
+    "storefront-ux-staging/chromium-390x844-multi-word-search.png": "fecde1958953b30e70b9f69f8e694739be32e867ae1d9780346658b6574fd8a5",
+    "storefront-ux-staging/chromium-390x844-scrolled-controls.png": "019c580d4a69be4ee6ce464fdc109c4b0355c1877c6ff22a2fd3e09854fac18a",
+    "storefront-ux-staging/chromium-390x900-details-quantity.png": "575a3aef1708da489d5963741fec7f73c6eed62cfc7644db8537edc5a5adc31a",
+    "storefront-ux-staging/chromium-390x900-multi-word-search.png": "fef0165cb5cb1a243323708234b833a32fff9c2a2b87345f4b9f38c3b37592e5",
+    "storefront-ux-staging/chromium-390x900-scrolled-controls.png": "064d169cca976965fe5a8477647462bb21c5881815abc1cd4612982fd10b5162",
+    "storefront-ux-staging/chromium-430x932-details-quantity.png": "faf034728a1239c0d8689213a56660acef347c85a8bb1041cdf37e38a7073845",
+    "storefront-ux-staging/chromium-430x932-multi-word-search.png": "d89c655519c42e596a416878bd08bbf9d34aef7dd5edd2b54505204577c88b71",
+    "storefront-ux-staging/chromium-430x932-scrolled-controls.png": "7a71a68d955bd4499d8af644bc4f9bbb648d5267c6bede3c77ef463d1a7c18bf",
+    "storefront-ux-staging/diagnostics/context-1-page-0.png": "564befd162fd352b6631b6e28bfcd1e41c7473c58576f6f670002cd4a81dfe87",
+    "storefront-ux-staging/diagnostics/context-2-page-0.png": "28790f28e62f7765d591fd15b97f38188b28de7cccb0f3bc5746d0172e50fe54",
+    "storefront-ux-staging/diagnostics/context-3-page-0.png": "b6c471606b6d7a433af05cce298041856d03508093923c8fce8fbf6cd1f0cf7b",
+    "storefront-ux-staging/diagnostics/context-4-page-0.png": "f5654b29ef9b61ecdb153547ef99c3ff99d7ed978423b9f877242a1b3562f66e",
+    "storefront-ux-staging/diagnostics/context-5-page-0.png": "2db0be5fb8930344b82891d5a58a4d44450485e0371052bea435f669d6b2583f",
+    "storefront-ux-staging/diagnostics/context-6-page-0.png": "41b3757bcc8581bc717663ba99945473b12ffd686200fd9631809352e585eec4",
+    "storefront-ux-staging/interaction/chromium-1440-false.png": "5c55a948adc3bfb6170cc3fb8ec1e077bdbd3daf3ee2fc0914903bea120289ca",
+    "storefront-ux-staging/interaction/chromium-1440-true.png": "1f21585c29e6325c7df86e437f13115fbd18b94d26d0a16cbc8a5b8a1798e4f1",
+    "storefront-ux-staging/interaction/chromium-320-false.png": "3d01976d98eda59277e82f2925fdc4fc1060c7e1550d7bdbc9c6c55924c01628",
+    "storefront-ux-staging/interaction/chromium-320-true.png": "6fd60abfc54c484cf06ab473d6b08d40c6b4443f84b4bebd3f104328c5a7ebcc",
+    "storefront-ux-staging/interaction/chromium-390-false.png": "adfe330b41139919794062de0e65805e365c42ac86985f2f3848fc775f0051b3",
+    "storefront-ux-staging/interaction/chromium-390-pending.png": "9910a52c048d373a99886c34b7d7cabfa4639d039c6efce8751020f6647c95c1",
+    "storefront-ux-staging/interaction/chromium-390-true.png": "81def05212bcb7bfa3da9ff9a08495bab9583f1cb04cbbc39bdd21e703e7a4f2",
+    "storefront-ux-staging/interaction/chromium-430-false.png": "e38f698faa1d2b9d8b33d21566833746358b43032065b70f2fe98a109e31d53a",
+    "storefront-ux-staging/interaction/chromium-430-true.png": "10e9502bab456ccbecd8fb0514a6c3a85324c7a34e06229d40c7ae8ea25bf774",
+    "storefront-ux-staging/interaction/chromium-701-false.png": "0ba9c1f993027dcaf6299454f1ab745554e121689acf1fe59ee856f323d3547c",
+    "storefront-ux-staging/interaction/chromium-701-true.png": "d6e14ec33beefaa80e9b28bcb75ce86747f7f4fa199989c55588a0d33b38230c",
+    "storefront-ux-staging/interaction/chromium-900-false.png": "8b742cc712f460cb86af61a6329430df2fd9a0d6b181ee48fc431fd79285384c",
+    "storefront-ux-staging/interaction/chromium-900-true.png": "03707673496f5b6a08ed046d9a9c11498ac6eb01b6baa002249ebb84cf6f30ba",
+    "storefront-ux-staging/no-dock-1440-false.png": "5c55a948adc3bfb6170cc3fb8ec1e077bdbd3daf3ee2fc0914903bea120289ca",
+    "storefront-ux-staging/no-dock-1440-true.png": "e5b64a61012f15178d723958a357bc6765673c33db917c0f09f2d286d1daec3d",
+    "storefront-ux-staging/no-dock-320-false.png": "bc268bb7b08a45cd66b78988b6c9a4c02245a3aac6dffcdc3c93025cd42903f3",
+    "storefront-ux-staging/no-dock-320-true.png": "e4f8efb62b7f7649c6c5ac3d60cc60b643bd11718652a3c39215e32c918d0018",
+    "storefront-ux-staging/no-dock-390-false.png": "93b4b8e06371c1320d9e4f7291b9c2cc2cabe26a71afb20fa102002ae6e6e128",
+    "storefront-ux-staging/no-dock-390-true.png": "fbde5d0aee77d3da81bad1bab90e2f411c494aed0791a3db393bf029aec68f66",
+    "storefront-ux-staging/no-dock-701-false.png": "0ba9c1f993027dcaf6299454f1ab745554e121689acf1fe59ee856f323d3547c",
+    "storefront-ux-staging/no-dock-701-true.png": "1fd6d0814ae4efd492810bc9e525f1ff03357adb5db885714e81df8ff6444690",
+    "storefront-ux-staging/no-dock-900-false.png": "8b742cc712f460cb86af61a6329430df2fd9a0d6b181ee48fc431fd79285384c",
+    "storefront-ux-staging/no-dock-900-true.png": "f8f36b65e78e64f9fcd7fc375f7cee100d71ec158d6e75edf73ef2cd54f16a15"
+  },
+  "submitted_orders": 0,
+  "production_access": false,
+  "production_mutation": false,
+  "baseline_masks_tolerances_changed": false,
+  "business_rules_changed": false,
+  "vision_notes": [
+    "All125 exact-release artifact PNGs actually inspected via16 contact sheets and critical full-size originals.",
+    "Native min1200/cart420/missing780 visible at top after click and beside submit; no native POST assembly.",
+    "Mobile row footers/prices align including long names and colored cards; native quantity/race/first tap regression passed.",
+    "Unknown/preliminary callbacks, phone/consent focus, COD, Store API and fixed modal source chrome preserved.",
+    "Original functional assembly captures may show expected no-order guard notices. Unchanged first-load native read/reload can show temporary disabled/skeleton state; ready-state focused screenshots and native totals assertions pass.",
+    "No new visual defect revoking PASS; homepage latency RB-025 remains outside scope."
+  ]
+}
