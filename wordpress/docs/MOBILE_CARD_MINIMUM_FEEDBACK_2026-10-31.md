@@ -1,0 +1,11 @@
+# Mobile card alignment and minimum feedback 2026-10-31
+
+Status: implementation/local preview verification in progress. Production forbidden; no submitted test orders authorized.
+
+Owner screenshot: mobile product names with different line counts produced staggered prices/cart buttons; a below-minimum checkout attempt scrolled up without an explanation there, while the existing shortfall stayed beside submit. Scope is exactly these two presentation defects, with no delivery/minimum/order authority changes.
+
+Confirmed cause: max700 CSS replaced the existing auto footer margin with8px, so flex card bodies stopped pushing footers to the row bottom. Default/colored card padding also differed by3px at mobile. Before-change Chromium/WebKit geometry at320/390/430/700 found28/23/19/5 misaligned rows, max33.625/22.3125/22.3125/5.5px respectively. Restore auto margin, retain explicit8px gap and compensate colored-card inner bottom padding for its7px outer padding; no fixed heights, truncated names or desktop styling changes. All these local rows now have0px footer and price deltas in both engines.
+
+Checkout uses the same existing deliveryMinimumError as the native validation and submit feedback. After an attempted submit, a role=alert notice appears above the native Checkout Block, with exact minimum and shortfall; focusing it makes the reason visible, including if Woo scrolls to modal top. Existing phone/consent priority and consent marker retained. Native Woo validation/server guard remain the only submission authority. Notice clears on pickup, unknown/preliminary minimum or sufficient cart total; no stale number or second calculation/storage path.
+
+New five-width browser gate covers all mobile catalog rows including accent cards, native420 cart/minimum1200/missing780, no native POST assembly, top notice visibility/focus, identical submit-adjacent text, pickup clearing and1260 qualifying-total clearing. Shadow preview replaces only candidate static JS/CSS in a separate staging browser; live release proof must explicitly say mode=live. First preview harness passed an extra request argument into a lambda default path; corrected the test handler signature, without changing product code or assertions. Local media placeholders are fixture-only and unchanged; real staging media regression remains mandatory.

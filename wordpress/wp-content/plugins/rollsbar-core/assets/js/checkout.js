@@ -24,6 +24,7 @@
 	var deliveryTerms='Уточнит менеджер';
 	var addressServiceError='';
 	var consentAttempted=false;
+	var minimumAttempted=false;
 	window.addEventListener('message',function(event){
 		if(event.origin!==location.origin||!event.data||!['rollsbar-map-escape','rollsbar-map-ready'].includes(event.data.type))return;
 		var frame=document.querySelector('.rollsbar-checkout-map iframe');
@@ -592,6 +593,16 @@
 			feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');
 			actions.prepend(feedback);
 		}
+		var checkout=document.querySelector('.wp-block-woocommerce-checkout');
+		var notice=document.querySelector('.rollsbar-minimum-notice');
+		if(!notice&&checkout&&minimumAttempted&&deliveryMinimumError){
+			notice=document.createElement('div');notice.className='rollsbar-minimum-notice';notice.setAttribute('role','alert');notice.setAttribute('tabindex','-1');checkout.before(notice);
+		}
+		if(notice){
+			var minimumMessage=minimumAttempted?deliveryMinimumError:'';
+			if(notice.textContent!==minimumMessage)notice.textContent=minimumMessage;
+			notice.hidden=!minimumMessage;
+		}
 		var consent=document.querySelector('#order-rollsbar-privacy-consent');
 		var missingConsent=consent&&!consent.checked;
 		var consentBlock=consent&&(consent.closest('.wc-block-components-address-form__rollsbar-privacy-consent')||consent.closest('.wc-block-components-checkbox'));
@@ -612,10 +623,10 @@
 		if(!button||button.dataset.rollsbarFeedback==='1')return;
 		button.dataset.rollsbarFeedback='1';
 		button.addEventListener('click',function(){
-			consentAttempted=true;prepareSubmissionFeedback();
+			consentAttempted=true;minimumAttempted=true;prepareSubmissionFeedback();
 			var currentConsent=document.querySelector('#order-rollsbar-privacy-consent');
 			var currentPhone=Array.from(document.querySelectorAll('input[id$="-phone"]')).find(function(n){return n.getClientRects().length;});
-			var selector=contactPhoneError||(currentPhone&&!currentPhone.value.trim())?'input[id$="-phone"]':currentConsent&&!currentConsent.checked?'#order-rollsbar-privacy-consent':deliveryMinimumError?'#shipping-address_1':null;
+			var selector=contactPhoneError||(currentPhone&&!currentPhone.value.trim())?'input[id$="-phone"]':currentConsent&&!currentConsent.checked?'#order-rollsbar-privacy-consent':deliveryMinimumError?'.rollsbar-minimum-notice':null;
 			if(!selector)return;
 			window.setTimeout(function(){
 				var field=Array.from(document.querySelectorAll(selector)).find(function(n){return n.getClientRects().length;});

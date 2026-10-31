@@ -208,7 +208,9 @@ img{max-width:100%;display:block}
 	.home .rollsbar-product-card__media{padding:8px;aspect-ratio:1.12/1;border-radius:18px 18px 0 0}
 	.home .rollsbar-product-card h3{font-size:14.5px;margin-bottom:5px}
 	.home .rollsbar-product-card p{display:none}
-	.home .rollsbar-product-card__footer{margin-top:8px;align-items:center}
+	.home .rollsbar-product-card__body{row-gap:8px}
+	.home .rollsbar-product-card__footer{margin-top:auto;align-items:center}
+	.home .rollsbar-product-card--accent .rollsbar-product-card__body{padding-bottom:9px}
 	.home .rollsbar-product-card__footer .rollsbar-price{font-size:16px;min-height:38px}
 	.home .rollsbar-product-card__footer .woocommerce-Price-amount{min-height:38px}
 	.home .rollsbar-product-card--accent{--rb-card-pad:7px;border-radius:18px;box-shadow:0 10px 28px rgba(18,22,26,.055),0 2px 8px rgba(18,22,26,.035)}

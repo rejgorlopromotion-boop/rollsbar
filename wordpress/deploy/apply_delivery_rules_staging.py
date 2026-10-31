@@ -6,7 +6,7 @@ from apply_storefront_ux_staging import verify
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'qa/visual-results/delivery-rules'
 BASE='921698e085263f23493e8f757aa0e7c1b561946c'
-PREVIOUS_APP='70bc390a0655b2c107b125ef9dc8f42c7f4b41c5'
+PREVIOUS_APP='cb0cc321cc7cf0cfa1de231955b1a16a2b22bb2a'
 CHANGED=[transport.PLUGIN+p for p in [
  'data/delivery-minimum.json','includes/class-rollsbar-delivery-minimum.php',
  'includes/class-rollsbar-delivery-checkout.php','includes/class-rollsbar-native-delivery-method.php',
@@ -92,7 +92,7 @@ def manifest():
  if len(reference)!=15:raise ValueError('Five immutable reference/candidate/unmasked diff sets required')
  maps=sorted((OUT/'map').glob('*.png'))
  if len(maps)!=5:raise ValueError('Five restored-map screenshots required')
- return hashlib.sha256('\n'.join(str(p.relative_to(ROOT/'qa/visual-results'))+':'+hashlib.sha256(p.read_bytes()).hexdigest() for p in files+reference+maps+sorted((ROOT/'qa/visual-results/client-ux').glob('*.png'))).encode()).hexdigest()
+ return hashlib.sha256('\n'.join(str(p.relative_to(ROOT/'qa/visual-results'))+':'+hashlib.sha256(p.read_bytes()).hexdigest() for p in files+reference+maps+sorted((ROOT/'qa/visual-results/client-ux').glob('*.png'))+sorted((ROOT/'qa/visual-results/mobile-feedback').glob('*.png'))).encode()).hexdigest()
 
 def finalize(sha):
  proof=json.loads((OUT/'evidence.json').read_text(encoding='utf8'))
@@ -112,6 +112,9 @@ def finalize(sha):
   if data.get('status')!='PASS' or data.get('release_sha')!=sha:raise ValueError('Exact storefront regression proof required: '+path)
  client=json.loads((ROOT/'qa/visual-results/client-ux/evidence.json').read_text(encoding='utf8'))
  if client.get('status')!='PASS' or client.get('release_sha')!=sha or [c['width'] for c in client['checks']]!=[1440,701,700,390,320]:raise ValueError('Exact client UX five-width proof required')
+ mobile=json.loads((ROOT/'qa/visual-results/mobile-feedback/evidence.json').read_text(encoding='utf8'))
+ if mobile.get('status')!='PASS' or mobile.get('mode')!='live' or mobile.get('release_sha')!=sha or [c['width'] for c in mobile['checks']]!=[1440,701,700,390,320] or mobile.get('submitted_orders')!=0:raise ValueError('Exact live mobile rows/top shortfall proof required')
+ if len(list((ROOT/'qa/visual-results/mobile-feedback').glob('*.png')))!=15:raise ValueError('Five card/top/button screenshot sets required')
  if os.environ.get('ROLLSBAR_REVIEWED_MANIFEST')!=manifest():raise ValueError('Exact screenshot set must be inspected')
  return f'''[[ "$(git -C "$PROJECT_ROOT" rev-parse HEAD)" == {sha} ]]
 {transport.code_hash_guard(sha,changed=CHANGED,base=BASE)}

@@ -535,6 +535,7 @@ jobs:
         if: inputs.direct_port_phase == 'apply'
         run: |
           # RB-021 is owner-deferred; its unaccepted alias gate is standalone.
+          python3 qa/checkout/mobile_feedback_live.py
           python3 qa/checkout/delivery_scenario.py --live
           python3 qa/checkout/checkout_policy_live.py
           python3 qa/checkout/fulfillment_live.py
@@ -589,6 +590,7 @@ jobs:
             qa/visual-results/checkout-policy/
             qa/visual-results/fulfillment/
             qa/visual-results/client-ux/
+            qa/visual-results/mobile-feedback/
             qa/visual-results/delivery-reference/
             qa/visual-results/storefront-ux-staging/
           retention-days: 30
@@ -604,6 +606,7 @@ jobs:
             qa/visual-results/checkout-policy/
             qa/visual-results/fulfillment/
             qa/visual-results/client-ux/
+            qa/visual-results/mobile-feedback/
             qa/visual-results/delivery-rules/*.txt
             qa/visual-results/delivery-rules/*.log
             qa/visual-results/delivery-reference/
