@@ -1,6 +1,6 @@
 # Full delivery address and operator confirmation
 
-Status: local verification PASS; staging acceptance pending. Production forbidden, no submitted orders authorized.
+Status: STAGING PASS. Application/marker `ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a`, receipt `browser_verified`. Production forbidden, no submitted orders authorized.
 
 Owner override 2026-11-01: delivery requires a street/local address name and a house, including manual entry when no matching suggestion exists. A street-only, town-only or empty address must block native checkout, focus/scroll to the address and explain what to complete. Pickup retains phone + explicit consent with client address hidden. Name remains optional. This supersedes the former delivery phone-only allowance; it does not require a verified geocoder house or turn imprecise coordinates into precise coordinates.
 
@@ -11,3 +11,11 @@ Implementation: PHP pre-order Store API guard checks completeness before the exi
 Local proof: shared 26 address examples pass both actual PHP helper and extracted browser helper; native-policy fixtures retain known minimum, saved proof, low-precision/manual callback, consent and note cleanup behavior. Five-width shadow browser checks at1440/701/700/390/320 PASS: actual provider street-only selection, zero native POST assembly on incomplete address, visible field focus/error, manual complete native payload without HTTP submission, operator note, pickup exemption. Preview-only critical screenshots reviewed; final live artifact/vision review is required before PASS.
 
 Earlier tests accepting blank delivery address were updated only for the explicit owner override. Blank pickup address and manually complete unknown delivery remain accepted. No baseline/masks/geometry tolerance relaxed.
+
+
+Final acceptance: [apply 41243149702](https://github.com/tilaninishi12754-code/rollsbar/actions/runs/41243149702) and [finalize 41245485321](https://github.com/tilaninishi12754-code/rollsbar/actions/runs/41245485321) SUCCESS. Fresh verified staging backup `20261031T212140Z` (DB/uploads/manifest/checksums outside webroot). Full live matrix: complete-address/operator5, birthday promotions5, mobile alignment/minimum5, native checkout5, policy/cache2, fulfillment2, prior clientUX5, provider20, map5, adversarial3, immutable modal chrome5, storefront5, fixed controls5, Interaction Stability6 PASS. All147 exact-release artifact PNGs actually viewed after deterministic gates. Reviewed manifest `aba3afe21867bd14fc60a15d4ec7760d7cca46605a5916763feeba37a5c8d7aa`; verified ZIP SHA256 `df57d2d0b2027fc62e28d32a03d0c00e99933ce9226f4a32b791100eda2d3b23`. No masks/baselines/tolerances weakened.
+
+Application delta from installed promotions candidate d3b7239 is exactly three core files: `includes/class-rollsbar-delivery-checkout.php`, `assets/js/checkout.js`, `assets/css/checkout.css`. Native schema optional-address handling for pickup remains; delivery adds its own pre-order completeness check. Scope guards protect every other tracked app file in the explicit cumulative20-file release. No new address storage/cart/transaction path, tariffs or precision upgrade. Catalog118/13/26+3=121 and Client Media Canon36 PASS. No orders/accounts/notifications or production access/mutation. RB-029 DONE. Evidence: `CHECKOUT_COMPLETE_ADDRESS_EVIDENCE_2026-11-01.json`.
+
+
+Nonblocking visual follow-up RB-030: after manual unknown-address entry, the native shipping row title can retain the preceding preliminary1200 label, although custom terms correctly request manager clarification, strict minimum is absent and no exact point/free-delivery promise is created. The source of this advisory title refresh is untraced and deferred; final operator confirmation is explicit. No unrelated rate/rule change was added to this batch.

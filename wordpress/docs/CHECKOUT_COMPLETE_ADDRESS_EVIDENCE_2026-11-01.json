@@ -1,0 +1,4347 @@
+{
+  "status": "STAGING_PASS",
+  "application_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+  "marker": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+  "receipt_phase": "browser_verified",
+  "apply_run": "41243149702",
+  "finalize_run": "41245485321",
+  "initial_promotions_apply": "41241858308",
+  "backup": "20261031T212140Z",
+  "artifact": {
+    "run": "41243149702",
+    "id": 13058541754,
+    "zip_sha256": "df57d2d0b2027fc62e28d32a03d0c00e99933ce9226f4a32b791100eda2d3b23",
+    "verified": true,
+    "files": 189
+  },
+  "reviewed_manifest": "aba3afe21867bd14fc60a15d4ec7760d7cca46605a5916763feeba37a5c8d7aa",
+  "gates": {
+    "delivery-rules/evidence.json": {
+      "status": "AUTOMATED_PASS_AWAITING_SCREENSHOT_REVIEW",
+      "mode": "live",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "geometry": {
+            "x": 200,
+            "y": 36,
+            "width": 1040,
+            "height": 828,
+            "radius": "28px",
+            "position": "absolute",
+            "scrollHeight": 1335,
+            "clientHeight": 828
+          },
+          "status": "PASS"
+        },
+        {
+          "width": 701,
+          "geometry": {
+            "x": 12,
+            "y": 36,
+            "width": 677,
+            "height": 828,
+            "radius": "28px",
+            "position": "absolute",
+            "scrollHeight": 1881,
+            "clientHeight": 828
+          },
+          "status": "PASS"
+        },
+        {
+          "width": 700,
+          "geometry": {
+            "x": 12,
+            "y": 72,
+            "width": 676,
+            "height": 828,
+            "radius": "25px 25px 0px 0px",
+            "position": "absolute",
+            "scrollHeight": 2058,
+            "clientHeight": 828
+          },
+          "status": "PASS"
+        },
+        {
+          "width": 390,
+          "geometry": {
+            "x": 12,
+            "y": 72,
+            "width": 366,
+            "height": 828,
+            "radius": "25px 25px 0px 0px",
+            "position": "absolute",
+            "scrollHeight": 2245,
+            "clientHeight": 828
+          },
+          "status": "PASS"
+        },
+        {
+          "width": 320,
+          "geometry": {
+            "x": 12,
+            "y": 72,
+            "width": 296,
+            "height": 828,
+            "radius": "25px 25px 0px 0px",
+            "position": "absolute",
+            "scrollHeight": 2518,
+            "clientHeight": 828
+          },
+          "status": "PASS"
+        }
+      ],
+      "submissions": [],
+      "errors": [],
+      "native_presubmit": {
+        "status": "PASS",
+        "http_sent": false,
+        "fields": [
+          "additional_fields",
+          "billing_address",
+          "create_account",
+          "customer_note",
+          "customer_password",
+          "extensions",
+          "shipping_address",
+          "expected_total",
+          "payment_method",
+          "payment_data"
+        ],
+        "proof_present": true
+      }
+    },
+    "address-complete/evidence.json": {
+      "status": "PASS",
+      "mode": "live",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "street_only_posts": 0,
+          "manual_native_payload": true,
+          "pickup_exempt": true,
+          "operator_notice": true
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "street_only_posts": 0,
+          "manual_native_payload": true,
+          "pickup_exempt": true,
+          "operator_notice": true
+        },
+        {
+          "width": 700,
+          "status": "PASS",
+          "street_only_posts": 0,
+          "manual_native_payload": true,
+          "pickup_exempt": true,
+          "operator_notice": true
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "street_only_posts": 0,
+          "manual_native_payload": true,
+          "pickup_exempt": true,
+          "operator_notice": true
+        },
+        {
+          "width": 320,
+          "status": "PASS",
+          "street_only_posts": 0,
+          "manual_native_payload": true,
+          "pickup_exempt": true,
+          "operator_notice": true
+        }
+      ],
+      "submitted_orders": 0
+    },
+    "promotions/evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "direct_entry": 200,
+          "offer": "birthday only",
+          "navigation": "PASS",
+          "ordinary_reload": "PASS"
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "direct_entry": 200,
+          "offer": "birthday only",
+          "navigation": "PASS",
+          "ordinary_reload": "PASS"
+        },
+        {
+          "width": 700,
+          "status": "PASS",
+          "direct_entry": 200,
+          "offer": "birthday only",
+          "navigation": "PASS",
+          "ordinary_reload": "PASS"
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "direct_entry": 200,
+          "offer": "birthday only",
+          "navigation": "PASS",
+          "ordinary_reload": "PASS"
+        },
+        {
+          "width": 320,
+          "status": "PASS",
+          "direct_entry": 200,
+          "offer": "birthday only",
+          "navigation": "PASS",
+          "ordinary_reload": "PASS"
+        }
+      ],
+      "submitted_orders": 0
+    },
+    "mobile-feedback/evidence.json": {
+      "status": "PASS",
+      "mode": "live",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "mobile_rows": "desktop unchanged",
+          "minimum": 1200,
+          "cart": 420,
+          "shortfall": 780,
+          "qualified_cart": 1260,
+          "checkout_posts": 0
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "mobile_rows": "desktop unchanged",
+          "minimum": 1200,
+          "cart": 420,
+          "shortfall": 780,
+          "qualified_cart": 1260,
+          "checkout_posts": 0
+        },
+        {
+          "width": 700,
+          "status": "PASS",
+          "mobile_rows": [
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            }
+          ],
+          "minimum": 1200,
+          "cart": 420,
+          "shortfall": 780,
+          "qualified_cart": 1260,
+          "checkout_posts": 0
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "mobile_rows": [
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            }
+          ],
+          "minimum": 1200,
+          "cart": 420,
+          "shortfall": 780,
+          "qualified_cart": 1260,
+          "checkout_posts": 0
+        },
+        {
+          "width": 320,
+          "status": "PASS",
+          "mobile_rows": [
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            },
+            {
+              "footerDelta": 0,
+              "priceDelta": 0
+            }
+          ],
+          "minimum": 1200,
+          "cart": 420,
+          "shortfall": 780,
+          "qualified_cart": 1260,
+          "checkout_posts": 0
+        }
+      ],
+      "submitted_orders": 0
+    },
+    "checkout-policy/evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "orders_created": 0,
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "queries": [
+            {
+              "query": "Симферополь",
+              "first": "г Симферополь"
+            },
+            {
+              "query": "улица Гагарина",
+              "first": "г Симферополь, ул Гагарина"
+            },
+            {
+              "query": "Мазанка",
+              "first": "село Мазанка"
+            },
+            {
+              "query": "Приятное Свидание",
+              "first": "село Приятное свидание"
+            }
+          ],
+          "saved_address": "г Симферополь, ул Гагарина, д 1",
+          "draft_retained": true
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "queries": [
+            {
+              "query": "Симферополь",
+              "first": "г Симферополь"
+            },
+            {
+              "query": "улица Гагарина",
+              "first": "г Симферополь, ул Гагарина"
+            },
+            {
+              "query": "Мазанка",
+              "first": "село Мазанка"
+            },
+            {
+              "query": "Приятное Свидание",
+              "first": "село Приятное свидание"
+            }
+          ],
+          "saved_address": "г Симферополь, ул Гагарина, д 1",
+          "draft_retained": true
+        }
+      ]
+    },
+    "fulfillment/evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "cart_rubles": 4200,
+          "minimum": 2500,
+          "molodezhnaya": [
+            {
+              "display": "г Симферополь, ул Молодежная, д 1",
+              "qc_geo": 2,
+              "decision": {
+                "status": "unresolved",
+                "minimum": null,
+                "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+                "estimate_minimum": 1200
+              }
+            },
+            {
+              "display": "г Симферополь, ул Молодежная, д 2",
+              "qc_geo": 2,
+              "decision": {
+                "status": "unresolved",
+                "minimum": null,
+                "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+                "estimate_minimum": 1200
+              }
+            },
+            {
+              "display": "г Симферополь, ул Молодежная, д 5",
+              "qc_geo": 2,
+              "decision": {
+                "status": "unresolved",
+                "minimum": null,
+                "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+                "estimate_minimum": 1200
+              }
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "cart_rubles": 4200,
+          "minimum": 2500,
+          "molodezhnaya": [
+            {
+              "display": "г Симферополь, ул Молодежная, д 1",
+              "qc_geo": 2,
+              "decision": {
+                "status": "unresolved",
+                "minimum": null,
+                "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+                "estimate_minimum": 1200
+              }
+            },
+            {
+              "display": "г Симферополь, ул Молодежная, д 2",
+              "qc_geo": 2,
+              "decision": {
+                "status": "unresolved",
+                "minimum": null,
+                "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+                "estimate_minimum": 1200
+              }
+            },
+            {
+              "display": "г Симферополь, ул Молодежная, д 5",
+              "qc_geo": 2,
+              "decision": {
+                "status": "unresolved",
+                "minimum": null,
+                "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+                "estimate_minimum": 1200
+              }
+            }
+          ]
+        }
+      ],
+      "orders_created": 0
+    },
+    "client-ux/evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "pizza_identities": 12,
+          "status": "PASS",
+          "map": "same checkout asset",
+          "navigation": "PASS",
+          "return": "PASS"
+        },
+        {
+          "width": 701,
+          "pizza_identities": 12,
+          "status": "PASS",
+          "map": "same checkout asset",
+          "navigation": "PASS",
+          "return": "PASS"
+        },
+        {
+          "width": 700,
+          "pizza_identities": 12,
+          "status": "PASS",
+          "map": "same checkout asset",
+          "navigation": "PASS",
+          "return": "PASS"
+        },
+        {
+          "width": 390,
+          "pizza_identities": 12,
+          "status": "PASS",
+          "map": "same checkout asset",
+          "navigation": "PASS",
+          "return": "PASS"
+        },
+        {
+          "width": 320,
+          "pizza_identities": 12,
+          "status": "PASS",
+          "map": "same checkout asset",
+          "navigation": "PASS",
+          "return": "PASS"
+        }
+      ],
+      "submitted_orders": 0
+    },
+    "delivery-rules/address-evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "cases": [
+        {
+          "query": "Симферополь Гагарина 17",
+          "expected": 1200,
+          "display": "г Симферополь, ул Гагарина, д 17",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 1200,
+            "basis": "fias_identity",
+            "sources": [
+              "B19"
+            ],
+            "message": "Бесплатная доставка при заказе от 1 200 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "b4001903-244a-4a14-8768-811bdd312f03",
+            "street": "Гагарина",
+            "house_fias_id": "5ab130fd-11d1-4eec-a371-cd946787fa82",
+            "house": "17",
+            "geo_lat": "44.970468",
+            "geo_lon": "34.094496",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 1 200 ₽. Добавьте товаров ещё на 780 ₽."
+        },
+        {
+          "query": "Симферополь Лермонтова 16",
+          "expected": 1200,
+          "display": "г Симферополь, ул Лермонтова, д 16",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 1200,
+            "basis": "fias_identity",
+            "sources": [
+              "B18"
+            ],
+            "message": "Бесплатная доставка при заказе от 1 200 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "df37fb25-0b1f-4b06-83ef-213be1983e72",
+            "street": "Лермонтова",
+            "house_fias_id": "eea34751-a6dc-4c68-b253-d668cbcc18dc",
+            "house": "16",
+            "geo_lat": "44.964462",
+            "geo_lon": "34.113605",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 1 200 ₽. Добавьте товаров ещё на 780 ₽."
+        },
+        {
+          "query": "Симферополь Бела Куна 5",
+          "expected": 1500,
+          "display": "г Симферополь, ул Бела Куна, д 5",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 1500,
+            "basis": "fias_identity",
+            "sources": [
+              "C7"
+            ],
+            "message": "Бесплатная доставка при заказе от 1 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "c2142f3a-a0bb-4be4-8fdc-19756a73ce7d",
+            "street": "Бела Куна",
+            "house_fias_id": "80d5b134-d4c2-4585-9ce8-aeeebbe21b3d",
+            "house": "5",
+            "geo_lat": "44.974762",
+            "geo_lon": "34.130348",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 1 500 ₽. Добавьте товаров ещё на 1 080 ₽."
+        },
+        {
+          "query": "Симферополь 51-й Армии 55",
+          "expected": 1500,
+          "display": "г Симферополь, ул 51-й Армии, д 55",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 1500,
+            "basis": "fias_identity",
+            "sources": [
+              "C9"
+            ],
+            "message": "Бесплатная доставка при заказе от 1 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "b717ced9-5fbe-4236-a6a9-bdaebafa3cec",
+            "street": "51-й Армии",
+            "house_fias_id": "12f709b9-6e16-47a7-9b7e-e981da163d73",
+            "house": "55",
+            "geo_lat": "44.956447",
+            "geo_lon": "34.126827",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 1 500 ₽. Добавьте товаров ещё на 1 080 ₽."
+        },
+        {
+          "query": "Крым Мирное Таврическая 120",
+          "expected": 2000,
+          "display": "село Мирное, ул Таврическая, д 120",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 2000,
+            "basis": "fias_identity",
+            "sources": [
+              "D12"
+            ],
+            "message": "Бесплатная доставка при заказе от 2 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "d14c6071-1b35-4066-a632-34877542242f",
+            "settlement": "Мирное",
+            "street_fias_id": "b606660d-6306-48b3-84d4-99a9cdb5698a",
+            "street": "Таврическая",
+            "house_fias_id": "c1accfdc-299a-48c1-bf55-40674d0e23db",
+            "house": "120",
+            "geo_lat": "44.98321",
+            "geo_lon": "34.049644",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 2 000 ₽. Добавьте товаров ещё на 1 580 ₽."
+        },
+        {
+          "query": "Крым Мирное Стадионная 19",
+          "expected": 2000,
+          "display": "село Мирное, ул Стадионная, д 19",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 2000,
+            "basis": "fias_identity",
+            "sources": [
+              "D12"
+            ],
+            "message": "Бесплатная доставка при заказе от 2 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "d14c6071-1b35-4066-a632-34877542242f",
+            "settlement": "Мирное",
+            "street_fias_id": "6ded4760-7626-4d4c-9b6a-f50a25cabd96",
+            "street": "Стадионная",
+            "house_fias_id": "a4fab443-75a7-4a8a-a959-1a9e26a6c67d",
+            "house": "19",
+            "geo_lat": "44.988004",
+            "geo_lon": "34.064843",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 2 000 ₽. Добавьте товаров ещё на 1 580 ₽."
+        },
+        {
+          "query": "Крым Грэсовский Яблочкова 12",
+          "expected": 2000,
+          "display": "пгт Грэсовский, ул Яблочкова, д 12",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 2000,
+            "basis": "fias_identity",
+            "sources": [
+              "D14"
+            ],
+            "message": "Бесплатная доставка при заказе от 2 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": "d3f14746-73e5-4ad2-85b3-f76e1b3cbc5c",
+            "settlement": "Грэсовский",
+            "street_fias_id": "9870c5de-eb4c-4ce7-bee9-c2ea926d0e26",
+            "street": "Яблочкова",
+            "house_fias_id": "b07ed933-0b45-4345-8f5b-f3795ce476d9",
+            "house": "12",
+            "geo_lat": "45.007208",
+            "geo_lon": "34.02706",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 2 000 ₽. Добавьте товаров ещё на 1 580 ₽."
+        },
+        {
+          "query": "Крым Молодёжное Крымская 13",
+          "expected": 2500,
+          "display": "пгт Молодежное, ул Крымская, д 13",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 2500,
+            "basis": "fias_identity",
+            "sources": [
+              "E8"
+            ],
+            "message": "Бесплатная доставка при заказе от 2 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "590081b2-48a8-488c-a503-dddb210ed43b",
+            "settlement": "Молодежное",
+            "street_fias_id": "ff1170de-0621-4834-a123-db200bb9c2ab",
+            "street": "Крымская",
+            "house_fias_id": "cccdb7f0-e06e-485c-9eaa-592595fe4acb",
+            "house": "13",
+            "geo_lat": "45.004009",
+            "geo_lon": "34.054549",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 2 500 ₽. Добавьте товаров ещё на 2 080 ₽."
+        },
+        {
+          "query": "Крым Аграрное Спортивная 9",
+          "expected": 2500,
+          "display": "пгт Аграрное, ул Спортивная, д 9",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 2500,
+            "basis": "fias_identity",
+            "sources": [
+              "E8"
+            ],
+            "message": "Бесплатная доставка при заказе от 2 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": "ef4eda92-ac95-42f7-8320-b67b7faf5b1b",
+            "settlement": "Аграрное",
+            "street_fias_id": "70c02afc-ee68-4c19-97e1-9219c1796b47",
+            "street": "Спортивная",
+            "house_fias_id": "d4eaa1a5-da90-479a-ac46-153818a9a52e",
+            "house": "9",
+            "geo_lat": "45.014052",
+            "geo_lon": "34.058501",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 2 500 ₽. Добавьте товаров ещё на 2 080 ₽."
+        },
+        {
+          "query": "Крым Денисовка Энергетиков 2",
+          "expected": 3000,
+          "display": "село Денисовка, ул Энергетиков, д 2",
+          "qc_geo": 3,
+          "decision": {
+            "status": "resolved",
+            "minimum": 3000,
+            "basis": "fias_identity",
+            "sources": [
+              "F3"
+            ],
+            "message": "Бесплатная доставка при заказе от 3 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "807c873c-8913-45a8-9255-5e04c55500bd",
+            "settlement": "Денисовка",
+            "street_fias_id": "01a6b2e9-31cc-4259-89d0-891e1215220b",
+            "street": "Энергетиков",
+            "house_fias_id": "3f41224e-ea1a-4314-a9df-98b16219fc5c",
+            "house": "2",
+            "geo_lat": "44.9208",
+            "geo_lon": "34.231822",
+            "qc_geo": "3"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 3 000 ₽. Добавьте товаров ещё на 2 580 ₽."
+        },
+        {
+          "query": "Крым Фонтаны Верхние Фонтаны 32",
+          "expected": 3000,
+          "display": "село Фонтаны, ул Верхние Фонтаны, д 32",
+          "qc_geo": 2,
+          "decision": {
+            "status": "resolved",
+            "minimum": 3000,
+            "basis": "fias_identity",
+            "sources": [
+              "F8"
+            ],
+            "message": "Бесплатная доставка при заказе от 3 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "e2e90324-31a7-4547-a6ec-fbaab0a17a4c",
+            "settlement": "Фонтаны",
+            "street_fias_id": "4dfc24e7-eab3-411d-9110-073aa6884e88",
+            "street": "Верхние Фонтаны",
+            "house_fias_id": "ec9b7f43-c68a-464e-a289-2e52e0fde887",
+            "house": "32",
+            "geo_lat": "44.887066",
+            "geo_lon": "34.083959",
+            "qc_geo": "2"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 3 000 ₽. Добавьте товаров ещё на 2 580 ₽."
+        },
+        {
+          "query": "Крым Урожайное 8 Марта 31",
+          "expected": 3500,
+          "display": "село Урожайное, ул 8 Марта, д 31",
+          "qc_geo": 2,
+          "decision": {
+            "status": "resolved",
+            "minimum": 3500,
+            "basis": "fias_identity",
+            "sources": [
+              "G5"
+            ],
+            "message": "Бесплатная доставка при заказе от 3 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "cc1f0e21-9ee0-426e-bace-636d9052e177",
+            "settlement": "Урожайное",
+            "street_fias_id": "372291d3-66f9-4d08-9c3e-ce581d31aa5a",
+            "street": "8 Марта",
+            "house_fias_id": "a9cb6047-833a-4cd4-8688-f142471be44a",
+            "house": "31",
+            "geo_lat": "45.04496",
+            "geo_lon": "34.133421",
+            "qc_geo": "2"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 3 500 ₽. Добавьте товаров ещё на 3 080 ₽."
+        },
+        {
+          "query": "Крым Урожайное 8 Марта 32",
+          "expected": 3500,
+          "display": "село Урожайное, ул 8 Марта, д 32",
+          "qc_geo": 2,
+          "decision": {
+            "status": "resolved",
+            "minimum": 3500,
+            "basis": "fias_identity",
+            "sources": [
+              "G5"
+            ],
+            "message": "Бесплатная доставка при заказе от 3 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "cc1f0e21-9ee0-426e-bace-636d9052e177",
+            "settlement": "Урожайное",
+            "street_fias_id": "372291d3-66f9-4d08-9c3e-ce581d31aa5a",
+            "street": "8 Марта",
+            "house_fias_id": "d2dadd9a-6b65-4ca4-ac8a-b3f6803d408a",
+            "house": "32",
+            "geo_lat": "45.04496",
+            "geo_lon": "34.133421",
+            "qc_geo": "2"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 3 500 ₽. Добавьте товаров ещё на 3 080 ₽."
+        },
+        {
+          "query": "Крым Донское Комсомольская 146А",
+          "expected": 4000,
+          "display": "село Донское, ул Комсомольская, д 146А",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 4000,
+            "basis": "fias_identity",
+            "sources": [
+              "H3"
+            ],
+            "message": "Бесплатная доставка при заказе от 4 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "113d9da9-0316-4213-94b0-94ecb66a5d6e",
+            "settlement": "Донское",
+            "street_fias_id": "30919342-5d8f-4711-b204-8b0443a7ff45",
+            "street": "Комсомольская",
+            "house_fias_id": "f682b139-717d-412e-b363-c7e4a501783a",
+            "house": "146А",
+            "geo_lat": "45.037738",
+            "geo_lon": "34.222641",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 4 000 ₽. Добавьте товаров ещё на 3 580 ₽."
+        },
+        {
+          "query": "Крым Мазанка Ясная 14",
+          "expected": 4000,
+          "display": "село Мазанка, ул Ясная, д 14",
+          "qc_geo": 3,
+          "decision": {
+            "status": "resolved",
+            "minimum": 4000,
+            "basis": "fias_identity",
+            "sources": [
+              "G8",
+              "H7"
+            ],
+            "message": "Бесплатная доставка при заказе от 4 000 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": "Симферопольский",
+            "city_fias_id": null,
+            "city": null,
+            "settlement_fias_id": "569bfd5c-d5b0-42a4-94ef-dc72a8018489",
+            "settlement": "Мазанка",
+            "street_fias_id": "dd7bed24-30bb-4c71-bcef-5dbcaf73ff8c",
+            "street": "Ясная",
+            "house_fias_id": "3f0673bf-f0d2-4c44-a868-8b648ce9a9a7",
+            "house": "14",
+            "geo_lat": "45.003907",
+            "geo_lon": "34.25534",
+            "qc_geo": "3"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 4 000 ₽. Добавьте товаров ещё на 3 580 ₽."
+        },
+        {
+          "query": "Симферополь Кечкеметская 79",
+          "expected": 1200,
+          "display": "г Симферополь, ул Кечкеметская, д 79",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 1200,
+            "basis": "owner_geographic_advisory",
+            "distance_m": 0,
+            "provisional": true,
+            "zones": [
+              "city-1200"
+            ],
+            "message": "Бесплатная доставка от 1 200 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "786f4caa-bb2a-4cfc-b3b1-d253375e95e2",
+            "street": "Кечкеметская",
+            "house_fias_id": "86e291d4-c530-46ad-b317-f5d11b7c769f",
+            "house": "79",
+            "geo_lat": "44.977287",
+            "geo_lon": "34.111195",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 1 200 ₽. Добавьте товаров ещё на 780 ₽."
+        },
+        {
+          "query": "Симферополь Беспалова 53",
+          "expected": 2500,
+          "display": "г Симферополь, ул Беспалова, д 53",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 2500,
+            "basis": "owner_geographic_advisory",
+            "distance_m": 0,
+            "provisional": true,
+            "zones": [
+              "city-2500"
+            ],
+            "message": "Бесплатная доставка от 2 500 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "f9e27cce-9d2f-4f7a-9b9a-4f784f565d75",
+            "street": "Беспалова",
+            "house_fias_id": "e6593f48-f304-499d-b7eb-92fb3cb5611e",
+            "house": "53",
+            "geo_lat": "44.92376",
+            "geo_lon": "34.136968",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 2 500 ₽. Добавьте товаров ещё на 2 080 ₽."
+        },
+        {
+          "query": "Симферополь Киевская 139А",
+          "expected": 1200,
+          "display": "г Симферополь, ул Киевская, д 139а",
+          "qc_geo": 0,
+          "decision": {
+            "status": "resolved",
+            "minimum": 1200,
+            "basis": "owner_geographic_advisory",
+            "distance_m": 0,
+            "provisional": true,
+            "zones": [
+              "city-1200"
+            ],
+            "message": "Бесплатная доставка от 1 200 ₽."
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "86ce0be6-9fba-4872-a36d-37cbb6fffcfa",
+            "street": "Киевская",
+            "house_fias_id": "5826d674-c131-42bd-9dc7-a5b9f1bca6cf",
+            "house": "139а",
+            "geo_lat": "44.975738",
+            "geo_lon": "34.09553",
+            "qc_geo": "0"
+          },
+          "browser_message": "Город, улица и дом\nМинимальный заказ для доставки — 1 200 ₽. Добавьте товаров ещё на 780 ₽."
+        },
+        {
+          "query": "Москва Тверская 1",
+          "expected": null,
+          "display": "no local suggestion",
+          "minimum": null
+        },
+        {
+          "query": "Симферополь Киевская",
+          "expected": null,
+          "display": "г Симферополь, ул Киевская",
+          "qc_geo": 2,
+          "decision": {
+            "status": "unresolved",
+            "minimum": null,
+            "message": "Предварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер.",
+            "estimate_minimum": 1200
+          },
+          "identity": {
+            "region": "Крым",
+            "area": null,
+            "city_fias_id": "b9001e55-72ed-43bf-b7eb-41b86a14380e",
+            "city": "Симферополь",
+            "settlement_fias_id": null,
+            "settlement": null,
+            "street_fias_id": "86ce0be6-9fba-4872-a36d-37cbb6fffcfa",
+            "street": "Киевская",
+            "house_fias_id": null,
+            "house": null,
+            "geo_lat": "44.966033",
+            "geo_lon": "34.103632",
+            "qc_geo": "2"
+          },
+          "browser_message": "Город, улица и дом\nПредварительный минимум для бесплатной доставки — 1 200 ₽. Отправьте заявку — условия уточнит менеджер."
+        }
+      ],
+      "orders_created": 0
+    },
+    "delivery-rules/map/evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "exact_point": {
+            "exact": true,
+            "lat": 44.975738,
+            "lon": 34.09553
+          },
+          "served_sha256": "ea7acd4e2a2a6a09f3edf14938d4c228423144d1113e823464b6bef04c8d2d97"
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "exact_point": {
+            "exact": true,
+            "lat": 44.975738,
+            "lon": 34.09553
+          },
+          "served_sha256": "ea7acd4e2a2a6a09f3edf14938d4c228423144d1113e823464b6bef04c8d2d97"
+        },
+        {
+          "width": 700,
+          "status": "PASS",
+          "exact_point": {
+            "exact": true,
+            "lat": 44.975738,
+            "lon": 34.09553
+          },
+          "served_sha256": "ea7acd4e2a2a6a09f3edf14938d4c228423144d1113e823464b6bef04c8d2d97"
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "exact_point": {
+            "exact": true,
+            "lat": 44.975738,
+            "lon": 34.09553
+          },
+          "served_sha256": "ea7acd4e2a2a6a09f3edf14938d4c228423144d1113e823464b6bef04c8d2d97"
+        },
+        {
+          "width": 320,
+          "status": "PASS",
+          "exact_point": {
+            "exact": true,
+            "lat": 44.975738,
+            "lon": 34.09553
+          },
+          "served_sha256": "ea7acd4e2a2a6a09f3edf14938d4c228423144d1113e823464b6bef04c8d2d97"
+        }
+      ],
+      "orders_created": 0,
+      "errors": []
+    },
+    "delivery-rules/adversarial-evidence.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 320,
+          "status": "PASS",
+          "pickup_native_presubmit": true,
+          "empty_phone_rejected": true,
+          "close_reopen": true,
+          "low_precision": true
+        },
+        {
+          "width": 700,
+          "status": "PASS",
+          "pickup_native_presubmit": true,
+          "empty_phone_rejected": true,
+          "close_reopen": true,
+          "low_precision": true
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "pickup_native_presubmit": true,
+          "empty_phone_rejected": true,
+          "close_reopen": true,
+          "low_precision": true
+        }
+      ],
+      "submissions": [],
+      "pickup_payload": {
+        "additional_fields": {
+          "rollsbar/privacy-consent": true
+        },
+        "billing_address": {
+          "first_name": "Тест",
+          "last_name": "",
+          "company": "",
+          "address_1": "",
+          "address_2": "",
+          "city": "",
+          "state": "",
+          "postcode": "",
+          "country": "RU",
+          "email": "guest-cfe90880ec4c39af3795980801f8ece7@checkout.rollsbar.invalid",
+          "phone": "+79780000000"
+        },
+        "create_account": false,
+        "customer_note": "Самовывоз: тест без заказа",
+        "customer_password": "",
+        "extensions": {
+          "woocommerce/order-attribution": {
+            "source_type": "typein",
+            "referrer": "(none)",
+            "utm_campaign": "(none)",
+            "utm_source": "(direct)",
+            "utm_medium": "(none)",
+            "utm_content": "(none)",
+            "utm_id": "(none)",
+            "utm_term": "(none)",
+            "utm_source_platform": "(none)",
+            "utm_creative_format": "(none)",
+            "utm_marketing_tactic": "(none)",
+            "session_entry": "https://staging.rollsbar.ru/",
+            "session_start_time": "2026-10-31 21:32:58",
+            "session_pages": "2",
+            "session_count": "1",
+            "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+          }
+        },
+        "shipping_address": {
+          "first_name": "Тест",
+          "last_name": "",
+          "company": "",
+          "address_1": "",
+          "address_2": "",
+          "city": "",
+          "state": "",
+          "postcode": "",
+          "country": "RU",
+          "email": "guest-cfe90880ec4c39af3795980801f8ece7@checkout.rollsbar.invalid",
+          "phone": "+79780000000"
+        },
+        "expected_total": "420",
+        "payment_method": "cod",
+        "payment_data": [
+          {
+            "key": "wc-cod-new-payment-method",
+            "value": false
+          }
+        ]
+      }
+    },
+    "delivery-reference/evidence.json": {
+      "status": "MODAL_CHROME_PASS_CONTENT_CHANGED_BY_OWNER",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "reference": "5e7836e22110ec076603bb1fa2b12f8bb90ee756:index.html",
+      "source_sha256": "784f2f560503c8ae3e9a0e40fdbf7f700385a79d90d689f8ec0be34fbd9e3809",
+      "checks": [
+        {
+          "width": 1440,
+          "status": "PASS",
+          "native": {
+            "x": 200,
+            "y": 36,
+            "width": 1040,
+            "height": 828,
+            "padding": "22px",
+            "radius": "28px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "source": {
+            "x": 200,
+            "y": 36,
+            "width": 1040,
+            "height": 828,
+            "padding": "22px",
+            "radius": "28px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "unmasked_mean_absolute_pixel_difference": 24.26267052469136
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "native": {
+            "x": 12,
+            "y": 36,
+            "width": 677,
+            "height": 828,
+            "padding": "22px",
+            "radius": "28px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "source": {
+            "x": 12,
+            "y": 36,
+            "width": 677,
+            "height": 828,
+            "padding": "22px",
+            "radius": "28px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "unmasked_mean_absolute_pixel_difference": 28.219493844772018
+        },
+        {
+          "width": 700,
+          "status": "PASS",
+          "native": {
+            "x": 12,
+            "y": 72,
+            "width": 676,
+            "height": 828,
+            "padding": "22px",
+            "radius": "25px 25px 0px 0px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "source": {
+            "x": 12,
+            "y": 72,
+            "width": 676,
+            "height": 828,
+            "padding": "22px",
+            "radius": "25px 25px 0px 0px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "unmasked_mean_absolute_pixel_difference": 23.846086243386242
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "native": {
+            "x": 12,
+            "y": 72,
+            "width": 366,
+            "height": 828,
+            "padding": "22px",
+            "radius": "25px 25px 0px 0px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "source": {
+            "x": 12,
+            "y": 72,
+            "width": 366,
+            "height": 828,
+            "padding": "22px",
+            "radius": "25px 25px 0px 0px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "unmasked_mean_absolute_pixel_difference": 25.738418803418806
+        },
+        {
+          "width": 320,
+          "status": "PASS",
+          "native": {
+            "x": 12,
+            "y": 72,
+            "width": 296,
+            "height": 828,
+            "padding": "22px",
+            "radius": "25px 25px 0px 0px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "source": {
+            "x": 12,
+            "y": 72,
+            "width": 296,
+            "height": 828,
+            "padding": "22px",
+            "radius": "25px 25px 0px 0px",
+            "shadow": "rgba(0, 0, 0, 0.32) 0px 40px 120px 0px"
+          },
+          "unmasked_mean_absolute_pixel_difference": 25.482642361111107
+        }
+      ],
+      "pixel_equality_claimed": false,
+      "masks": [],
+      "immutable_asset_sha256": {
+        "catalog-part-2.js": "1a30dce207476578be7c95a99e59c254d02221387f73ccc04e32b79f96fae069",
+        "catalog-part-6.js": "42bf8ff3870188e9569f4c82eb2f32b46a9061493d13f790aa16af7bc4b364e7",
+        "catalog-part-3.js": "04a4e01298f7abf07ada8afaa79f540105645e5c36272720ca5f3e957e382c1f",
+        "catalog-part-1.js": "e5771e682fa2be61a6a49c59e4749017af98dae64cbff10dbe97d66177dba85c",
+        "catalog-part-5.js": "192e82464e0a1c632f2a59ea0e0d32f0919b81dbc71b6281678e6a33f82b2e67",
+        "catalog-part-4.js": "55cd4dcccc54d9101b718e236eb133e0341ef6162550a5dee3821c690492b81e",
+        "assets/vk-products-row1.webp": "43edb50bb3fdde5e0abb0c71cbaaa51c4af3887a4e65e6c057c062190407f836"
+      }
+    },
+    "storefront-ux-staging/original-browser.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "live_backend": true,
+      "checks": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "height": 900,
+          "status": "PASS",
+          "queries": {
+            "пицца": [
+              "pizza-4-syra-chedder",
+              "pizza-byanka",
+              "pizza-gribnaya",
+              "pizza-derevenskaya",
+              "pizza-karbonara",
+              "pizza-margarita",
+              "pizza-myasnaya",
+              "pizza-ogonek",
+              "pizza-pepperoni",
+              "pizza-ranch",
+              "pizza-cezar",
+              "pizza-cypochka",
+              "combo-kombo-1",
+              "combo-kombo-2"
+            ],
+            "пицца цезарь": [
+              "pizza-cezar"
+            ],
+            "цезарь пицца": [
+              "pizza-cezar"
+            ],
+            "пицца четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "ролл филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-mega-set"
+            ],
+            "филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ],
+            "  ПИЦЦА   ЦЕЗАРЬ  ": [
+              "pizza-cezar"
+            ],
+            "запечённые": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "запеченные": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "фила": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ]
+          },
+          "header": [
+            {
+              "y": 0,
+              "top": 0,
+              "bottom": 79,
+              "nav": 79,
+              "overflow": 0
+            },
+            {
+              "y": 300,
+              "top": 0,
+              "bottom": 79,
+              "nav": 78,
+              "overflow": 0
+            },
+            {
+              "y": 700,
+              "top": 0,
+              "bottom": 79,
+              "nav": 78,
+              "overflow": 0
+            },
+            {
+              "y": 1500,
+              "top": 0,
+              "bottom": 79,
+              "nav": 78,
+              "overflow": 0
+            },
+            {
+              "y": 3500,
+              "top": 0,
+              "bottom": 79,
+              "nav": 78,
+              "overflow": 0
+            }
+          ],
+          "ancestry": {
+            "ancestors": [
+              {
+                "tag": "BODY",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              },
+              {
+                "tag": "HTML",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              }
+            ],
+            "visualViewport": {
+              "offsetTop": 0,
+              "height": 900,
+              "scale": 1
+            }
+          }
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "height": 844,
+          "status": "PASS",
+          "queries": {
+            "пицца": [
+              "pizza-4-syra-chedder",
+              "pizza-byanka",
+              "pizza-gribnaya",
+              "pizza-derevenskaya",
+              "pizza-karbonara",
+              "pizza-margarita",
+              "pizza-myasnaya",
+              "pizza-ogonek",
+              "pizza-pepperoni",
+              "pizza-ranch",
+              "pizza-cezar",
+              "pizza-cypochka",
+              "combo-kombo-1",
+              "combo-kombo-2"
+            ],
+            "пицца цезарь": [
+              "pizza-cezar"
+            ],
+            "цезарь пицца": [
+              "pizza-cezar"
+            ],
+            "пицца четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "ролл филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-mega-set"
+            ],
+            "филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ],
+            "  ПИЦЦА   ЦЕЗАРЬ  ": [
+              "pizza-cezar"
+            ],
+            "запечённые": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "запеченные": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "фила": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ]
+          },
+          "header": [
+            {
+              "y": 0,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 300,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 700,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 1500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 3500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            }
+          ],
+          "ancestry": {
+            "ancestors": [
+              {
+                "tag": "BODY",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              },
+              {
+                "tag": "HTML",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              }
+            ],
+            "visualViewport": {
+              "offsetTop": 0,
+              "height": 844,
+              "scale": 1
+            }
+          }
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "height": 900,
+          "status": "PASS",
+          "queries": {
+            "пицца": [
+              "pizza-4-syra-chedder",
+              "pizza-byanka",
+              "pizza-gribnaya",
+              "pizza-derevenskaya",
+              "pizza-karbonara",
+              "pizza-margarita",
+              "pizza-myasnaya",
+              "pizza-ogonek",
+              "pizza-pepperoni",
+              "pizza-ranch",
+              "pizza-cezar",
+              "pizza-cypochka",
+              "combo-kombo-1",
+              "combo-kombo-2"
+            ],
+            "пицца цезарь": [
+              "pizza-cezar"
+            ],
+            "цезарь пицца": [
+              "pizza-cezar"
+            ],
+            "пицца четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "ролл филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-mega-set"
+            ],
+            "филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ],
+            "  ПИЦЦА   ЦЕЗАРЬ  ": [
+              "pizza-cezar"
+            ],
+            "запечённые": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "запеченные": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "фила": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ]
+          },
+          "header": [
+            {
+              "y": 0,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 300,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 700,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 1500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 3500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            }
+          ],
+          "ancestry": {
+            "ancestors": [
+              {
+                "tag": "BODY",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              },
+              {
+                "tag": "HTML",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              }
+            ],
+            "visualViewport": {
+              "offsetTop": 0,
+              "height": 900,
+              "scale": 1
+            }
+          }
+        },
+        {
+          "engine": "chromium",
+          "width": 430,
+          "height": 932,
+          "status": "PASS",
+          "queries": {
+            "пицца": [
+              "pizza-4-syra-chedder",
+              "pizza-byanka",
+              "pizza-gribnaya",
+              "pizza-derevenskaya",
+              "pizza-karbonara",
+              "pizza-margarita",
+              "pizza-myasnaya",
+              "pizza-ogonek",
+              "pizza-pepperoni",
+              "pizza-ranch",
+              "pizza-cezar",
+              "pizza-cypochka",
+              "combo-kombo-1",
+              "combo-kombo-2"
+            ],
+            "пицца цезарь": [
+              "pizza-cezar"
+            ],
+            "цезарь пицца": [
+              "pizza-cezar"
+            ],
+            "пицца четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "ролл филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-mega-set"
+            ],
+            "филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ],
+            "  ПИЦЦА   ЦЕЗАРЬ  ": [
+              "pizza-cezar"
+            ],
+            "запечённые": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "запеченные": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "фила": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ]
+          },
+          "header": [
+            {
+              "y": 0,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 300,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 700,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 1500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 3500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            }
+          ],
+          "ancestry": {
+            "ancestors": [
+              {
+                "tag": "BODY",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              },
+              {
+                "tag": "HTML",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              }
+            ],
+            "visualViewport": {
+              "offsetTop": 0,
+              "height": 932,
+              "scale": 1
+            }
+          }
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "height": 568,
+          "status": "PASS",
+          "queries": {
+            "пицца": [
+              "pizza-4-syra-chedder",
+              "pizza-byanka",
+              "pizza-gribnaya",
+              "pizza-derevenskaya",
+              "pizza-karbonara",
+              "pizza-margarita",
+              "pizza-myasnaya",
+              "pizza-ogonek",
+              "pizza-pepperoni",
+              "pizza-ranch",
+              "pizza-cezar",
+              "pizza-cypochka",
+              "combo-kombo-1",
+              "combo-kombo-2"
+            ],
+            "пицца цезарь": [
+              "pizza-cezar"
+            ],
+            "цезарь пицца": [
+              "pizza-cezar"
+            ],
+            "пицца четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "четыре сыра": [
+              "pizza-4-syra-chedder"
+            ],
+            "ролл филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-mega-set"
+            ],
+            "филадельфия": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ],
+            "  ПИЦЦА   ЦЕЗАРЬ  ": [
+              "pizza-cezar"
+            ],
+            "запечённые": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "запеченные": [
+              "baked-zapechennye-gunkan-s-krevetkoy",
+              "baked-zapechennye-gunkan-s-lososem",
+              "baked-zapechennye-maki-s-krabom",
+              "baked-zapechennye-maki-s-krevetkoy",
+              "baked-zapechennye-maki-s-lososem",
+              "baked-zapechennye-maki-s-midiyami",
+              "baked-zapechennye-maki-s-tuncom",
+              "baked-zapechennye-maki-s-ugrem",
+              "baked-zapechennye-mamenori-s-krabom",
+              "baked-zapechennye-mamenori-s-krevetkoy",
+              "baked-zapechennye-mamenori-s-lososem",
+              "baked-zapechennye-mamenori-s-midiyami",
+              "baked-zapechennye-mamenori-s-ugrem",
+              "baked-zapechennye-mamenori-tuncom",
+              "baked-mussels-spicy",
+              "baked-mussels-unagi"
+            ],
+            "фила": [
+              "rolls-filadelfiya",
+              "rolls-filadelfiya-s-krevetkoy",
+              "rolls-filadelfiya-s-ugrem",
+              "sets-filadelfiya-set",
+              "sets-inari-set",
+              "sets-mega-set",
+              "sets-super-set",
+              "sets-tanuki-set",
+              "sets-tyapnica",
+              "sets-hit-set"
+            ]
+          },
+          "header": [
+            {
+              "y": 0,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 300,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 700,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 1500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            },
+            {
+              "y": 3500,
+              "top": 0,
+              "bottom": 67,
+              "nav": 67,
+              "overflow": 0
+            }
+          ],
+          "ancestry": {
+            "ancestors": [
+              {
+                "tag": "BODY",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              },
+              {
+                "tag": "HTML",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "transform": "none",
+                "contain": "none"
+              }
+            ],
+            "visualViewport": {
+              "offsetTop": 0,
+              "height": 568,
+              "scale": 1
+            }
+          }
+        }
+      ],
+      "screenshots": [
+        "qa/visual-results/storefront-ux-staging/chromium-1440x900-details-quantity.png",
+        "qa/visual-results/storefront-ux-staging/chromium-1440x900-scrolled-controls.png",
+        "qa/visual-results/storefront-ux-staging/chromium-1440x900-multi-word-search.png",
+        "qa/visual-results/storefront-ux-staging/chromium-390x844-details-quantity.png",
+        "qa/visual-results/storefront-ux-staging/chromium-390x844-scrolled-controls.png",
+        "qa/visual-results/storefront-ux-staging/chromium-390x844-multi-word-search.png",
+        "qa/visual-results/storefront-ux-staging/chromium-390x900-details-quantity.png",
+        "qa/visual-results/storefront-ux-staging/chromium-390x900-scrolled-controls.png",
+        "qa/visual-results/storefront-ux-staging/chromium-390x900-multi-word-search.png",
+        "qa/visual-results/storefront-ux-staging/chromium-430x932-details-quantity.png",
+        "qa/visual-results/storefront-ux-staging/chromium-430x932-scrolled-controls.png",
+        "qa/visual-results/storefront-ux-staging/chromium-430x932-multi-word-search.png",
+        "qa/visual-results/storefront-ux-staging/chromium-320x568-details-quantity.png",
+        "qa/visual-results/storefront-ux-staging/chromium-320x568-scrolled-controls.png",
+        "qa/visual-results/storefront-ux-staging/chromium-320x568-multi-word-search.png"
+      ],
+      "media": {
+        "assets": 36,
+        "products": 45,
+        "status": "PASS"
+      }
+    },
+    "storefront-ux-staging/browser.json": {
+      "status": "PASS",
+      "scope": "controls-no-dock",
+      "inherited_full_acceptance_sha": "529cbf3dc536b13dce40d74bbfbb8d054a9f2cfd",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "width": 320,
+          "status": "PASS",
+          "states": [
+            {
+              "populated": false,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            },
+            {
+              "populated": true,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "status": "PASS",
+          "states": [
+            {
+              "populated": false,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            },
+            {
+              "populated": true,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            }
+          ]
+        },
+        {
+          "width": 701,
+          "status": "PASS",
+          "states": [
+            {
+              "populated": false,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            },
+            {
+              "populated": true,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            }
+          ]
+        },
+        {
+          "width": 900,
+          "status": "PASS",
+          "states": [
+            {
+              "populated": false,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            },
+            {
+              "populated": true,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            }
+          ]
+        },
+        {
+          "width": 1440,
+          "status": "PASS",
+          "states": [
+            {
+              "populated": false,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            },
+            {
+              "populated": true,
+              "cartFirstTap": true,
+              "backFirstTap": true,
+              "noFullWidthShelf": true
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        "qa/visual-results/storefront-ux-staging/no-dock-320-false.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-320-true.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-390-false.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-390-true.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-701-false.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-701-true.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-900-false.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-900-true.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-1440-false.png",
+        "qa/visual-results/storefront-ux-staging/no-dock-1440-true.png"
+      ]
+    },
+    "storefront-ux-staging/interaction/browser.json": {
+      "status": "PASS",
+      "release_sha": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+      "checks": [
+        {
+          "engine": "chromium",
+          "width": 320,
+          "status": "PASS",
+          "cycles": 4,
+          "hits": [
+            {
+              "label": "cart pending",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 252,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 306,
+                "bottom": 886,
+                "left": 252
+              }
+            },
+            {
+              "label": "back pending",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 258,
+                "y": 768,
+                "width": 46,
+                "height": 46,
+                "top": 768,
+                "right": 304,
+                "bottom": 814,
+                "left": 258
+              }
+            },
+            {
+              "label": "pending-cart pending",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 252,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 306,
+                "bottom": 886,
+                "left": 252
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<span class=\"rollsbar-order-bar__count\" data-rollsbar-order-count=\"\">2 товара</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 824,
+                "width": 292,
+                "height": 64,
+                "top": 824,
+                "right": 306,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 258,
+                "y": 756,
+                "width": 46,
+                "height": 46,
+                "top": 756,
+                "right": 304,
+                "bottom": 802,
+                "left": 258
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<path d=\"M7.1 3.5 9 3c.8-.2 1.6.2 1.9 1l.9 2.6c.2.7 0 1.4-.6 1.8l-1.4 1a14.7 14.7 0 0 0 4.8 4.8l1-1.4c.4-.6 1.2-.8 1.8-.6l2.6.9c.8.3 1.2 1.1 1 1.9l-.5 1.9c-.2.8-.9 1.4-1.8 1.4C11.6 18.3 5.7 12.4 5.7 5.3c0-.9.6-1.6 1.4-1.8Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 748,
+                "width": 54,
+                "height": 54,
+                "top": 748,
+                "right": 68,
+                "bottom": 802,
+                "left": 14
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 252,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 306,
+                "bottom": 886,
+                "left": 252
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 258,
+                "y": 768,
+                "width": 46,
+                "height": 46,
+                "top": 768,
+                "right": 304,
+                "bottom": 814,
+                "left": 258
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<path d=\"M7.1 3.5 9 3c.8-.2 1.6.2 1.9 1l.9 2.6c.2.7 0 1.4-.6 1.8l-1.4 1a14.7 14.7 0 0 0 4.8 4.8l1-1.4c.4-.6 1.2-.8 1.8-.6l2.6.9c.8.3 1.2 1.1 1 1.9l-.5 1.9c-.2.8-.9 1.4-1.8 1.4C11.6 18.3 5.7 12.4 5.7 5.3c0-.9.6-1.6 1.4-1.8Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 68,
+                "bottom": 886,
+                "left": 14
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            }
+          ],
+          "requests": 59
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "status": "PASS",
+          "cycles": 4,
+          "hits": [
+            {
+              "label": "cart pending",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 322,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 376,
+                "bottom": 886,
+                "left": 322
+              }
+            },
+            {
+              "label": "back pending",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 328,
+                "y": 768,
+                "width": 46,
+                "height": 46,
+                "top": 768,
+                "right": 374,
+                "bottom": 814,
+                "left": 328
+              }
+            },
+            {
+              "label": "pending-cart pending",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 322,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 376,
+                "bottom": 886,
+                "left": 322
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<button type=\"button\" class=\"rollsbar-order-bar\" data-rollsbar-orderbar=\"\" aria-label=\"Открыть корзину\">\n\t\t<span class=\"rollsbar-order-bar__left\"><span class=\"rollsbar-order-bar__icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 8h14l-1 12H6L5 8Zm3 0V6a4 4 0 0 1 8 0v2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></spa",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 824,
+                "width": 362,
+                "height": 64,
+                "top": 824,
+                "right": 376,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 328,
+                "y": 756,
+                "width": 46,
+                "height": 46,
+                "top": 756,
+                "right": 374,
+                "bottom": 802,
+                "left": 328
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<path d=\"M7.1 3.5 9 3c.8-.2 1.6.2 1.9 1l.9 2.6c.2.7 0 1.4-.6 1.8l-1.4 1a14.7 14.7 0 0 0 4.8 4.8l1-1.4c.4-.6 1.2-.8 1.8-.6l2.6.9c.8.3 1.2 1.1 1 1.9l-.5 1.9c-.2.8-.9 1.4-1.8 1.4C11.6 18.3 5.7 12.4 5.7 5.3c0-.9.6-1.6 1.4-1.8Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 748,
+                "width": 54,
+                "height": 54,
+                "top": 748,
+                "right": 68,
+                "bottom": 802,
+                "left": 14
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 322,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 376,
+                "bottom": 886,
+                "left": 322
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 328,
+                "y": 768,
+                "width": 46,
+                "height": 46,
+                "top": 768,
+                "right": 374,
+                "bottom": 814,
+                "left": 328
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<path d=\"M7.1 3.5 9 3c.8-.2 1.6.2 1.9 1l.9 2.6c.2.7 0 1.4-.6 1.8l-1.4 1a14.7 14.7 0 0 0 4.8 4.8l1-1.4c.4-.6 1.2-.8 1.8-.6l2.6.9c.8.3 1.2 1.1 1 1.9l-.5 1.9c-.2.8-.9 1.4-1.8 1.4C11.6 18.3 5.7 12.4 5.7 5.3c0-.9.6-1.6 1.4-1.8Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 68,
+                "bottom": 886,
+                "left": 14
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            }
+          ],
+          "requests": 59
+        },
+        {
+          "engine": "chromium",
+          "width": 430,
+          "status": "PASS",
+          "cycles": 4,
+          "hits": [
+            {
+              "label": "cart pending",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 362,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 416,
+                "bottom": 886,
+                "left": 362
+              }
+            },
+            {
+              "label": "back pending",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 368,
+                "y": 768,
+                "width": 46,
+                "height": 46,
+                "top": 768,
+                "right": 414,
+                "bottom": 814,
+                "left": 368
+              }
+            },
+            {
+              "label": "pending-cart pending",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 362,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 416,
+                "bottom": 886,
+                "left": 362
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<button type=\"button\" class=\"rollsbar-order-bar\" data-rollsbar-orderbar=\"\" aria-label=\"Открыть корзину\">\n\t\t<span class=\"rollsbar-order-bar__left\"><span class=\"rollsbar-order-bar__icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 8h14l-1 12H6L5 8Zm3 0V6a4 4 0 0 1 8 0v2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></spa",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 824,
+                "width": 402,
+                "height": 64,
+                "top": 824,
+                "right": 416,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 368,
+                "y": 756,
+                "width": 46,
+                "height": 46,
+                "top": 756,
+                "right": 414,
+                "bottom": 802,
+                "left": 368
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<path d=\"M7.1 3.5 9 3c.8-.2 1.6.2 1.9 1l.9 2.6c.2.7 0 1.4-.6 1.8l-1.4 1a14.7 14.7 0 0 0 4.8 4.8l1-1.4c.4-.6 1.2-.8 1.8-.6l2.6.9c.8.3 1.2 1.1 1 1.9l-.5 1.9c-.2.8-.9 1.4-1.8 1.4C11.6 18.3 5.7 12.4 5.7 5.3c0-.9.6-1.6 1.4-1.8Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 748,
+                "width": 54,
+                "height": 54,
+                "top": 748,
+                "right": 68,
+                "bottom": 802,
+                "left": 14
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg class=\"rollsbar-mobile-cart__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h2l1.5 9h9.8l1.7-6H7.1M10 19a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 19Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 19Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 362,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 416,
+                "bottom": 886,
+                "left": 362
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 368,
+                "y": 768,
+                "width": 46,
+                "height": 46,
+                "top": 768,
+                "right": 414,
+                "bottom": 814,
+                "left": 368
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<path d=\"M7.1 3.5 9 3c.8-.2 1.6.2 1.9 1l.9 2.6c.2.7 0 1.4-.6 1.8l-1.4 1a14.7 14.7 0 0 0 4.8 4.8l1-1.4c.4-.6 1.2-.8 1.8-.6l2.6.9c.8.3 1.2 1.1 1 1.9l-.5 1.9c-.2.8-.9 1.4-1.8 1.4C11.6 18.3 5.7 12.4 5.7 5.3c0-.9.6-1.6 1.4-1.8Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 832,
+                "width": 54,
+                "height": 54,
+                "top": 832,
+                "right": 68,
+                "bottom": 886,
+                "left": 14
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            }
+          ],
+          "requests": 59
+        },
+        {
+          "engine": "chromium",
+          "width": 701,
+          "status": "PASS",
+          "cycles": 4,
+          "hits": [
+            {
+              "label": "cart pending",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"0 товаров\">0</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 673,
+                "height": 51,
+                "top": 837,
+                "right": 687,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "back pending",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 629,
+                "y": 766,
+                "width": 48,
+                "height": 48,
+                "top": 766,
+                "right": 677,
+                "bottom": 814,
+                "left": 629
+              }
+            },
+            {
+              "label": "pending-cart pending",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"0 товаров\">0</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 673,
+                "height": 51,
+                "top": 837,
+                "right": 687,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"2 товара\">2</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 673,
+                "height": 51,
+                "top": 837,
+                "right": 687,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 629,
+                "y": 766,
+                "width": 48,
+                "height": 48,
+                "top": 766,
+                "right": 677,
+                "bottom": 814,
+                "left": 629
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"0 товаров\">0</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 673,
+                "height": 51,
+                "top": 837,
+                "right": 687,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 629,
+                "y": 766,
+                "width": 48,
+                "height": 48,
+                "top": 766,
+                "right": 677,
+                "bottom": 814,
+                "left": 629
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            }
+          ],
+          "requests": 59
+        },
+        {
+          "engine": "chromium",
+          "width": 900,
+          "status": "PASS",
+          "cycles": 4,
+          "hits": [
+            {
+              "label": "cart pending",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"0 товаров\">0</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 872,
+                "height": 51,
+                "top": 837,
+                "right": 886,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "back pending",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 828,
+                "y": 766,
+                "width": 48,
+                "height": 48,
+                "top": 766,
+                "right": 876,
+                "bottom": 814,
+                "left": 828
+              }
+            },
+            {
+              "label": "pending-cart pending",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"0 товаров\">0</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 872,
+                "height": 51,
+                "top": 837,
+                "right": 886,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"2 товара\">2</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 872,
+                "height": 51,
+                "top": 837,
+                "right": 886,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 828,
+                "y": 766,
+                "width": 48,
+                "height": 48,
+                "top": 766,
+                "right": 876,
+                "bottom": 814,
+                "left": 828
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<span class=\"rollsbar-mobile-cart__inner\">\n\t\t\t<span>Корзина</span>\n\t\t\t<span class=\"rollsbar-cart-count\" aria-label=\"0 товаров\">0</span>\t\t</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 14,
+                "y": 837,
+                "width": 872,
+                "height": 51,
+                "top": 837,
+                "right": 886,
+                "bottom": 888,
+                "left": 14
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 828,
+                "y": 766,
+                "width": 48,
+                "height": 48,
+                "top": 766,
+                "right": 876,
+                "bottom": 814,
+                "left": 828
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            }
+          ],
+          "requests": 59
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "status": "PASS",
+          "cycles": 4,
+          "hits": [
+            {
+              "label": "cart pending",
+              "ok": true,
+              "target": "<span>Корзина</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 1007.703125,
+                "y": 16,
+                "width": 202.296875,
+                "height": 46,
+                "top": 16,
+                "right": 1210,
+                "bottom": 62,
+                "left": 1007.703125
+              }
+            },
+            {
+              "label": "back pending",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 1368,
+                "y": 824,
+                "width": 48,
+                "height": 48,
+                "top": 824,
+                "right": 1416,
+                "bottom": 872,
+                "left": 1368
+              }
+            },
+            {
+              "label": "pending-cart pending",
+              "ok": true,
+              "target": "<span>Корзина</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 1007.703125,
+                "y": 16,
+                "width": 202.296875,
+                "height": 46,
+                "top": 16,
+                "right": 1210,
+                "bottom": 62,
+                "left": 1007.703125
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<span>Корзина</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 993.234375,
+                "y": 16,
+                "width": 216.765625,
+                "height": 46,
+                "top": 16,
+                "right": 1210,
+                "bottom": 62,
+                "left": 993.234375
+              }
+            },
+            {
+              "label": "fixed true",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 1368,
+                "y": 824,
+                "width": 48,
+                "height": 48,
+                "top": 824,
+                "right": 1416,
+                "bottom": 872,
+                "left": 1368
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<span>Корзина</span>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 1007.703125,
+                "y": 16,
+                "width": 202.296875,
+                "height": 46,
+                "top": 16,
+                "right": 1210,
+                "bottom": 62,
+                "left": 1007.703125
+              }
+            },
+            {
+              "label": "fixed false",
+              "ok": true,
+              "target": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 14l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+              "inert": false,
+              "visibility": "visible",
+              "scroll": 1100,
+              "box": {
+                "x": 1368,
+                "y": 824,
+                "width": 48,
+                "height": 48,
+                "top": 824,
+                "right": 1416,
+                "bottom": 872,
+                "left": 1368
+              }
+            },
+            {
+              "label": "no full-width control shelf",
+              "display": "none"
+            }
+          ],
+          "requests": 59
+        }
+      ],
+      "screenshots": [
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-320-true.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-320-false.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-390-pending.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-390-true.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-390-false.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-430-true.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-430-false.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-701-true.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-701-false.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-900-true.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-900-false.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-1440-true.png",
+        "qa/visual-results/storefront-ux-staging/interaction/chromium-1440-false.png"
+      ]
+    }
+  },
+  "screenshots_inspected": {
+    "address-complete/incomplete-1440.png": "f3dd87030a9ee63210790e2beed67c69a0202cead32cfc5a329a8a8e2922b2ce",
+    "address-complete/incomplete-320.png": "0516f13cd00c89890f74f8766e8e0b22177d6f8fa8e29be5f69cf36fd691b739",
+    "address-complete/incomplete-390.png": "b71ea11d82b9241c627e57af2be355f2a0ac35ab9a5b73b295cb168e4bea27f4",
+    "address-complete/incomplete-700.png": "82295ea8a18c3466d6fa5fdb577ff34fe2d7781f3a6f32e82445771708b15270",
+    "address-complete/incomplete-701.png": "55023f9d32868ff8d90abaee55400d886d72254db47effc6556d240b119524e3",
+    "address-complete/operator-1440.png": "cc240f27ebc0a147397e322c7031625eddfedd0ae42f02ceb6c68190778d14b9",
+    "address-complete/operator-320.png": "2882cab9f324b692b872afa86f2cd0b5ab4e2fd5fbf7930e5cbcc68876856130",
+    "address-complete/operator-390.png": "b07c359c410bda2c94e9f074711e8a5b58270dc97958ad681dc6cbf30e47f6e8",
+    "address-complete/operator-700.png": "a4cb15655e018d6ddee37b7f22342a0b8a5996677628d9f4402c767e49d51343",
+    "address-complete/operator-701.png": "1c1cac02ff0ccb2a3e54bc0f3a6ad4dbf74786190134843d8cdcdd4226a2602d",
+    "address-complete/pickup-1440.png": "f20614847265952750e9a6ad1b6233067a11e1aa2afa789f45ae81ef4dfd97fe",
+    "address-complete/pickup-320.png": "916510865c35a5dcebc2552b856db09e2145a95def1e3ba36933269fa908c30a",
+    "address-complete/pickup-390.png": "09e19d7fc122d359fc1f98fb10840b4b10c7df1f418a1173ebc1f17ab38ea0d9",
+    "address-complete/pickup-700.png": "729eb5450ebb97d73b4312b8a6eb87877ccf6f3af435dee056f80b81f3a4d0cd",
+    "address-complete/pickup-701.png": "22c737fa6c3abffde91855f396afa592aef17a497f4c2d4cf7cea519eac51caf",
+    "checkout-policy/policy-1440.png": "652fc0d5faf02d076eef0618838ad08323c0d8f702301502ac928e6210fbd97a",
+    "checkout-policy/policy-390.png": "43ea1d53110919700695bdf5eb9270738993058d1dec2916225868f328a83af2",
+    "client-ux/delivery-1440.png": "f2330662099d45f2485af431360ecfb6b83f12936b738fe2af3ae8323f348707",
+    "client-ux/delivery-320.png": "761093a0ac815c26b8f39808f4f59fd460fbd35de668f359a7d29dfc425be9d9",
+    "client-ux/delivery-390.png": "978d152dd4bcd0ebb9f906c6b3360cbe0a29655744b6f029b7934705d27326eb",
+    "client-ux/delivery-700.png": "6ece0c1ec4cc20ea9d12eab0d7e0afbb1cff6970df8495c341f11205ad3264c1",
+    "client-ux/delivery-701.png": "ffd3ea45e7686c4e60975547bb49040a88f4baeb9b7f32e58cc1b446a07c7860",
+    "client-ux/menu-1440.png": "e67b77403c0de3b96d722beb6687ae0cdb867dd39925ffe229a00e145b35f3d3",
+    "client-ux/menu-320.png": "9a1b76fee8a3914a41ae535e76f122f1fbc7eb7e717b510e708e5f1b6a140704",
+    "client-ux/menu-390.png": "3fa548b49e933cfd60f0975d0b261fd2d43482dee9f4dce301d02addfcf50a2f",
+    "client-ux/menu-700.png": "f7a1c06d453b19469dba0ed215037b228dad1206ed8b1ca0e91b50da829e429d",
+    "client-ux/menu-701.png": "d8bc60392e5d70ebf364b58444f0824cb11890d9d70042f94243cd6addae60b2",
+    "client-ux/pizza-1440.png": "038452096f80c0343892887bdda109bb6f66813966cc9a642afe6c23730a34fd",
+    "client-ux/pizza-320.png": "5aa3c949fb70bc64b407b48a07d88055239268e779f260fb22fa97082f82f06d",
+    "client-ux/pizza-390.png": "285298a7ad9673e7e1613820e2693fe92a87510be123357995bb83d4ee3c11a4",
+    "client-ux/pizza-700.png": "e8a8258a5b15e376df7dd2f06e4add963f37fdf42002b86ccdd264cd5fa3c9b4",
+    "client-ux/pizza-701.png": "1b39d0be5dc4e301d4fc01d4ee328a70342d395fbbc405b5ee58ecbe9f961eac",
+    "delivery-reference/candidate-1440.png": "689a342bfe9405c2ae1e845c23b2b5528bcfade134202982ec5e2dfba67ca7bc",
+    "delivery-reference/candidate-320.png": "fbb254c473cae9d4d442cb4ea22ad29536be2d1aa1af3ecbf2412b1b12fa6ba5",
+    "delivery-reference/candidate-390.png": "fc7f82519700cf3088f99ff4569ba3c541c51238efb5aa8a436b02789ed272bf",
+    "delivery-reference/candidate-700.png": "d81117e52b99efa13cd90215c603e794ff0f8a48dede8c36b8d07135160c8523",
+    "delivery-reference/candidate-701.png": "5e188596c71750a799c09a2fa854425d8ce86ab95e3e3be451fa6b04d6eb38e6",
+    "delivery-reference/diff-1440.png": "cececc485e54d7b2c1dd992855101b31c4a78aaac694e918eefd93be0382ca58",
+    "delivery-reference/diff-320.png": "d145ba26142dbce4a71c8ae6ccdce4fc48f3484f737e8ac2ad6e8ecf9f452103",
+    "delivery-reference/diff-390.png": "8bec2eaf79be6b46927a5b8b0c8881b728372721a166912e1018b8837c08b6c6",
+    "delivery-reference/diff-700.png": "652b094313439c1ea26b9c3485fc755511279608d8370bdf167ee983a2575b55",
+    "delivery-reference/diff-701.png": "6ed4598b464618b7ae461657a55b76b6745471af0df2dc9b8975498537ee98fd",
+    "delivery-reference/reference-1440.png": "b18ce19cff33c748f4f3556ea90b342725ae64714ad5eaeaf69e82bfc53d55ec",
+    "delivery-reference/reference-320.png": "b3061b21452220ad924e5b780e002143cc3d83c5a9f125c6798de8f96a8b6588",
+    "delivery-reference/reference-390.png": "cf6d221aa32aeac08ac66a44da1255ab919cfb69796bea50494d793160a48409",
+    "delivery-reference/reference-700.png": "98fec09bde3b14445b573dc86baf227007a8cccedcf4edd2c4aabc00187312c9",
+    "delivery-reference/reference-701.png": "97a26f62a19d2bf33cd27a4e9eb95d686c82a9983d519675761ff3f247551ded",
+    "delivery-rules/address-14.png": "0dbbe0bf12bc93909b8f7783ade26756416a44dcb9f4f2814ec655c4c072c1a0",
+    "delivery-rules/address-15.png": "b070b3d18eba02206764993fd1d63f31f537cbf92c7f36a4bf3a62f5ca8f2676",
+    "delivery-rules/address-16.png": "337276098b5b348f86514b4839a51d86499af695e8ce216f8addf585b95346a3",
+    "delivery-rules/address-17.png": "3497e4652ebb2ad15d6c4b9ec987f7554d4fcb5afb508f2a682a9f5d22383edc",
+    "delivery-rules/address-18.png": "3096954f22b7fa9e61f27676cdc669dfbe53023803c471a52375847d8e34fa37",
+    "delivery-rules/address-19.png": "61e2ca8dd8717674545024b259141f0c7c12f09d8b436b7680b967c6a90782c6",
+    "delivery-rules/address-20.png": "6b934bdadfa03e65feab36499b10c0e371374de3fe7af808f75d3e18c87dfaef",
+    "delivery-rules/adversarial-320.png": "fe9603dedcab6a1872d73f5b7ebbda32c2716357841a1d3db96ec2bfd3bbe96b",
+    "delivery-rules/adversarial-700.png": "56c4ad992c01d96b5461ac7800fcd44132cfed1f66d7f53f575918ebe9f5422d",
+    "delivery-rules/adversarial-701.png": "82bae6e523d4a64f6d78131e2761e732af287774973791e596b54e4b3caedddf",
+    "delivery-rules/consent-feedback/consent-1440.png": "ba2a8997504bb42fdf464c582c2293fc14ae79ecaed375c419c6ec9a13b70152",
+    "delivery-rules/consent-feedback/consent-320.png": "6d75cac03621fad942a398c66f84a046eb235bf2184d8a3c729830fe9cdb6ab5",
+    "delivery-rules/consent-feedback/consent-390.png": "796e2b749e0ae9c586912283d647a37dceda268d098836d5cf5ded3213545b43",
+    "delivery-rules/consent-feedback/consent-700.png": "420e5db6615f0feb4982e2181c7f68bf24c7d49f625eda64f6a2380e954c41d2",
+    "delivery-rules/consent-feedback/consent-701.png": "aed0160157e5e306c9a3f6ef0557df106c3d61356bd096ffff681fae99c5bd9b",
+    "delivery-rules/delivery-1440.png": "ea5d1df2d79735e1cb9661c52fd20fe9263f4aec035bde2402a8f853217e6d5b",
+    "delivery-rules/delivery-320.png": "a790d7becfa05a8e957a70c24f568c4ce49d466835c7c9a556e0901ec6787cb4",
+    "delivery-rules/delivery-390.png": "4b4dc6157cd2ab9c5ab800034d511c9efcf5bad8956d37afd504b0b194d08199",
+    "delivery-rules/delivery-700.png": "0425278c51bd5505766eabf829353254e872595ad4e7b97efce596ab5b232f96",
+    "delivery-rules/delivery-701.png": "ea9ada170b2a8e4e471bfa9282c4ff1b1c5112d2eec3b71b50f18b81bd029335",
+    "delivery-rules/map/map-1440.png": "5f55d40050d2fdb41c13e6182ffb5b8cac1ba45fbf14ae5a575102537d7911eb",
+    "delivery-rules/map/map-320.png": "fb9031a5f0d6cdba745394f37d45ee43af5f1f1f1ca7ebf8ccbe8bfcbdbf759d",
+    "delivery-rules/map/map-390.png": "afd0156a3b4d821077b8713a95f0b99352f75166f4fead3d3af0986d5f6817a2",
+    "delivery-rules/map/map-700.png": "61c567323c44bc69618179c8456bbaf869cf1a4b2ceb435e7462eed893836268",
+    "delivery-rules/map/map-701.png": "b169c61476faa230139a2d22500ba8049ac5acbe9cc177029c3fa494d38155da",
+    "delivery-rules/pickup-1440.png": "0119da012c2d2526e9f4a5e69437f88330c43f75a1b38f180e7cf8c3bf26a7ee",
+    "delivery-rules/pickup-320.png": "947c9703fbd8697ac3145c41c1d9e7f6cf692f773075bd669541498d976fbcd8",
+    "delivery-rules/pickup-390.png": "16a7eeedf7239771dec9f3768e96174f19ccd134ac86ad911a1f8aaedbb33474",
+    "delivery-rules/pickup-700.png": "47046567b8da832f2620c70f4ee3ba34146acec47f26545fc8379a72c01640ee",
+    "delivery-rules/pickup-701.png": "a0c5a66524766b71a9fd3dddbde9e0e391930e228b717a5e6c5258d7395ebdc5",
+    "fulfillment/local-address-1440.png": "0652bee2e3adac22af276917ac162e8900454745772633813b1c086ba66cf392",
+    "fulfillment/local-address-390.png": "97b9801a214a04d6d03d831888d9faf22dc1dca3c924ddd58df6d93ccfa67924",
+    "fulfillment/qualified-1440.png": "0005861695ccce5ecc70417b1f903efb1250cb7b1f17a8a929bd2bf87df19123",
+    "fulfillment/qualified-390.png": "3c0d6e3b49c7f7af6391403f8e0a6fe5516b8f0f266b8c1f8b0c4a190f8a2471",
+    "mobile-feedback/cards-1440.png": "23a0c4c742b735b5890234e6351debdaeb7fdafea061390c3c830f7efe4fb02e",
+    "mobile-feedback/cards-320.png": "bce3163ab92d76e1b64e092c15b7bd1c2a5dc40c6d44b4106eb62c1ff1436b04",
+    "mobile-feedback/cards-390.png": "7efbd43b05b971d867297f2127eaed4462fd406bf9b209177dfe1279c8e9198e",
+    "mobile-feedback/cards-700.png": "003ead9355fa5d37fac5f98b8ba6cae2e7085115cd883686933b7d0e78013036",
+    "mobile-feedback/cards-701.png": "dce0f94af4ca5428f55e4058c5d971215dd252a52ac2e2c46151da45e0489484",
+    "mobile-feedback/minimum-button-1440.png": "1b9b71a69244a1e1bcdabb9b2fd36bf12b65c9ed72bc07bab314bbaeeddeb02a",
+    "mobile-feedback/minimum-button-320.png": "6361dc0e384dd571fe7af4074d4a09e5ea0260171497bcb8f4a7afb0a3b75c58",
+    "mobile-feedback/minimum-button-390.png": "01696390856112a9e221075d7b22e7c02a7107405a1b5d58198a90e4c30d5a16",
+    "mobile-feedback/minimum-button-700.png": "723b2814e481b6ddebc0c7d8275a5c7bf0acd5d3057b989db7099c5fc61c08fe",
+    "mobile-feedback/minimum-button-701.png": "c09f6d23b577eecaa1b7314b4d20983299c9c1d53c3c98849b3179f181b0327d",
+    "mobile-feedback/minimum-top-1440.png": "1b9b71a69244a1e1bcdabb9b2fd36bf12b65c9ed72bc07bab314bbaeeddeb02a",
+    "mobile-feedback/minimum-top-320.png": "9d4595050fdf616167a19734267a6ef9507c72328bf9f8a597ec841704393687",
+    "mobile-feedback/minimum-top-390.png": "f6fbcfe3d04657cc07a9852ac8138e0b5ec5ee693cc0df4a1a9b8c3a7ccf36b7",
+    "mobile-feedback/minimum-top-700.png": "0c799f82dd6043028d64e142ae747b12fc034da856f5221476335fedf5d837d6",
+    "mobile-feedback/minimum-top-701.png": "f8441fa83408e495d78abceff42f553bd170fcb1116d42868526a4c81ee64c62",
+    "promotions/home-1440.png": "c6861aa73617a2a0d4c42cf43290107cf583a2575f1784f4f771e5e1505fd3d4",
+    "promotions/home-390.png": "07a3ebbffc8372c494acca52ee245f4b90fdce5886409a6e626a46d6a5eb5d5f",
+    "promotions/page-1440.png": "fb804223d8a427a82f2d10187a92b7f2907aec0b75d868c25a428beefb45547b",
+    "promotions/page-320.png": "dc5665a3e1587c51e65b2f78554e397c7238b5f72dc473dd2a0894cb7ebc76c8",
+    "promotions/page-390.png": "dd805f1de5c46ddeac059a4bf470f6252a31756febdf3720f33961a2e3145088",
+    "promotions/page-700.png": "cf37a09f46ff8236437cda7ee1e294960a0dc84e9b6517b9c742251af77f9f5c",
+    "promotions/page-701.png": "07bf79d853248ca97b19ac8e9f5ebc69ea04e6522f1cbdde23834ed21737c4a7",
+    "storefront-ux-staging/chromium-1440x900-details-quantity.png": "b5ef8836ab06b4b35dfde39f585d6f36bd302d93ea4ff3543a89609a20928c9b",
+    "storefront-ux-staging/chromium-1440x900-multi-word-search.png": "c5fe9af738cceca4bdcf47c0ace5f162974f178d76e57411f743a1bfc80b04f6",
+    "storefront-ux-staging/chromium-1440x900-scrolled-controls.png": "2fcbca3ca0197f7bd7771c31b83d3e8de1ece75060706ed36b6883cea71a01b4",
+    "storefront-ux-staging/chromium-320x568-details-quantity.png": "d58a9fcfde93928a4a21bfb5f9f37d97447b2727bc827493ee35328da7543f81",
+    "storefront-ux-staging/chromium-320x568-multi-word-search.png": "7330f5100fcca869791cc5d1e945ef3f6ce1c04efefae25ff25fcf18ec862cfb",
+    "storefront-ux-staging/chromium-320x568-scrolled-controls.png": "c061896a8cece2c7c5429a4e34bfa32b01cf6350d75dce4bac1031e17c54d378",
+    "storefront-ux-staging/chromium-390x844-details-quantity.png": "1f5d8929d7fe114ee0f603d5579e0f05a567449fbaa1f94e416d90bb30e43b23",
+    "storefront-ux-staging/chromium-390x844-multi-word-search.png": "fecde1958953b30e70b9f69f8e694739be32e867ae1d9780346658b6574fd8a5",
+    "storefront-ux-staging/chromium-390x844-scrolled-controls.png": "019c580d4a69be4ee6ce464fdc109c4b0355c1877c6ff22a2fd3e09854fac18a",
+    "storefront-ux-staging/chromium-390x900-details-quantity.png": "c5a68e0467fa399ccd461d0c29ad1f4343103cec55c9c6dd26dfaf91e4df2a24",
+    "storefront-ux-staging/chromium-390x900-multi-word-search.png": "fef0165cb5cb1a243323708234b833a32fff9c2a2b87345f4b9f38c3b37592e5",
+    "storefront-ux-staging/chromium-390x900-scrolled-controls.png": "41f54d8f6f1bbc0c91613af43cc4e9d03bd86b9be3e3d44a2db5f68939fe93e8",
+    "storefront-ux-staging/chromium-430x932-details-quantity.png": "faf034728a1239c0d8689213a56660acef347c85a8bb1041cdf37e38a7073845",
+    "storefront-ux-staging/chromium-430x932-multi-word-search.png": "d89c655519c42e596a416878bd08bbf9d34aef7dd5edd2b54505204577c88b71",
+    "storefront-ux-staging/chromium-430x932-scrolled-controls.png": "7a71a68d955bd4499d8af644bc4f9bbb648d5267c6bede3c77ef463d1a7c18bf",
+    "storefront-ux-staging/diagnostics/context-1-page-0.png": "73b19975c159519b3f7b00455f807536c525e6fa5e3b7a485f4b91785724c628",
+    "storefront-ux-staging/diagnostics/context-2-page-0.png": "763e738b2902a979671a670705b81aee5cea4af5998f6b6ff1f4bae959841bb6",
+    "storefront-ux-staging/diagnostics/context-3-page-0.png": "924feb721a9eeb8ef9e48df06804bdd54916856fbffddb2cf747acb0ced567b0",
+    "storefront-ux-staging/diagnostics/context-4-page-0.png": "da41869d7012d36df1eea51622bf05df5d343ada00a51ea6eee09fd9af8d60ca",
+    "storefront-ux-staging/diagnostics/context-5-page-0.png": "308fcc3a7c6f2bdd01811dd67fc235ca35f39dd56a5fa2c9a12a6e4794de3013",
+    "storefront-ux-staging/diagnostics/context-6-page-0.png": "5843ddb0711bfe20822a99c45a37afb55d234244787d888d1c6b500036af2ab7",
+    "storefront-ux-staging/interaction/chromium-1440-false.png": "5c55a948adc3bfb6170cc3fb8ec1e077bdbd3daf3ee2fc0914903bea120289ca",
+    "storefront-ux-staging/interaction/chromium-1440-true.png": "1f21585c29e6325c7df86e437f13115fbd18b94d26d0a16cbc8a5b8a1798e4f1",
+    "storefront-ux-staging/interaction/chromium-320-false.png": "3d01976d98eda59277e82f2925fdc4fc1060c7e1550d7bdbc9c6c55924c01628",
+    "storefront-ux-staging/interaction/chromium-320-true.png": "6fd60abfc54c484cf06ab473d6b08d40c6b4443f84b4bebd3f104328c5a7ebcc",
+    "storefront-ux-staging/interaction/chromium-390-false.png": "2f9104127de6bf43981dffb3140cd9c552ecb3b7ca54917582f95e79af2cb6df",
+    "storefront-ux-staging/interaction/chromium-390-pending.png": "9910a52c048d373a99886c34b7d7cabfa4639d039c6efce8751020f6647c95c1",
+    "storefront-ux-staging/interaction/chromium-390-true.png": "81def05212bcb7bfa3da9ff9a08495bab9583f1cb04cbbc39bdd21e703e7a4f2",
+    "storefront-ux-staging/interaction/chromium-430-false.png": "e38f698faa1d2b9d8b33d21566833746358b43032065b70f2fe98a109e31d53a",
+    "storefront-ux-staging/interaction/chromium-430-true.png": "10e9502bab456ccbecd8fb0514a6c3a85324c7a34e06229d40c7ae8ea25bf774",
+    "storefront-ux-staging/interaction/chromium-701-false.png": "0ba9c1f993027dcaf6299454f1ab745554e121689acf1fe59ee856f323d3547c",
+    "storefront-ux-staging/interaction/chromium-701-true.png": "d6e14ec33beefaa80e9b28bcb75ce86747f7f4fa199989c55588a0d33b38230c",
+    "storefront-ux-staging/interaction/chromium-900-false.png": "8b742cc712f460cb86af61a6329430df2fd9a0d6b181ee48fc431fd79285384c",
+    "storefront-ux-staging/interaction/chromium-900-true.png": "03707673496f5b6a08ed046d9a9c11498ac6eb01b6baa002249ebb84cf6f30ba",
+    "storefront-ux-staging/no-dock-1440-false.png": "5c55a948adc3bfb6170cc3fb8ec1e077bdbd3daf3ee2fc0914903bea120289ca",
+    "storefront-ux-staging/no-dock-1440-true.png": "bef3967fbd72e7f1b3a7518688895f6de73b71f34cbe7460833c5eedf08e5f18",
+    "storefront-ux-staging/no-dock-320-false.png": "bc268bb7b08a45cd66b78988b6c9a4c02245a3aac6dffcdc3c93025cd42903f3",
+    "storefront-ux-staging/no-dock-320-true.png": "e4f8efb62b7f7649c6c5ac3d60cc60b643bd11718652a3c39215e32c918d0018",
+    "storefront-ux-staging/no-dock-390-false.png": "1b9a1e581e42cc9d1573070aeacaebd2307fdc83e5e8206bf1864a3cdc8805aa",
+    "storefront-ux-staging/no-dock-390-true.png": "fbde5d0aee77d3da81bad1bab90e2f411c494aed0791a3db393bf029aec68f66",
+    "storefront-ux-staging/no-dock-701-false.png": "0ba9c1f993027dcaf6299454f1ab745554e121689acf1fe59ee856f323d3547c",
+    "storefront-ux-staging/no-dock-701-true.png": "1fd6d0814ae4efd492810bc9e525f1ff03357adb5db885714e81df8ff6444690",
+    "storefront-ux-staging/no-dock-900-false.png": "8b742cc712f460cb86af61a6329430df2fd9a0d6b181ee48fc431fd79285384c",
+    "storefront-ux-staging/no-dock-900-true.png": "f8f36b65e78e64f9fcd7fc375f7cee100d71ec158d6e75edf73ef2cd54f16a15"
+  },
+  "address_cases": [
+    [
+      "",
+      false
+    ],
+    [
+      "Симферополь",
+      false
+    ],
+    [
+      "г Симферополь, ул Гагарина",
+      false
+    ],
+    [
+      "Симферополь, 2-я улица Коллективных садов",
+      false
+    ],
+    [
+      "улица 8 Марта",
+      false
+    ],
+    [
+      "улица 60 лет Октября",
+      false
+    ],
+    [
+      "улица 1905 года",
+      false
+    ],
+    [
+      "улица 8",
+      false
+    ],
+    [
+      "дом 1",
+      false
+    ],
+    [
+      "Симферополь, дом 1",
+      false
+    ],
+    [
+      "Симферополь 1",
+      false
+    ],
+    [
+      "г Симферополь, ул Гагарина, д 1",
+      true
+    ],
+    [
+      "Симферополь Гагарина 1",
+      true
+    ],
+    [
+      "Гагарина, 1",
+      true
+    ],
+    [
+      "Гагарина д. 1",
+      true
+    ],
+    [
+      "Гагарина дом 1а",
+      true
+    ],
+    [
+      "Киевская 139А",
+      true
+    ],
+    [
+      "Киевская, д 139/2",
+      true
+    ],
+    [
+      "Киевская, д 139 корпус 2",
+      true
+    ],
+    [
+      "Киевская, д 139 стр. 2",
+      true
+    ],
+    [
+      "Молодёжная, 5",
+      true
+    ],
+    [
+      "2-я улица Коллективных садов, д 34",
+      true
+    ],
+    [
+      "ул 8 Марта, д 2",
+      true
+    ],
+    [
+      "улица 60 лет Октября, 5",
+      true
+    ],
+    [
+      "с Мазанка, ул Ленина, д 1",
+      true
+    ],
+    [
+      "Неизвестная улица, д 99Б",
+      true
+    ]
+  ],
+  "shadow_address_checks": {
+    "status": "PASS",
+    "mode": "shadow",
+    "release_sha": "d3b7239b9fefa758b224be7ede422e4ea7c02414",
+    "checks": [
+      {
+        "width": 1440,
+        "status": "PASS",
+        "street_only_posts": 0,
+        "manual_native_payload": true,
+        "pickup_exempt": true,
+        "operator_notice": true
+      },
+      {
+        "width": 701,
+        "status": "PASS",
+        "street_only_posts": 0,
+        "manual_native_payload": true,
+        "pickup_exempt": true,
+        "operator_notice": true
+      },
+      {
+        "width": 700,
+        "status": "PASS",
+        "street_only_posts": 0,
+        "manual_native_payload": true,
+        "pickup_exempt": true,
+        "operator_notice": true
+      },
+      {
+        "width": 390,
+        "status": "PASS",
+        "street_only_posts": 0,
+        "manual_native_payload": true,
+        "pickup_exempt": true,
+        "operator_notice": true
+      },
+      {
+        "width": 320,
+        "status": "PASS",
+        "street_only_posts": 0,
+        "manual_native_payload": true,
+        "pickup_exempt": true,
+        "operator_notice": true
+      }
+    ],
+    "submitted_orders": 0
+  },
+  "orders_submitted": 0,
+  "notifications_sent": 0,
+  "production_access": false,
+  "production_mutation": false,
+  "baseline_masks_tolerances_weakened": false,
+  "notes": [
+    "All147 exact-release PNGs actually inspected, including top/local address errors and operator text at five widths.",
+    "No complete-content equality claim against old checkout demo after owner changes; native modal chrome geometry remains accepted.",
+    "Assembly captures may contain expected no-order middleware notices. Initial skeleton/pending states are not order failures.",
+    "Incomplete delivery is now intentionally rejected; unknown complete manual delivery remains nonblocking callback.",
+    "Birthday offer is informational, excludes sets, valid17.02.2026 through17.02.2027; delivery-from1000 source offer explicitly excluded by owner."
+  ],
+  "nonblocking_followup": "RB-030: native shipping row may retain preceding preliminary minimum label after manual unknown address; custom current terms/operator confirmation and strict validation remain correct. Cause untraced, presentation follow-up deferred."
+}

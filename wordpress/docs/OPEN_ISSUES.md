@@ -1,9 +1,21 @@
 # RollsBar Issue Register
 
 Status owner: RollsBar Coordinator
-Last updated: 2026-10-31
+Last updated: 2026-11-01
 
 This file is the durable source of truth for unresolved / deferred RollsBar defects and follow-up work. New confirmed issues should be recorded here instead of living only in chat. Do not reopen items marked DONE without new evidence.
+
+## RB-030 - Preliminary shipping label after manual address edit
+
+Status: OPEN - P3, presentation follow-up. Final live screenshots address-complete/operator-320/390 show the native shipping row title retaining the previous preliminary1200 label after a manual unknown address, while the current custom terms correctly say manager clarification. Strict minimum validation is cleared and no exact geocode proof or free-delivery promise is created; final operator-confirmation note is visible. Underlying rate-title refresh cause is not yet traced. Review this advisory-copy consistency separately; do not change commercial rules, fees or precision. Evidence: CHECKOUT_COMPLETE_ADDRESS_EVIDENCE_2026-11-01.json.
+
+## RB-029 - Complete delivery address and operator confirmation
+
+Status: DONE - staging2026-11-01. Owner supersedes phone-only delivery: street/local address name plus house required, manual entry allowed, incomplete field focused/marked with visible explanation; pickup exempt. Permanent operator final-cost/conditions note in both modes. Actual PHP/JS26 cases, live5 + full native/storefront/precision/minimum regression PASS. App/markeree7dcd5fa90a646419bda611f6ff0cd2d8582f5a, backup20261031T212140Z, apply41243149702/finalize41245485321 SUCCESS; all147 PNGs inspected. No submitted orders/production. See CHECKOUT_COMPLETE_ADDRESS_2026-11-01.md and JSON.
+
+## RB-028 - Birthday promotions page
+
+Status: DONE - staging2026-11-01, same accepted applicationee7dcd5fa90a646419bda611f6ff0cd2d8582f5a. Native /aktsii/ page with homepage/shared-menu links and approved birthday10% conditions/dates; delivery-from1000 offer excluded by owner. Informational only, no automatic coupon. Live5 and full regressions PASS; final7 offer PNGs inspected. See PROMOTIONS_PAGE_2026-11-01.md and source evidence. No production access or notifications/orders.
 
 ## RB-027 — Mobile staggered card footers and invisible top minimum explanation
 

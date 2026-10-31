@@ -1,0 +1,9 @@
+# Promotions page staging acceptance
+
+Status: STAGING PASS, accepted together with full-address checkout release `ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a`, marker same, receipt browser_verified. Page: https://staging.rollsbar.ru/aktsii/ .
+
+Owner-approved source and exclusions: `PROMOTIONS_SOURCE_2026-11-01.md`. Only birthday10% on the day and next two days, excluding sets, validity17.02.2026–17.02.2027. No automatic discount/coupon is implemented or promised; call action and visible explanation allow the operator to apply/confirm the offer. No source delivery-from1000 offer, minima remain1200–4000. Expired offer is not displayed as active.
+
+Native WordPress empty page aktsii created only if absent after fresh verified backup; existing nonempty content is never overwritten. Template `page-aktsii.php` uses existing theme/header/footer/menu/cart controls; homepage utility and shared menu link to the new page. Home catalog Hit-menu category remains available. Three presentation files changed in initial candidate d3b7239.
+
+Initial narrow [apply41241858308](https://github.com/tilaninishi12754-code/rollsbar/actions/runs/41241858308) SUCCESS, installed backend_verified; no separate finalization claimed for that intermediate candidate. Final combined [apply41243149702](https://github.com/tilaninishi12754-code/rollsbar/actions/runs/41243149702)/[finalize41245485321](https://github.com/tilaninishi12754-code/rollsbar/actions/runs/41245485321) SUCCESS, backup `20261031T212140Z`. Exact-release direct-page/reload/offer/call/menu/back-to-catalog five-width gate and full storefront/checkout regressions PASS. All7 final promotions PNGs inspected among147 final images; hashes/manifest in `CHECKOUT_COMPLETE_ADDRESS_EVIDENCE_2026-11-01.json`. No production access, catalog/media mutation, submitted orders or notifications. RB-028 DONE. Final report commit is documentation-only and not redeployed.
