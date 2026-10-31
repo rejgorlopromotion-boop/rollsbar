@@ -14,6 +14,7 @@ class PolicySession {public $data=[];public $saves=0;function get($key,$default=
 $GLOBALS['wc']=(object)['session'=>new PolicySession(),'cart'=>new class {public $amount=420;function get_cart_contents_total(){return $this->amount;}}];
 require __DIR__.'/../../wordpress/wp-content/plugins/rollsbar-core/includes/class-rollsbar-checkout.php';
 require __DIR__.'/../../wordpress/wp-content/plugins/rollsbar-core/includes/class-rollsbar-delivery-checkout.php';
+foreach(json_decode(file_get_contents(__DIR__.'/address-completeness.json'),true,512,JSON_THROW_ON_ERROR) as [$entry,$complete]){check_rule($complete===RollsBar_Delivery_Checkout::has_complete_address($entry),'server address completeness: '.$entry);}
 require __DIR__.'/../../wordpress/wp-content/plugins/rollsbar-core/includes/class-rollsbar-address-suggestions.php';
 $session=WC()->session;$session->data['chosen_shipping_methods']=['rollsbar_delivery'];
 $address='г Симферополь, ул Гагарина, д 1';$proof=RollsBar_Delivery_Minimum::proof(identity(),$address);
@@ -24,6 +25,8 @@ check_rule(null===RollsBar_Delivery_Checkout::validate_request(null,null,$reques
 WC()->cart->amount=420;$session->data['rollsbar_delivery_address_proof']=$proof;$request->params['extensions']=[];
 check_rule(is_wp_error(RollsBar_Delivery_Checkout::validate_request(null,null,$request)),'saved native-session proof prevents bypass by omitting client extension');
 $request->params['shipping_address']['address_1']='Улица вне справочника';
+check_rule('rollsbar_delivery_address'===RollsBar_Delivery_Checkout::validate_request(null,null,$request)->code,'street without house rejected before native order');
+$request->params['shipping_address']['address_1']='Улица вне справочника, д 1';
 check_rule(null===RollsBar_Delivery_Checkout::validate_request(null,null,$request),'unknown edited address remains callback');
 $estimate_data=identity(['street'=>'Молодёжная','house_fias_id'=>'','qc_geo'=>2]);
 $estimate=RollsBar_Delivery_Minimum::classify($estimate_data);

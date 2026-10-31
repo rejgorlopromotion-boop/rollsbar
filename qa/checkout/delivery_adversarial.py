@@ -122,6 +122,10 @@ try:
     frame.wait_for_function('window.rollsbarMapState?.exact===false')
     p.wait_for_function('()=>!!document.querySelector(".rollsbar-submit-feedback")?.textContent')
     capture_native(p)
+    # Owner now requires a written house; manual completion must not upgrade precision.
+    address.fill('Симферополь, ул Неизвестная, д 1')
+    settle_native(p)
+    require(p.evaluate('wp.data.select("wc/store/validation").getValidationError("rollsbar-delivery-address")') is None,'manual street and house satisfy completeness without an exact provider point')
     p.locator('input[id$="-phone"]').filter(visible=True).first.fill('+79780000000')
     p.locator('#order-rollsbar-privacy-consent').check()
     p.wait_for_function('()=>!wp.data.select("wc/store/cart").isCustomerDataUpdating()&&!wp.data.select("wc/store/checkout").isCalculating()')

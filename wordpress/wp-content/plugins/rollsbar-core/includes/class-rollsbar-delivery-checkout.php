@@ -56,6 +56,17 @@ final class RollsBar_Delivery_Checkout {
 		return (string) $default;
 	}
 
+	/** Completeness only; a manual house does not become a verified location/zone. */
+	public static function has_complete_address( string $address ): bool {
+		$address = trim( preg_replace( '/\s+/u', ' ', $address ) );
+		$house = '[0-9]+[a-zа-яё0-9\/-]*(?:\s*(?:к(?:орпус)?|стр(?:оение)?)\.?\s*[a-zа-яё0-9\/-]+)?';
+		if ( ! preg_match( '/(?:^|[\s,])(?:д(?:ом)?\.?\s*)?' . $house . '\s*$/iu', $address, $match, PREG_OFFSET_CAPTURE ) ) { return false; }
+		$place = trim( substr( $address, 0, $match[0][1] ), ' ,.' );
+		$place = preg_replace( '/^(?:(?:г|город)\.?\s+)?симферополь(?:\s*,\s*|\s+|$)/iu', '', $place );
+		$place = preg_replace( '/(?:^|[\s,])(?:г|город|ул|улица|проспект|пр-кт|переулок|пер|шоссе|д|дом)\.?(?=[\s,]|$)/iu', ' ', $place );
+		return (bool) preg_match( '/[a-zа-яё]{2,}/iu', $place );
+	}
+
 	public static function validate_request( $response, $handler, $request ) {
 		if ( null !== $response || 'POST' !== $request->get_method() || ! preg_match( '#^/wc/store/v[0-9]+/checkout$#', $request->get_route() ) ) { return $response; }
 		// This filter runs before Checkout::get_response loads its native cart.
@@ -71,6 +82,7 @@ final class RollsBar_Delivery_Checkout {
 		$shipping = (array) $request->get_param( 'shipping_address' );
 		$billing = (array) $request->get_param( 'billing_address' );
 		$address = (string) ( $shipping['address_1'] ?? $billing['address_1'] ?? '' );
+		if ( ! self::has_complete_address( $address ) ) { return new WP_Error( 'rollsbar_delivery_address', 'Укажите полный адрес доставки: улицу и номер дома. Если дома нет в подсказках, напишите его вручную.', array( 'status' => 400 ) ); }
 		$extensions = (array) $request->get_param( 'extensions' );
 		$proof = $extensions['rollsbar-delivery']['address_proof'] ?? '';
 		$amount = (float) $controller->get_cart_for_response()->get_cart_contents_total();

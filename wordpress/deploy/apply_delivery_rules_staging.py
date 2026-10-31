@@ -6,7 +6,7 @@ from apply_storefront_ux_staging import verify
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'qa/visual-results/delivery-rules'
 BASE='921698e085263f23493e8f757aa0e7c1b561946c'
-PREVIOUS_APP='30c7402c345b58cbfdf6c966b7bf3f1e12d78d29'
+PREVIOUS_APP='d3b7239b9fefa758b224be7ede422e4ea7c02414'
 CHANGED=[transport.PLUGIN+p for p in [
  'data/delivery-minimum.json','includes/class-rollsbar-delivery-minimum.php',
  'includes/class-rollsbar-delivery-checkout.php','includes/class-rollsbar-native-delivery-method.php',
@@ -14,6 +14,7 @@ CHANGED=[transport.PLUGIN+p for p in [
  'includes/class-rollsbar-checkout.php','includes/class-rollsbar-cart-actions.php',
  'assets/js/checkout.js','assets/css/checkout.css','assets/delivery-map.html','data/delivery-geography.json']]
 CHANGED += [transport.THEME+p for p in ['header.php','front-page.php','assets/js/app.js','assets/css/app.css','template-parts/header-home.php','template-parts/site-menu.php','template-parts/delivery-home.php']]
+CHANGED += [transport.THEME+'page-aktsii.php']
 RECEIPT='$HOME/.rollsbar-delivery-rules-release'
 
 def verify_mail():
@@ -51,7 +52,7 @@ wp_cmd eval {shlex.quote(probe)}
 
 def scope():
  paths=subprocess.check_output(['git','diff','--name-only',BASE,'--',transport.PLUGIN,transport.THEME],cwd=ROOT,text=True).splitlines()
- if sorted(paths)!=sorted(CHANGED):raise ValueError('Delivery batch application files differ from the explicit nineteen-file cumulative scope')
+ if sorted(paths)!=sorted(CHANGED):raise ValueError('Application files differ from the explicit cumulative scope')
 
 def backend():
  return 'wp_cmd eval-file "$PROJECT_ROOT/wordpress/deploy/verify-delivery-rules.php"\n'+verify()
@@ -92,7 +93,7 @@ def manifest():
  if len(reference)!=15:raise ValueError('Five immutable reference/candidate/unmasked diff sets required')
  maps=sorted((OUT/'map').glob('*.png'))
  if len(maps)!=5:raise ValueError('Five restored-map screenshots required')
- return hashlib.sha256('\n'.join(str(p.relative_to(ROOT/'qa/visual-results'))+':'+hashlib.sha256(p.read_bytes()).hexdigest() for p in files+reference+maps+sorted((ROOT/'qa/visual-results/client-ux').glob('*.png'))+sorted((ROOT/'qa/visual-results/mobile-feedback').glob('*.png'))).encode()).hexdigest()
+ return hashlib.sha256('\n'.join(str(p.relative_to(ROOT/'qa/visual-results'))+':'+hashlib.sha256(p.read_bytes()).hexdigest() for p in files+reference+maps+sorted((ROOT/'qa/visual-results/client-ux').glob('*.png'))+sorted((ROOT/'qa/visual-results/mobile-feedback').glob('*.png'))+sorted((ROOT/'qa/visual-results/address-complete').glob('*.png'))+sorted((ROOT/'qa/visual-results/promotions').glob('*.png'))).encode()).hexdigest()
 
 def finalize(sha):
  proof=json.loads((OUT/'evidence.json').read_text(encoding='utf8'))
@@ -115,6 +116,11 @@ def finalize(sha):
  mobile=json.loads((ROOT/'qa/visual-results/mobile-feedback/evidence.json').read_text(encoding='utf8'))
  if mobile.get('status')!='PASS' or mobile.get('mode')!='live' or mobile.get('release_sha')!=sha or [c['width'] for c in mobile['checks']]!=[1440,701,700,390,320] or mobile.get('submitted_orders')!=0:raise ValueError('Exact live mobile rows/top shortfall proof required')
  if len(list((ROOT/'qa/visual-results/mobile-feedback').glob('*.png')))!=15:raise ValueError('Five card/top/button screenshot sets required')
+ address=json.loads((ROOT/'qa/visual-results/address-complete/evidence.json').read_text(encoding='utf8'))
+ if address.get('status')!='PASS' or address.get('mode')!='live' or address.get('release_sha')!=sha or [c['width'] for c in address['checks']]!=[1440,701,700,390,320] or address.get('submitted_orders')!=0:raise ValueError('Exact live complete-address/operator five-width proof required')
+ if len(list((ROOT/'qa/visual-results/address-complete').glob('*.png')))!=15:raise ValueError('Incomplete-address/operator/pickup screenshot sets required')
+ promo=json.loads((ROOT/'qa/visual-results/promotions/evidence.json').read_text(encoding='utf8'))
+ if promo.get('status')!='PASS' or promo.get('release_sha')!=sha or len(promo['checks'])!=5 or len(list((ROOT/'qa/visual-results/promotions').glob('*.png')))!=7:raise ValueError('Promotions page regression required')
  if os.environ.get('ROLLSBAR_REVIEWED_MANIFEST')!=manifest():raise ValueError('Exact screenshot set must be inspected')
  return f'''[[ "$(git -C "$PROJECT_ROOT" rev-parse HEAD)" == {sha} ]]
 {transport.code_hash_guard(sha,changed=CHANGED,base=BASE)}

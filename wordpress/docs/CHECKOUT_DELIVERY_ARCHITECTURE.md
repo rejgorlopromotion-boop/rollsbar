@@ -3,6 +3,10 @@
 Updated: 2026-10-08
 Status: STAGING IMPLEMENTATION — DADATA-FIRST, COURIER ENFORCEMENT STILL OFF
 
+## Owner override — 2026-11-01 complete address
+
+Delivery now requires a written street/local address name and house, with manual entry allowed if provider suggestions do not contain the house. Empty/street-only delivery is blocked before native order submission and focuses the marked address field with a completion message. Pickup remains exempt from client address. Unknown or low-precision **complete** addresses remain manager callbacks without an invented strict minimum or exact-house marker. Existing known minima remain enforced. Final cost and delivery conditions are explicitly subject to operator confirmation in both modes. See `CHECKOUT_COMPLETE_ADDRESS_2026-11-01.md` for implementation and acceptance status. This supersedes older phone-only delivery passages below.
+
 ## Owner override — 2026-10-30 checkout policy
 
 Later owner override (fulfillment corrections, same date): exact supported addresses outside existing footprints use the nearest existing zone boundary in all directions, retaining exact table/containing-locality priority. Equal-distance ties use the higher existing minimum. Owner separately approved preliminary estimates for street-level/imprecise addresses such as Молодёжная: show `estimate_minimum` plus manager qualification, keep strict `minimum=null`, allow callback below that estimate and never create an exact-house marker or upgrade qc_geo. Signed native-session proof retains this distinction across reloads. Native Store API pre-order minimum validation must first load/recalculate the real Woo cart via its CartController, not read an unhydrated zero total. See `CHECKOUT_FULFILLMENT_2026-10-30.md`.

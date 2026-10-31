@@ -492,3 +492,5 @@ body.woocommerce-checkout:not(.woocommerce-order-received) .rollsbar-checkout-sh
 body.woocommerce-checkout:not(.woocommerce-order-received) .rollsbar-minimum-notice{border:1px solid #d92525;border-radius:12px;background:#fff2f2;color:#a91e1e;padding:14px 16px;margin:0 0 20px;line-height:1.5;font-size:14px;scroll-margin-block:20px}
 body.woocommerce-checkout:not(.woocommerce-order-received) .rollsbar-minimum-notice[hidden]{display:none}
 body.woocommerce-checkout:not(.woocommerce-order-received) .rollsbar-minimum-notice:focus-visible{outline:2px solid #a91e1e;outline-offset:2px}
+body.woocommerce-checkout:not(.woocommerce-order-received) .rollsbar-address-incomplete{outline:2px solid #d92525;outline-offset:3px;border-radius:12px;background:#fff2f2}
+body.woocommerce-checkout:not(.woocommerce-order-received) .rollsbar-operator-confirmation{font-size:14px;line-height:1.5;color:#444;margin:0 0 12px;overflow-wrap:anywhere}

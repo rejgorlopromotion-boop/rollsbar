@@ -58,7 +58,7 @@ try {
   $response=RollsBar_Delivery_Checkout::validate_request(null,null,$request);
   rb_direct_assert($case[1] ? null===$response : is_wp_error($response),'pre-order native delivery minimum at '.$case[0]);
  }
- $request->set_param('shipping_address',array('address_1'=>'Другой адрес'));
+ $request->set_param('shipping_address',array('address_1'=>'Другой адрес, д 1'));
  rb_direct_assert(null===RollsBar_Delivery_Checkout::validate_request(null,null,$request),'callback accepts edited address pending manager clarification');
  $request->set_param('extensions',array('rollsbar-delivery'=>array('minimum'=>0)));
  rb_direct_assert(null===RollsBar_Delivery_Checkout::validate_request(null,null,$request),'callback accepts absent proof without claiming confirmed delivery terms');
@@ -67,7 +67,8 @@ try {
  $request->set_param('additional_fields',array('rollsbar/privacy-consent'=>true));
  RollsBar_Checkout::prepare_store_request(null,null,$request);
  rb_direct_assert(true===$native_route->validate_callback($request),'actual native phone-only callback accepts absent name/address with explicit consent');
- rb_direct_assert(null===RollsBar_Delivery_Checkout::validate_request(null,null,$request),'native phone-only delivery callback bypasses commercial minimum gate');
+ $incomplete=RollsBar_Delivery_Checkout::validate_request(null,null,$request);
+ rb_direct_assert(is_wp_error($incomplete)&&$incomplete->get_error_code()==='rollsbar_delivery_address','delivery without street/house rejected before order creation');
  WC()->session->set('chosen_shipping_methods',array('pickup_location:0'));
  $request->set_param('shipping_address',array());
  rb_direct_assert(null===RollsBar_Delivery_Checkout::validate_request(null,null,$request),'native pickup bypasses delivery address/minimum only');
