@@ -99,9 +99,9 @@ foreach ( $promo_posts as $promo_post ) {
 	);
 }
 // This navigation card promises the actual destination, including editable legacy promo posts.
-$utility_cards['promo']['title'] = 'Хит-меню';
-$utility_cards['promo']['text'] = 'Популярные блюда Rolls Bar';
-$utility_cards['promo']['url'] = '#hits';
+$utility_cards['promo']['title'] = 'Акции';
+$utility_cards['promo']['text'] = 'Специальные предложения Rolls Bar';
+$utility_cards['promo']['url'] = home_url( '/aktsii/' );
 
 ?>
 

@@ -15,7 +15,7 @@ try:
     errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
     p.goto(BASE+'/',wait_until='domcontentloaded')
     data=json.loads(p.locator('#rollsbarProductDetailsData').text_content())
-    promo=p.locator('.rollsbar-utility--promo');require('Хит-меню' in promo.inner_text() and promo.get_attribute('href')=='#hits','truthful hit-menu card')
+    promo=p.locator('.rollsbar-utility--promo');require('Акции' in promo.inner_text() and promo.get_attribute('href')==BASE+'/aktsii/','owner-approved promotions destination')
     pizzas=[(key,v) for key,v in data.items() if v.get('pizza')]
     require(len(pizzas)==12,'all 12 pizza identities retained')
     modal=p.locator('#rollsbarProductDetails')

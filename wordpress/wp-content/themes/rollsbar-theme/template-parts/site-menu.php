@@ -9,6 +9,7 @@ $phone_href = rollsbar_setting( 'phone_href', '+79786882288' );
 		<div class="rollsbar-site-menu__head"><strong>Rolls Bar</strong><button class="rollsbar-site-menu__close" type="button" aria-label="Закрыть меню" data-rollsbar-menu-close>×</button></div>
 		<nav class="rollsbar-site-menu__links" aria-label="Разделы сайта">
 			<a href="<?php echo esc_url( home_url( '/#rolls' ) ); ?>">Меню</a>
+			<a href="<?php echo esc_url( home_url( '/aktsii/' ) ); ?>">Акции</a>
 			<a href="<?php echo esc_url( home_url( '/#delivery' ) ); ?>">Доставка и оплата</a>
 			<a href="<?php echo esc_url( home_url( '/#contacts' ) ); ?>" data-rollsbar-menu-contacts>Контакты</a>
 			<a href="<?php echo esc_url( home_url( '/rabota-v-rolls-bar/' ) ); ?>">Работа в Rolls Bar</a>
