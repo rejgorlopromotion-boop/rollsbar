@@ -34,7 +34,7 @@ jobs:
           echo "::add-mask::$ISP_MANAGER_USER"
           echo "::add-mask::$ISP_MANAGER_PASSWORD"
 
-      - name: Add second WooCommerce recipient and send one staging test order
+      - name: Persist dual WooCommerce recipients and test in a fresh process
         shell: bash
         env:
           ISP_MANAGER_URL: ${{ secrets.ISP_MANAGER_URL }}
@@ -56,30 +56,32 @@ jobs:
           if not host:
               raise SystemExit('Could not derive staging host')
 
-          script_name = '.rollsbar-email-recipient-test.php'
-          script = r'''<?php
-          if ( 'staging' !== wp_get_environment_type() ) {
-              fwrite(STDERR, "not_staging\n");
-              exit(2);
-          }
-          if ( ! function_exists('wc_create_order') || ! class_exists('WooCommerce') ) {
-              fwrite(STDERR, "woocommerce_missing\n");
-              exit(3);
-          }
+          config_name = '.rollsbar-email-recipient-config.php'
+          test_name = '.rollsbar-email-recipient-test.php'
 
+          config_php = r'''<?php
+          if ( 'staging' !== wp_get_environment_type() ) { exit(2); }
           $recipient = 'tilaninishi12754@gmail.com,rolls.bar.zakaz@yandex.ru';
           $settings = get_option('woocommerce_new_order_settings', array());
           if ( ! is_array($settings) ) { $settings = array(); }
           $settings['enabled'] = 'yes';
           $settings['recipient'] = $recipient;
           update_option('woocommerce_new_order_settings', $settings, false);
-
           $saved = get_option('woocommerce_new_order_settings', array());
           $saved_recipient = is_array($saved) ? (string)($saved['recipient'] ?? '') : '';
           echo 'saved_recipient=' . $saved_recipient . "\n";
-          if ( $saved_recipient !== $recipient ) {
-              fwrite(STDERR, "recipient_readback_failed\n");
-              exit(4);
+          if ( $saved_recipient !== $recipient ) { exit(3); }
+          ?>'''
+
+          test_php = r'''<?php
+          if ( 'staging' !== wp_get_environment_type() ) { exit(2); }
+          if ( ! function_exists('wc_create_order') || ! class_exists('WooCommerce') ) { exit(3); }
+
+          $settings = get_option('woocommerce_new_order_settings', array());
+          $saved_recipient = is_array($settings) ? (string)($settings['recipient'] ?? '') : '';
+          echo 'fresh_process_recipient=' . $saved_recipient . "\n";
+          if ( false === stripos($saved_recipient, 'tilaninishi12754@gmail.com') || false === stripos($saved_recipient, 'rolls.bar.zakaz@yandex.ru') ) {
+              throw new RuntimeException('recipient_setting_incomplete');
           }
 
           $mail_ok = false;
@@ -99,16 +101,10 @@ jobs:
           }, 999, 1);
 
           $products = wc_get_products(array('status' => 'publish', 'limit' => 1, 'return' => 'objects'));
-          if ( empty($products) ) {
-              fwrite(STDERR, "no_product\n");
-              exit(5);
-          }
+          if ( empty($products) ) { exit(4); }
 
           $order = wc_create_order();
-          if ( is_wp_error($order) ) {
-              fwrite(STDERR, "order_create_failed\n");
-              exit(6);
-          }
+          if ( is_wp_error($order) ) { exit(5); }
           $order->add_product($products[0], 1);
           $order->set_billing_first_name('Тест');
           $order->set_billing_last_name('RollsBar recipients');
@@ -122,18 +118,15 @@ jobs:
 
           try {
               $emails = WC()->mailer()->get_emails();
-              if ( empty($emails['WC_Email_New_Order']) ) {
-                  throw new RuntimeException('new_order_email_missing');
-              }
+              if ( empty($emails['WC_Email_New_Order']) ) { throw new RuntimeException('new_order_email_missing'); }
+              echo 'woo_recipient=' . $emails['WC_Email_New_Order']->get_recipient() . "\n";
               $emails['WC_Email_New_Order']->trigger($order_id, $order);
               echo 'test_order_id=' . $order_id . "\n";
               echo 'wp_mail_succeeded=' . ($mail_ok ? 'yes' : 'no') . "\n";
               echo 'wp_mail_failed=' . ($mail_failed ? 'yes' : 'no') . "\n";
               echo 'mail_to=' . $mail_to . "\n";
               echo 'mail_subject=' . $mail_subject . "\n";
-              if ( ! $mail_ok || $mail_failed ) {
-                  throw new RuntimeException('send_failed');
-              }
+              if ( ! $mail_ok || $mail_failed ) { throw new RuntimeException('send_failed'); }
               if ( false === stripos($mail_to, 'tilaninishi12754@gmail.com') || false === stripos($mail_to, 'rolls.bar.zakaz@yandex.ru') ) {
                   throw new RuntimeException('both_recipients_not_present');
               }
@@ -155,9 +148,10 @@ jobs:
           try:
               sftp = client.open_sftp()
               try:
-                  with sftp.open(script_name, 'w') as fh:
-                      fh.write(script.encode('utf-8'))
-                  sftp.chmod(script_name, 0o600)
+                  for name, body in ((config_name, config_php), (test_name, test_php)):
+                      with sftp.open(name, 'w') as fh:
+                          fh.write(body.encode('utf-8'))
+                      sftp.chmod(name, 0o600)
               finally:
                   sftp.close()
 
@@ -166,7 +160,10 @@ jobs:
           WP_PATH="$HOME/www/staging.rollsbar.ru"
           [[ "$(wp --path="$WP_PATH" eval 'echo wp_get_environment_type();')" == "staging" ]]
           [[ "$(wp --path="$WP_PATH" plugin get rollsbar-core --field=status)" == "active" ]]
-          wp --path="$WP_PATH" eval-file "$HOME/{script_name}"
+          echo "=== PERSIST + READBACK ==="
+          wp --path="$WP_PATH" eval-file "$HOME/{config_name}"
+          echo "=== FRESH PROCESS SEND ==="
+          wp --path="$WP_PATH" eval-file "$HOME/{test_name}"
           '''
               _, stdout, stderr = client.exec_command('bash -lc ' + shlex.quote(remote), timeout=300)
               out = stdout.read().decode('utf-8', errors='replace').strip()
@@ -184,10 +181,11 @@ jobs:
               try:
                   sftp = client.open_sftp()
                   try:
-                      try:
-                          sftp.remove(script_name)
-                      except FileNotFoundError:
-                          pass
+                      for name in (config_name, test_name):
+                          try:
+                              sftp.remove(name)
+                          except FileNotFoundError:
+                              pass
                   finally:
                       sftp.close()
               except Exception:
