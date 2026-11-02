@@ -1,16 +1,17 @@
 # Rolls Bar — current-launch go-live decision matrix
 
-Updated: 2026-10-14
+Updated: 2026-11-02
 
 ## Purpose
 This matrix is the current launch decision layer. It follows the latest explicit owner/client decisions over older TЗ/checkpoint wording when they conflict. Historical implementation evidence remains in `wordpress/docs/CURRENT_STATE.md` and Git/CI history.
 
 Before any consequential implementation or production change, re-read live GitHub/CI/runtime evidence.
 
-## Latest owner/client decisions — 2026-10-14
+## Latest owner/client decisions — 2026-11-02
 - Telegram is **no longer required for launch**. The client explicitly replaced Telegram order alerts with **MAX**.
 - MAX feasibility is confirmed from the current official MAX Bot API, but the Rolls Bar MAX integration is **not implemented or end-to-end verified yet**.
-- Staging WooCommerce `New order` e-mail is now **END-TO-END READY**: authenticated Gmail SMTP was configured and order №279 was successfully received by the owner in Gmail.
+- Staging WooCommerce `New order` e-mail is **END-TO-END READY** through authenticated Gmail SMTP; order №279 was successfully received by the owner in Gmail.
+- On 2026-11-02 the owner added `rolls.bar.zakaz@yandex.ru` as a second `New order` recipient while keeping `tilaninishi12754@gmail.com` as the authenticated Gmail SMTP sender and first recipient. Fresh-process staging verification run `41418406683` sent test order №375 to both configured addresses without a local mail error; human receipt confirmation on the Yandex mailbox is still pending.
 - The client supplied a delivery-tier table with thresholds 1200 / 1500 / 2000 / 2500 / 3000 / 3500 / 4000 RUB. The table is useful source data but is **not exact polygon geometry**.
 - Vacancy questionnaire remains deferred; no new vacancy input is required now.
 - Yandex Metrica remains separate/deferred work. Online acquiring remains a later phase.
@@ -59,7 +60,20 @@ End-to-end proof:
 - temporary order cleanup = PASS;
 - the owner explicitly confirmed the message actually arrived in Gmail.
 
-Status: **READY on staging**.
+Dual-recipient update on 2026-11-02:
+- WooCommerce `New order` recipients are now `tilaninishi12754@gmail.com, rolls.bar.zakaz@yandex.ru`;
+- sender/SMTP transport remains the existing authenticated Gmail account;
+- no Yandex SMTP credentials are needed while the Yandex mailbox is receive-only;
+- fresh-process verification run `41418406683` = PASS;
+- test order №375;
+- `woo_recipient` contained both addresses;
+- `wp_mail_succeeded=yes`;
+- `wp_mail_failed=no`;
+- `mail_to` contained both addresses;
+- temporary order cleanup = PASS;
+- actual mailbox receipt on `rolls.bar.zakaz@yandex.ru` still needs one human confirmation to call the second recipient end-to-end proven.
+
+Status: **READY on staging for the proven Gmail path; dual-recipient configuration is active and send-level verified, with Yandex receipt confirmation pending.**
 
 Before production cutover, replace sender/recipient only if the client approves different production mailboxes. If changed, run one targeted production-like receipt proof after cutover.
 
@@ -153,7 +167,7 @@ The earlier Telegram implementation remains historical code/evidence only. It is
 
 ## External inputs actually missing now
 For the current first launch:
-1. **Email:** no further staging input is required; authenticated SMTP delivery to Gmail is end-to-end proven. Final production sender/recipient only needs client confirmation if it should differ from the staging address.
+1. **Email:** no further staging credential input is required. Authenticated SMTP delivery to Gmail is end-to-end proven and the second Yandex recipient is configured/send-level verified. One human receipt confirmation on the Yandex mailbox will close that recipient end-to-end.
 2. **MAX:** verified business/IP/self-employed MAX profile + created/moderated bot + secure bot token + destination `user_id`/`chat_id` for real staging delivery proof.
 3. **Delivery:** clarification only for the subset of spreadsheet rows that remain ambiguous after normalization; do not ask the client to redraw every zone before this analysis is done.
 
