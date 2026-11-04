@@ -1,9 +1,17 @@
 # RollsBar Issue Register
 
 Status owner: RollsBar Coordinator
-Last updated: 2026-11-01
+Last updated: 2026-11-05
 
 This file is the durable source of truth for unresolved / deferred RollsBar defects and follow-up work. New confirmed issues should be recorded here instead of living only in chat. Do not reopen items marked DONE without new evidence.
+
+## RB-032 - Shared staging Gmail SMTP authentication rejected
+
+Status: OPEN - P1, external credential blocker. Gmail returns535 5.7.8 Username and Password not accepted; TLS connection itself works. Read-only probe41917708709. Existing staging secret matches the deployed password after removing display spaces (comparison41918525371), so no newer working credential is available. Owner must update the Gmail application password in staging environment secret ROLLSBAR_SMTP_APP_PASSWORD; then backed-up configuration update, SMTP authentication and existing application392 retry are required. No new Woo order or diagnostic message. Earlier October email readiness is historical pending restoration. Do not bypass SMTP or change recipients to manufacture PASS. See CAREER_FORM_2026-11-05.md.
+
+## RB-031 - Native career questionnaire and readable footer logo
+
+Status: STAGING UI / REGRESSION PASS - email blocked by RB-032; not DONE. Application0705edbd44001177fd2d315b716bc7e066d27610, fresh backup20261104T211831Z, apply41914721082: native private candidate storage, editable published establishment addresses, required consent and phone validation, queue/retry integration PASS; browser36/36 PASS. All97 artifact PNGs inspected. One marked test application392 saved; mail failed after3 bounded attempts. Receipt backend_verified; prior fully accepted marker unchanged. Footer logo also published to GitHub demo via separate two-file main commita202476c62cf767f5ff97386800f67c685fc3b35, Pages41915313815 PASS, desktop/mobile inspected. Production untouched. See CAREER_FORM_2026-11-05.md and JSON.
 
 ## RB-030 - Preliminary shipping label after manual address edit
 

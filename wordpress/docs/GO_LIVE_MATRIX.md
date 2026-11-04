@@ -1,5 +1,9 @@
 # Rolls Bar — current-launch go-live decision matrix
 
+## Current update 2026-11-05 - staging email blocked
+
+Gmail SMTP currently rejects authentication with535 5.7.8 BadCredentials. The older October successful-delivery evidence below is historical, not current readiness. The existing staging secret matches the deployed password after removing display spaces; owner must supply a regenerated application password through the staging GitHub environment secret. See RB-032 and CAREER_FORM_2026-11-05.md. Career form and private storage are deployed and browser verified, but email/final release remain unaccepted. No new order or production operation was performed.
+
 Updated: 2026-10-14
 
 ## Purpose

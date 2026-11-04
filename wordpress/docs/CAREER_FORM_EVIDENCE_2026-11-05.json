@@ -1,0 +1,55 @@
+{
+  "status": "BLOCKED_SMTP_AUTH",
+  "application_sha": "0705edbd44001177fd2d315b716bc7e066d27610",
+  "application_tree_unchanged_after_diagnostics": true,
+  "apply_run": 41914721082,
+  "fresh_backup": "20261104T211831Z",
+  "receipt_phase": "backend_verified",
+  "last_accepted_marker": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+  "browser_checks": {
+    "careers/evidence.json": {
+      "status": "PASS",
+      "count": 5
+    },
+    "storefront-ux-staging/original-browser.json": {
+      "status": "PASS",
+      "count": 5
+    },
+    "storefront-ux-staging/browser.json": {
+      "status": "PASS",
+      "count": 5
+    },
+    "storefront-ux-staging/interaction/browser.json": {
+      "status": "PASS",
+      "count": 6
+    },
+    "address-complete/evidence.json": {
+      "status": "PASS",
+      "count": 5
+    },
+    "mobile-feedback/evidence.json": {
+      "status": "PASS",
+      "count": 5
+    },
+    "promotions/evidence.json": {
+      "status": "PASS",
+      "count": 5
+    }
+  },
+  "screenshots_reviewed": 97,
+  "screenshot_manifest": "11d7e64f18b0cd75fb446f08533c9da1c2d2a451fa9e62fef2b837dec5d02876",
+  "single_test_application": 392,
+  "mail_status": "failed",
+  "mail_attempts": 3,
+  "mail_smtp_reply": "535 5.7.8 Username and Password not accepted",
+  "smtp_diagnostic_run": 41917708709,
+  "secret_comparison_run": 41918525371,
+  "secret_matches_after_removing_display_spaces": true,
+  "recipient": "stroy_business24@mail.ru",
+  "github_demo_sha": "a202476c62cf767f5ff97386800f67c685fc3b35",
+  "github_pages_run": 41915313815,
+  "github_demo_desktop_mobile": "PASS, both screenshots inspected",
+  "production_access": false,
+  "production_mutation": false,
+  "orders_created": 0
+}
