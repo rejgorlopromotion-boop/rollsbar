@@ -695,6 +695,34 @@
 
 // Careers: fixed layout, editable vacancy content.
 (function(){
+	var form=document.querySelector('[data-career-form]');
+	if(form){
+		var city=form.querySelector('[data-career-city]'), location=form.querySelector('[data-career-location]'), phone=form.querySelector('[data-career-phone]'), submit=form.querySelector('[type=submit]');
+		function filterLocations(){
+			var available=[];
+			Array.from(location.options).forEach(function(option){if(!option.value)return;option.hidden=option.dataset.city!==city.value;option.disabled=option.hidden;if(!option.hidden)available.push(option);});
+			if(!location.selectedOptions.length||location.selectedOptions[0].disabled)location.value='';
+			if(available.length===1)location.value=available[0].value;
+		}
+		filterLocations();city.addEventListener('change',filterLocations);
+		function checkPhone(){
+			var digits=phone.value.replace(/\D/g,'');
+			if(digits[0]==='8'||digits[0]==='7'){digits='7'+digits.slice(1);phone.value='+'+digits;}
+			if(digits.length===10&&digits[0]!=='7'){digits='7'+digits;phone.value='+'+digits;}
+			phone.setCustomValidity(/^7\d{10}$/.test(digits)&&! /^(.)\1{9}$/.test(digits.slice(1))?'':'Укажите номер телефона: +7 и 10 цифр.');
+		}
+		function clearError(field){var label=field.closest('label');if(!label)return;label.classList.remove('rb-career-invalid');var error=label.querySelector('.rb-career-error');if(error)error.remove();field.removeAttribute('aria-invalid');field.removeAttribute('aria-describedby');}
+		form.addEventListener('invalid',function(e){
+			var field=e.target,label=field.closest('label');if(!label)return;clearError(field);label.classList.add('rb-career-invalid');field.setAttribute('aria-invalid','true');
+			var error=document.createElement('span');error.className='rb-career-error';error.id='rb-career-error-'+field.name;error.textContent=field.name==='consent'?'Отметьте согласие на обработку персональных данных.':field.validationMessage;label.appendChild(error);field.setAttribute('aria-describedby',error.id);
+		},true);
+		form.addEventListener('input',function(e){clearError(e.target);if(e.target===phone)checkPhone();});
+		form.addEventListener('change',function(e){clearError(e.target);});
+		form.addEventListener('submit',function(){submit.disabled=true;submit.textContent='Отправляем…';});
+		window.addEventListener('pageshow',function(){submit.disabled=false;submit.textContent='Отправить анкету';});
+		var apply=document.querySelector('[data-career-apply]');if(apply)apply.addEventListener('click',function(){setTimeout(function(){city.focus({preventScroll:true});},0);});
+		var status=document.querySelector('[data-career-status]');if(status)status.focus();
+	}
 	var tabs=document.querySelector('[data-rb-vacancy-tabs]');
 	if(tabs){
 		tabs.addEventListener('click',function(e){

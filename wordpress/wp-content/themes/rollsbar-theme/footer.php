@@ -6,9 +6,7 @@ $footer_city = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'city' 
 $footer_address = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'address' ) : '';
 $footer_vk = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'vk_url' ) : '';
 $footer_telegram = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'telegram_url' ) : '';
-$footer_logo_id = (int) get_theme_mod( 'custom_logo' );
-$footer_logo = $footer_logo_id ? wp_get_attachment_image_url( $footer_logo_id, 'full' ) : false;
-$footer_logo = $footer_logo ?: get_template_directory_uri() . '/assets/images/header-logo.png';
+$footer_logo = get_template_directory_uri() . '/assets/images/footer-logo.svg';
 // Approved seller presentation uses the same editable phone, with parentheses.
 $footer_seller_phone = preg_replace( '/^\+7 (\d{3}) /u', '+7 ($1) ', $footer_phone_display );
 // Keep the approved local grammatical form without retaining a stale city after editing.

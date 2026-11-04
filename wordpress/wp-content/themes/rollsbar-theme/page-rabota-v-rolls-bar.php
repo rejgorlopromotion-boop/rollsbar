@@ -22,12 +22,16 @@ $phone_display = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'phon
 $phone_href    = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'phone_href', '+79786882288' ) : '+79786882288';
 $telegram_url  = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'telegram_url', 'https://telegram.me/rollsbar82' ) : 'https://telegram.me/rollsbar82';
 $vk_url        = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'vk_url', 'https://vk.ru/rollsbar82' ) : 'https://vk.ru/rollsbar82';
+$locations = RollsBar_Vacancy_Page::locations();
+$cities = array_unique( array_column( $locations, 'city' ) );
+$status = isset( $_GET['application'] ) ? sanitize_key( wp_unslash( $_GET['application'] ) ) : '';
+$messages = array( 'received' => 'Спасибо! Анкета получена. Мы свяжемся с вами по указанному телефону.', 'invalid' => 'Проверьте обязательные поля: город, адрес заведения, направление, имя, телефон и согласие.', 'expired' => 'Обновите страницу и отправьте анкету ещё раз: время заполнения формы истекло.', 'rate' => 'Вы уже отправили несколько анкет. Попробуйте позже или позвоните нам.', 'error' => 'Не удалось сохранить анкету. Попробуйте ещё раз или позвоните нам.' );
 ?>
 
 <section class="rb-career-hero">
 	<div class="rollsbar-shell rb-career-hero__inner">
 		<h1>Присоединяйся<br>к команде Rolls Bar</h1>
-		<p>Актуальные вакансии управляются через админку WordPress: заказчик может добавлять и убирать позиции, не меняя дизайн страницы.</p>
+		<p>Выбери направление и заполни анкету — обсудим работу в команде Rolls Bar.</p>
 
 		<div class="rb-career-art" aria-hidden="true">
 			<div class="rb-career-arc">и всё закрутится</div>
@@ -73,23 +77,40 @@ $vk_url        = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'vk_u
 		<?php else : ?>
 			<article class="rb-vacancy-card rb-vacancy-card--empty">
 				<h3>Сейчас активных вакансий нет</h3>
-				<p>Когда заказчик опубликует вакансию в разделе Rolls Bar → Вакансии, она появится здесь автоматически.</p>
+				<p>Оставь анкету — мы сможем связаться с тобой и обсудить подходящие вакансии.</p>
 			</article>
 		<?php endif; ?>
 	</div>
 </section>
 
-<?php
-/*
- * Final questionnaire wording and receiving channel are a documented pending
- * client input. Fail closed: do not expose a technical placeholder, invented
- * questions or a dead application CTA on the public site. Existing approved
- * contact routes remain available below. The real questionnaire can be added
- * later without changing the vacancy content model or page layout contract.
- */
-?>
+<section class="rollsbar-shell rb-career-section rb-career-form-section" id="vacancy-form" aria-labelledby="rb-career-form-title">
+ <div class="rb-questionnaire">
+  <h2 id="rb-career-form-title">Заполни небольшую анкету</h2>
+  <p>Оставь свои контакты — мы свяжемся с тобой и обсудим детали.</p>
+  <?php if ( isset( $messages[ $status ] ) ) : ?><div class="rb-career-status" role="<?php echo 'received' === $status ? 'status' : 'alert'; ?>" tabindex="-1" data-career-status><?php echo esc_html( $messages[ $status ] ); ?></div><?php endif; ?>
+  <?php if ( $locations ) : ?>
+  <form class="rb-career-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" data-career-form>
+   <input type="hidden" name="action" value="rollsbar_career_apply">
+   <?php wp_nonce_field( 'rollsbar_career_apply', 'career_nonce', false ); ?>
+   <input type="hidden" name="application_token" value="<?php echo esc_attr( wp_generate_uuid4() ); ?>">
+   <label class="rb-career-field rb-career-wide">Город <select name="city" autocomplete="address-level2" required data-career-city><?php foreach ( $cities as $city ) : ?><option value="<?php echo esc_attr( $city ); ?>"><?php echo esc_html( $city ); ?></option><?php endforeach; ?></select></label>
+   <label class="rb-career-field rb-career-wide">Адрес заведения <select name="location" required data-career-location><option value="">Выберите адрес заведения</option><?php foreach ( $locations as $id => $location ) : ?><option value="<?php echo esc_attr( $id ); ?>" data-city="<?php echo esc_attr( $location['city'] ); ?>"><?php echo esc_html( $location['address'] ); ?></option><?php endforeach; ?></select></label>
+   <label class="rb-career-field rb-career-wide">Направление <select name="position" required><option value="">Выберите направление</option><option value="kitchen">Кухня и касса</option><option value="delivery">Доставка</option><option value="other">Другое / уточнить</option></select></label>
+   <label class="rb-career-field rb-career-wide">Номер телефона <input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 978 123-45-67" maxlength="24" required data-career-phone></label>
+   <label class="rb-career-field">Имя <input name="name" type="text" autocomplete="given-name" maxlength="80" required></label>
+   <label class="rb-career-field">Фамилия <span class="rb-career-optional">— по желанию</span><input name="surname" type="text" autocomplete="family-name" maxlength="100"></label>
+   <label class="rb-career-field rb-career-wide">Дата рождения <span class="rb-career-optional">— по желанию</span><input name="birthday" type="date" autocomplete="bday" min="1900-01-01" max="<?php echo esc_attr( current_time( 'Y-m-d' ) ); ?>"></label>
+   <label class="rb-career-field rb-career-wide">Комментарий <span class="rb-career-optional">— по желанию</span><textarea name="comment" rows="3" maxlength="3000"></textarea></label>
+   <label class="rb-career-consent rb-career-wide"><input name="consent" type="checkbox" value="1" required><span>Даю согласие на <a href="<?php echo esc_url( home_url( '/politika-konfidencialnosti/' ) ); ?>" target="_blank" rel="noopener">обработку персональных данных</a> для рассмотрения анкеты и связи по вопросам трудоустройства.</span></label>
+   <label class="rb-career-honeypot" aria-hidden="true">Ваш сайт <input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+   <button class="rb-career-submit rb-career-wide" type="submit">Отправить анкету</button>
+  </form>
+  <?php else : ?><p>Чтобы оставить анкету, позвони нам: <a href="tel:<?php echo esc_attr( $phone_href ); ?>"><?php echo esc_html( $phone_display ); ?></a>.</p><?php endif; ?>
+ </div>
+</section>
 
-<nav class="rb-career-actions rb-career-actions--contacts-only" style="width:min(150px,calc(100% - 26px));grid-template-columns:58px 58px;justify-content:center;" aria-label="Связаться по вакансии">
+<nav class="rb-career-actions" aria-label="Связаться по вакансии">
+	<a class="rb-career-actions__apply" href="#vacancy-form" data-career-apply>Заполнить анкету</a>
 	<button class="rb-career-actions__round" type="button" data-rb-career-chat aria-label="Написать">💬</button>
 	<a class="rb-career-actions__round" href="tel:<?php echo esc_attr( $phone_href ); ?>" aria-label="Позвонить">☎</a>
 </nav>
@@ -98,7 +119,7 @@ $vk_url        = function_exists( 'rollsbar_setting' ) ? rollsbar_setting( 'vk_u
 	<button class="rb-career-chat__backdrop" type="button" data-rb-career-chat-close aria-label="Закрыть"></button>
 	<section class="rb-career-chat__panel" role="dialog" aria-modal="true" aria-label="Связаться с Rolls Bar">
 		<h3>Связаться с Rolls Bar</h3>
-		<p>Пока один приоритетный канал по вакансиям не утверждён, показываем уже используемые контакты.</p>
+		<p>Напиши нам или позвони, чтобы узнать о работе в команде.</p>
 		<div class="rb-career-chat__links">
 			<?php if ( $telegram_url ) : ?><a href="<?php echo esc_url( $telegram_url ); ?>" target="_blank" rel="noopener">Telegram</a><?php endif; ?>
 			<?php if ( $vk_url ) : ?><a href="<?php echo esc_url( $vk_url ); ?>" target="_blank" rel="noopener">VK</a><?php endif; ?>
