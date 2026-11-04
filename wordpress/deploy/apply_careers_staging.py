@@ -70,7 +70,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--phase',choices=['apply','finalize','inspect','manifest','probe-mail'],required=True);args=p.parse_args()
  if args.phase=='manifest':print(manifest());return
  sha=transport.release_sha();scope();(OUT/'careers').mkdir(parents=True,exist_ok=True)
- script=('wp_cmd eval '+shlex.quote((ROOT/'wordpress/deploy/probe-career-mail.php').read_text(encoding='utf8').removeprefix('<?php'))) if args.phase=='probe-mail' else apply(sha) if args.phase=='apply' else finalize(sha) if args.phase=='finalize' else f'cat "{RECEIPT}" 2>/dev/null || true\ncat "$HOME/.rollsbar-staging-deployed-sha"\ngit -C "$PROJECT_ROOT" rev-parse HEAD\n'
+ script=('wp_cmd eval '+shlex.quote((ROOT/'wordpress/deploy/probe-career-mail.php').read_text(encoding='utf8').removeprefix('<?php').replace('EXPECTED_PASSWORD_HASH',hashlib.sha256(os.environ.get('ROLLSBAR_SMTP_APP_PASSWORD','').encode()).hexdigest()).replace('EXPECTED_NORMALIZED_PASSWORD_HASH',hashlib.sha256(''.join(os.environ.get('ROLLSBAR_SMTP_APP_PASSWORD','').split()).encode()).hexdigest()))) if args.phase=='probe-mail' else apply(sha) if args.phase=='apply' else finalize(sha) if args.phase=='finalize' else f'cat "{RECEIPT}" 2>/dev/null || true\ncat "$HOME/.rollsbar-staging-deployed-sha"\ngit -C "$PROJECT_ROOT" rev-parse HEAD\n'
  output=transport.execute(script);(OUT/'careers'/(args.phase+'.log')).write_text(output,encoding='utf8')
  if args.phase=='apply':
   if 'CAREERS_BACKEND_PASS' not in output:raise RuntimeError('Missing receipt')
