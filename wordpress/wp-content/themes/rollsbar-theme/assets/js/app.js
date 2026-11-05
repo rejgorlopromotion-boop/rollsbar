@@ -688,7 +688,7 @@
 	// contain only changed targets and cannot identify the current short section.
 	links=links.filter(function(link){return sections.some(function(section){return link.hash==='#'+section.id;});});
 	var track=nav.querySelector('.rollsbar-category-nav__scroll'),pending=false,current='';
-	function readingLine(){return (parseFloat(getComputedStyle(nav).top)||0)+nav.getBoundingClientRect().height+16;}
+	function readingLine(){return (parseFloat(getComputedStyle(nav).top)||0)+nav.getBoundingClientRect().height+48;}
 	function heading(section){return section.querySelector('h2')||section;}
 	function updateCategory(){
 		pending=false;if(!sections.length)return;

@@ -30,6 +30,11 @@ async function run(engine,name){
   await combo.click();await expect(combo).toHaveAttribute('aria-current','location');
   await sets.click();await expect(sets).toHaveAttribute('aria-current','location');
   await combo.click();await expect(combo).toHaveClass('active');
+  // Original video at6s: Sets heading is roughly27px below the sticky bar.
+  await page.locator('#sets h2').evaluate(n=>{const nav=document.querySelector('.rollsbar-category-nav');window.scrollTo({top:scrollY+n.getBoundingClientRect().top-(parseFloat(getComputedStyle(nav).top)+nav.offsetHeight+27),behavior:'instant'});});
+  await expect(sets).toHaveAttribute('aria-current','location');
+  await page.screenshot({path:`${out}/${name}-${width}-video-replay.png`});
+  await combo.click();await expect(combo).toHaveClass('active');
   // Replay the reported down/up transition using wheel movement, then pause in each category.
   await page.mouse.move(width/2,500);
   const distance=await page.locator('#sets h2').evaluate(n=>n.getBoundingClientRect().top)-200;
