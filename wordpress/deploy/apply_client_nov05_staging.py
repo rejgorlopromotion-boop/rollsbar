@@ -1,5 +1,5 @@
 """Client checklist presentation/phone release. Email readiness stays deferred."""
-import argparse,hashlib,json,os,shlex,subprocess
+import argparse,hashlib,json,os,re,shlex,subprocess
 from pathlib import Path
 import apply_client_media_staging as t
 from apply_storefront_ux_staging import verify
@@ -14,6 +14,19 @@ BUSINESS=t.BUSINESS_PHP.replace("unset($d['image_id'],$d['date_modified'],$d['da
 def scope():
  paths=subprocess.check_output(['git','diff','--name-only',BASE,'--',t.THEME,t.PLUGIN],cwd=ROOT,text=True).splitlines()
  if sorted(paths)!=sorted(CHANGED):raise ValueError('Unexpected application scope')
+def release_identity(phase):
+ sha=os.environ.get('ROLLSBAR_DEPLOY_SHA','');head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+ if sha==head:return t.release_sha()
+ if phase not in ['inspect','finalize'] or not re.fullmatch('[0-9a-f]{40}',sha) or os.environ.get('GITHUB_REF_NAME')!=t.BRANCH:raise ValueError('Application override is read-only/finalization only')
+ # A tooling-only fix may finalize the already proven application. Never stamp
+ # a new app revision with evidence from an older revision or rewrite proof JSON.
+ changed=subprocess.check_output(['git','diff','--name-only',sha,head],cwd=ROOT,text=True).splitlines()
+ allowed={'.github/workflows/deploy-reg-ru-staging-wordpress.yml','wordpress/deploy/apply_client_nov05_staging.py'}
+ if any(p not in allowed and not p.startswith('wordpress/docs/') for p in changed):raise ValueError('Only finalization tooling/documentation may differ')
+ paths=subprocess.check_output(['git','ls-tree','-r','--name-only',sha,'--',t.PLUGIN,t.THEME,'wordpress/data/client-2026-11-05','wordpress/data/catalog.json'],cwd=ROOT,text=True).splitlines()
+ for path in paths:
+  if subprocess.check_output(['git','show',sha+':'+path],cwd=ROOT)!=(ROOT/path).read_bytes():raise ValueError('Application/data byte mismatch: '+path)
+ return sha
 def inspect(sha):
  return f'''echo CLIENT_NOV05_INSPECT_BEGIN
 git -C "$PROJECT_ROOT" rev-parse HEAD
@@ -74,7 +87,8 @@ def finalize(sha):
   proof=json.loads((OUT.parent/path).read_text(encoding='utf8'))
   if proof.get('status')!='PASS' or proof.get('release_sha')!=sha or len(proof.get('checks',[]))!=count:raise ValueError('Missing regression: '+path)
  if os.environ.get('ROLLSBAR_REVIEWED_MANIFEST')!=manifest():raise ValueError('Screenshot review required')
- return f'''[[ "$(git -C "$PROJECT_ROOT" rev-parse HEAD)" == {sha} ]]
+ return f'''export WP_PATH PROJECT_ROOT
+[[ "$(git -C "$PROJECT_ROOT" rev-parse HEAD)" == {sha} ]]
 {t.code_hash_guard(sha,changed=CHANGED,base=BASE)}
 grep -qx 'release={sha}' "{RECEIPT}"
 grep -qx 'phase=backend_verified' "{RECEIPT}"
@@ -87,7 +101,7 @@ echo CLIENT_NOV05_SCOPED_RELEASE_PASS_EMAIL_REMAINS_DEFERRED
 def main():
  p=argparse.ArgumentParser();p.add_argument('--phase',choices=['inspect','apply','manifest','finalize'],required=True);a=p.parse_args();OUT.mkdir(parents=True,exist_ok=True)
  if a.phase=='manifest':print(manifest());return
- sha=t.release_sha();scope();output=t.execute(inspect(sha) if a.phase=='inspect' else apply(sha) if a.phase=='apply' else finalize(sha))
+ sha=release_identity(a.phase);scope();output=t.execute(inspect(sha) if a.phase=='inspect' else apply(sha) if a.phase=='apply' else finalize(sha))
  (OUT/(a.phase+'.log')).write_text(output,encoding='utf8')
  if a.phase=='apply':
   target=OUT.parent/'storefront-ux-staging';target.mkdir(exist_ok=True)
