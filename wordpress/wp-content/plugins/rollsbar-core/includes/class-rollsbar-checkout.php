@@ -17,6 +17,7 @@ final class RollsBar_Checkout {
 
 	private const FIELD_PREFIX = 'rollsbar/';
 	private static array $contact_template_buffers = array();
+	private static bool $phone_draft_request = false;
 
 	public static function init(): void {
 		add_action( 'init', array( __CLASS__, 'canonical_staging_host' ), -100 );
@@ -67,6 +68,7 @@ final class RollsBar_Checkout {
 	}
 
 	public static function clear_completed_note( $response, $handler, $request ) {
+		self::$phone_draft_request = false;
 		if ( 'POST' !== $request->get_method() || ! preg_match( '#^/wc/store/v[0-9]+/checkout$#', $request->get_route() ) || is_wp_error( $response ) || ! $response instanceof WP_REST_Response ) { return $response; }
 		$data = $response->get_data();
 		if ( is_array( $data ) && $response->get_status() >= 200 && $response->get_status() < 300 && ! empty( $data['order_id'] ) && 'success' === ( $data['payment_result']['payment_status'] ?? '' ) && WC()->session ) {
@@ -161,7 +163,9 @@ final class RollsBar_Checkout {
 		unset( $country );
 		$digits = preg_replace( '/\D/', '', (string) $phone );
 		// Requiredness stays with Woo. A prefix is not a complete contact number.
-		return $valid && ( '' === trim( (string) $phone ) || ( strlen( $digits ) >= 10 && strlen( $digits ) <= 15 ) );
+		// Woo autosaves while the customer edits a country code. Completeness is
+		// mandatory for the actual checkout POST, not intermediate cart/PUT drafts.
+		return $valid && ( '' === trim( (string) $phone ) || ( ( self::$phone_draft_request || strlen( $digits ) >= 10 ) && strlen( $digits ) <= 15 ) );
 	}
 
 	/** Same contract is consumed by Blocks countryData and Store API validation. */
@@ -212,6 +216,7 @@ final class RollsBar_Checkout {
 	/** Runs before REST schema validation; keeps the native endpoint and payload. */
 	public static function prepare_store_request( $result, $server, $request ) {
 		unset( $server );
+		self::$phone_draft_request = ( 'PUT' === $request->get_method() && preg_match( '#^/wc/store/v[0-9]+/checkout$#', $request->get_route() ) ) || ( 'POST' === $request->get_method() && preg_match( '#^/wc/store/v[0-9]+/cart/update-customer$#', $request->get_route() ) );
 		if ( ! in_array( $request->get_method(), array( 'POST', 'PUT' ), true ) || ! preg_match( '#^/wc/store/v[0-9]+/(checkout|cart/update-customer)$#', $request->get_route() ) ) {
 			return $result;
 		}

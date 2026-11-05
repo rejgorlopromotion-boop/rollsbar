@@ -6,6 +6,12 @@ $valid=['location'=>$id,'city'=>$locations[$id]['city'],'name'=>'QA TEMP — н�
 $phones=['+79781234567','+44 20 7946 0958','+380501234567','+1 (202) 555-0123','+995555123456'];
 foreach($phones as $phone){$data=RollsBar_Vacancy_Page::validate(array_replace($valid,['phone'=>$phone]));nov05_assert(!is_wp_error($data)&&$data['phone']===$phone,'Career international phone changed');nov05_assert(WC_Validation::is_phone($phone,'RU'),'Native Woo international phone rejected');}
 foreach(['+7','abc1234567890','++442079460958',str_repeat('1',16),['array']] as $phone)nov05_assert(is_wp_error(RollsBar_Vacancy_Page::validate(array_replace($valid,['phone'=>$phone]))),'Invalid career phone accepted');
+foreach([['PUT','/wc/store/v1/checkout',true],['POST','/wc/store/v1/cart/update-customer',true],['POST','/wc/store/v1/checkout',false]] as [$method,$route,$draft]){
+ $request=new WP_REST_Request($method,$route);RollsBar_Checkout::prepare_store_request(null,null,$request);
+ nov05_assert(WC_Validation::is_phone('+7','RU')===$draft,'Draft versus final phone validation');
+ nov05_assert(WC_Validation::is_phone('+442079460958','RU'),'Full international phone validation');
+ nov05_assert(!WC_Validation::is_phone('letters','RU'),'Malformed phone accepted');
+}
 // Exercise canonical private persistence without queuing or calling email.
 $fixture=0;$application=0;
 try{

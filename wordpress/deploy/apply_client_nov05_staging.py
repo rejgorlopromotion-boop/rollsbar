@@ -5,8 +5,8 @@ import apply_client_media_staging as t
 from apply_storefront_ux_staging import verify
 ROOT=Path(__file__).resolve().parents[2]
 BASE='0705edbd44001177fd2d315b716bc7e066d27610'
-DEPLOY_BASE='374b02dd64446741f851d787b8a218f8e7a13dc9'
-CHANGED=[t.THEME+p for p in ['front-page.php','assets/js/app.js','assets/css/app.css']]+[t.PLUGIN+p for p in ['assets/js/checkout.js','includes/class-rollsbar-vacancy-page.php']]
+DEPLOY_BASE='d47cff79ec6dd3d83a659145f51d279e22273916'
+CHANGED=[t.THEME+p for p in ['front-page.php','assets/js/app.js','assets/css/app.css']]+[t.PLUGIN+p for p in ['assets/js/checkout.js','includes/class-rollsbar-vacancy-page.php','includes/class-rollsbar-checkout.php']]
 RECEIPT='$HOME/.rollsbar-client-nov05-release'
 OUT=ROOT/'qa/visual-results/client-nov05'
 # Only native product menu_order and its modification timestamp may change.

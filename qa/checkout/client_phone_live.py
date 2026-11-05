@@ -15,8 +15,10 @@ try:
     p.goto(BASE+'/',wait_until='domcontentloaded');add_first_simple_product(p);settle_native(p)
     p.goto(BASE+'/checkout/',wait_until='domcontentloaded');phone=p.locator('#shipping-phone');phone.wait_for();phone.fill('');phone.blur();phone.focus()
     require(phone.input_value()=='+7','Empty focus seeds +7');require(phone.evaluate('n=>n.selectionStart')==2,'Caret after prefix')
+    phone.blur();settle_native(p);phone.focus()
     phone.press('Backspace');require(phone.input_value()=='+','Country digit deletable');phone.press('Backspace');require(phone.input_value()=='','Plus deletable')
     phone.type('+442079460958');phone.blur();settle_native(p);require(phone.input_value()=='+442079460958','International typing preserved')
+    require('Предоставленный телефон недействителен' not in p.locator('body').inner_text() and 'The provided phone number is not valid' not in p.locator('body').inner_text(),'Draft prefix does not leave a native phone error')
     p.wait_for_function('wp.data.select("wc/store/cart").getCustomerData().shippingAddress.phone==="+442079460958"')
     for number in ['+79781234567','+380501234567','+1 (202) 555-0123']:
      phone.fill(number);phone.blur();settle_native(p)
