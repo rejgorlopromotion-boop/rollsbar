@@ -21,7 +21,7 @@ async function run(engine,name){
   for(let i=0;i<4;i++){
    const card=cards.nth(i),img=card.locator('img.rollsbar-utility__artwork');await expect(img).toBeAttached();
    expect(new URL(await card.getAttribute('href')).pathname+new URL(await card.getAttribute('href')).hash).toBe(urls[i]);
-   await expect(img).toHaveJSProperty('complete',true);expect(await img.evaluate(n=>n.naturalWidth)).toBe(1254);
+   await img.evaluate(n=>n.decode());expect(await img.evaluate(n=>n.naturalWidth)).toBeGreaterThanOrEqual(178);
    const rect=await card.boundingBox();expect(Math.abs(rect.width-rect.height)).toBeLessThan(1.1);
    await expect(card.locator('.rollsbar-utility__eyebrow')).toBeHidden();await expect(card.locator('.rollsbar-utility__text')).toBeHidden();
   }

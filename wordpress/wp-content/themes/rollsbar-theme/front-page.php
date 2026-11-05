@@ -96,6 +96,7 @@ foreach ( $promo_posts as $promo_post ) {
 		'text'    => has_excerpt( $promo_post ) ? get_the_excerpt( $promo_post ) : $utility_cards[ $variant ]['text'],
 		'url'     => $url ?: $utility_cards[ $variant ]['url'],
 		'image'   => $image ?: '',
+		'srcset'  => $image && function_exists( 'wp_get_attachment_image_srcset' ) ? wp_get_attachment_image_srcset( get_post_thumbnail_id( $promo_post->ID ), 'full' ) : '',
 	);
 }
 // This navigation card promises the actual destination, including editable legacy promo posts.
@@ -109,7 +110,7 @@ $utility_cards = array_replace( array_flip( array( 'promo', 'delivery', 'work', 
 		<?php foreach ( $utility_cards as $variant => $card ) : ?>
 			<a class="rollsbar-utility<?php echo $card['image'] ? ' rollsbar-utility--artwork' : ''; ?> rollsbar-utility--<?php echo esc_attr( $variant ); ?>" href="<?php echo esc_url( $card['url'] ); ?>">
 				<?php if ( $card['image'] ) : ?>
-					<img class="rollsbar-utility__artwork" src="<?php echo esc_url( $card['image'] ); ?>" alt="" width="1254" height="1254" decoding="async">
+					<img class="rollsbar-utility__artwork" src="<?php echo esc_url( $card['image'] ); ?>"<?php if ( ! empty( $card['srcset'] ) ) : ?> srcset="<?php echo esc_attr( $card['srcset'] ); ?>" sizes="(max-width: 700px) 178px, (max-width: 1050px) 230px, 285px"<?php endif; ?> alt="" width="1254" height="1254" decoding="async">
 				<?php elseif ( 'promo' === $variant ) : ?>
 					<span class="rollsbar-utility__art" aria-hidden="true"></span>
 				<?php elseif ( 'work' === $variant ) : ?>

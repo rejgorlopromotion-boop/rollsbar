@@ -687,9 +687,11 @@
 	// Evaluate the whole ordered catalog at one reading line. Observer entries
 	// contain only changed targets and cannot identify the current short section.
 	links=links.filter(function(link){return sections.some(function(section){return link.hash==='#'+section.id;});});
-	var track=nav.querySelector('.rollsbar-category-nav__scroll'),pending=false,current='';
+	var track=nav.querySelector('.rollsbar-category-nav__scroll'),pending=false,current='',interacted=false;
 	function readingLine(){return (parseFloat(getComputedStyle(nav).top)||0)+nav.getBoundingClientRect().height+48;}
 	function heading(section){return section.querySelector('h2')||section;}
+	function refreshOffsets(){var line=readingLine();sections.forEach(function(section){section.style.scrollMarginTop=Math.max(0,line-(heading(section).getBoundingClientRect().top-section.getBoundingClientRect().top))+'px';});schedule();}
+	['wheel','touchstart','pointerdown','keydown'].forEach(function(type){window.addEventListener(type,function(){interacted=true;},{passive:true,once:true});});
 	function updateCategory(){
 		pending=false;if(!sections.length)return;
 		var line=readingLine(),active=sections[0];
@@ -713,14 +715,14 @@
 		if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
 		event.preventDefault();closeMore();history.pushState(null,'',link.hash);goToSection(link.hash.slice(1));
 	});});
-	window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule);
+	window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',refreshOffsets);
 	window.addEventListener('hashchange',function(){goToSection(location.hash.slice(1));});
 	function initialCategory(){if(location.hash)requestAnimationFrame(function(){goToSection(location.hash.slice(1));});else schedule();}
 	if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialCategory,{once:true});else initialCategory();
-	window.addEventListener('load',schedule);
+	window.addEventListener('load',function(){if(!interacted&&location.hash)goToSection(location.hash.slice(1));else schedule();});
 	window.addEventListener('pageshow',schedule);
-	if('ResizeObserver' in window){var sizes=new ResizeObserver(schedule);sections.forEach(function(section){sizes.observe(section);});sizes.observe(nav);}
-	schedule();
+	if('ResizeObserver' in window){var sizes=new ResizeObserver(refreshOffsets);sections.forEach(function(section){sizes.observe(section);});sizes.observe(nav);}
+	refreshOffsets();
 })();
 
 // Careers: fixed layout, editable vacancy content.
