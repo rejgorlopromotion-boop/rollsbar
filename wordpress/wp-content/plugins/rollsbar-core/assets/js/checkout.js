@@ -230,7 +230,7 @@
 			event.preventDefault();starter=false;setNativeValue(input,text);input.setSelectionRange(text.length,text.length);
 		}
 		input.addEventListener('beforeinput',function(event){insertFullPhone(event,event.data);});
-		input.addEventListener('paste',function(event){insertFullPhone(event,event.clipboardData&&event.clipboardData.getData('text'));});
+		input.addEventListener('paste',function(event){insertFullPhone(event,event.clipboardData&&(event.clipboardData.getData('text/plain')||event.clipboardData.getData('text')));});
 		input.addEventListener('input',function(){
 			if(pendingPhone!==null){var text=pendingPhone;pendingPhone=null;starter=false;setNativeValue(input,text);return;}
 			if(starter&&input.value.startsWith('+7+'))setNativeValue(input,input.value.slice(2));

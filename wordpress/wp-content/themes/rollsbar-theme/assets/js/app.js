@@ -744,7 +744,7 @@
 			event.preventDefault();phoneStarter=false;phone.value=text;phone.setSelectionRange(text.length,text.length);phone.dispatchEvent(new Event('input',{bubbles:true}));
 		}
 		phone.addEventListener('beforeinput',function(event){insertCareerPhone(event,event.data);});
-		phone.addEventListener('paste',function(event){insertCareerPhone(event,event.clipboardData&&event.clipboardData.getData('text'));});
+		phone.addEventListener('paste',function(event){insertCareerPhone(event,event.clipboardData&&(event.clipboardData.getData('text/plain')||event.clipboardData.getData('text')));});
 		phone.addEventListener('input',function(){if(pendingCareerPhone!==null){phone.value=pendingCareerPhone;pendingCareerPhone=null;}else if(phoneStarter&&phone.value.startsWith('+7+'))phone.value=phone.value.slice(2);phoneStarter=false;});
 		phone.addEventListener('focus',function(){if(!phone.value.trim()){phone.value='+7';phoneStarter=true;phone.setSelectionRange(2,2);phone.setCustomValidity('');}});
 		function checkPhone(){

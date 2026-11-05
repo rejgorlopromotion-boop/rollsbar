@@ -133,20 +133,56 @@ jobs:
           ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
           ROLLSBAR_REVIEWED_MANIFEST: ${{ inputs.reviewed_manifest }}
         run: python3 wordpress/deploy/apply_client_nov05_staging.py --phase "${{ inputs.direct_port_phase }}"
-      - name: Client checklist and existing storefront/checkout regressions, no emails or orders
+      - name: Client checklist in Chromium, WebKit and Firefox
         if: inputs.direct_port_phase == 'apply'
         env:
           ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
           ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
         run: |
           node --import ./qa/visual/staging-browser-diagnostics.mjs qa/visual/client-nov05.mjs
+      - name: Native phone insertion, deletion and persistence
+        if: inputs.direct_port_phase == 'apply'
+        env:
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+        run: |
           python3 qa/checkout/client_phone_live.py
+      - name: Storefront regression
+        if: inputs.direct_port_phase == 'apply'
+        env:
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+        run: |
           node --import ./qa/visual/staging-browser-diagnostics.mjs qa/visual/storefront-ux.mjs
           cp qa/visual-results/storefront-ux-staging/browser.json qa/visual-results/storefront-ux-staging/original-browser.json
+      - name: Floating controls regression
+        if: inputs.direct_port_phase == 'apply'
+        env:
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+        run: |
           node --import ./qa/visual/staging-browser-diagnostics.mjs qa/visual/controls-no-dock.mjs
+      - name: Interaction stability regression
+        if: inputs.direct_port_phase == 'apply'
+        env:
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+        run: |
           node --import ./qa/visual/staging-browser-diagnostics.mjs qa/visual/interaction-stability.mjs
+      - name: Delivery address and minimum regression
+        if: inputs.direct_port_phase == 'apply'
+        env:
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+        run: |
           python3 qa/checkout/address_complete_live.py
           python3 qa/checkout/mobile_feedback_live.py
+      - name: Promotions regression and screenshot manifest
+        if: inputs.direct_port_phase == 'apply'
+        env:
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+        run: |
           node --import ./qa/visual/staging-browser-diagnostics.mjs qa/visual/promotions-live.mjs
           python3 wordpress/deploy/apply_client_nov05_staging.py --phase manifest > qa/visual-results/client-nov05/screenshot-manifest.txt
       - uses: actions/upload-artifact@v4

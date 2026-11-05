@@ -56,7 +56,9 @@ async function run(engine,name){
    await page.locator('#rolls').screenshot({path:`${out}/${name}-${width}-rolls.png`});
    await page.goto(base+'/rabota-v-rolls-bar/',{waitUntil:'domcontentloaded'});
    const phone=page.locator('[data-career-phone]');await phone.fill('+79781234567');await expect(phone).toHaveValue('+79781234567');await phone.fill('');await phone.blur();await phone.focus();await expect(phone).toHaveValue('+7');
-   await phone.evaluate(n=>{const data=new DataTransfer();data.setData('text/plain','+44 20 7946 0958');n.dispatchEvent(new ClipboardEvent('paste',{clipboardData:data,bubbles:true,cancelable:true}));});await expect(phone).toHaveValue('+44 20 7946 0958');
+   // Firefox intentionally strips clipboardData from an untrusted ClipboardEvent.
+   // Supply the fixture payload explicitly; the real input/paste handler is unchanged.
+   await phone.evaluate(n=>{const data=new DataTransfer();data.setData('text/plain','+44 20 7946 0958');const event=new Event('paste',{bubbles:true,cancelable:true});Object.defineProperty(event,'clipboardData',{value:data});n.dispatchEvent(event);});await expect(phone).toHaveValue('+44 20 7946 0958');
    await phone.fill('');await phone.blur();await phone.focus();await expect(phone).toHaveValue('+7');
    expect(await phone.evaluate(n=>n.selectionStart)).toBe(2);await phone.press('Backspace');await expect(phone).toHaveValue('+');await phone.press('Backspace');await expect(phone).toHaveValue('');
    await phone.pressSequentially('+442079460958');await expect(phone).toHaveValue('+442079460958');expect(await phone.evaluate(n=>n.checkValidity())).toBe(true);
