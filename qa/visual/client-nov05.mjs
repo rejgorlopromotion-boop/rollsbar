@@ -55,7 +55,9 @@ async function run(engine,name){
   if(width===390||width===320||width===1440){
    await page.locator('#rolls').screenshot({path:`${out}/${name}-${width}-rolls.png`});
    await page.goto(base+'/rabota-v-rolls-bar/',{waitUntil:'domcontentloaded'});
-   const phone=page.locator('[data-career-phone]');await phone.focus();await expect(phone).toHaveValue('+7');
+   const phone=page.locator('[data-career-phone]');await phone.fill('+79781234567');await expect(phone).toHaveValue('+79781234567');await phone.fill('');await phone.blur();await phone.focus();await expect(phone).toHaveValue('+7');
+   await phone.evaluate(n=>{const data=new DataTransfer();data.setData('text/plain','+44 20 7946 0958');n.dispatchEvent(new ClipboardEvent('paste',{clipboardData:data,bubbles:true,cancelable:true}));});await expect(phone).toHaveValue('+44 20 7946 0958');
+   await phone.fill('');await phone.blur();await phone.focus();await expect(phone).toHaveValue('+7');
    expect(await phone.evaluate(n=>n.selectionStart)).toBe(2);await phone.press('Backspace');await expect(phone).toHaveValue('+');await phone.press('Backspace');await expect(phone).toHaveValue('');
    await phone.pressSequentially('+442079460958');await expect(phone).toHaveValue('+442079460958');expect(await phone.evaluate(n=>n.checkValidity())).toBe(true);
    await phone.fill('+380501234567');await phone.blur();await phone.focus();await expect(phone).toHaveValue('+380501234567');expect(await phone.evaluate(n=>n.checkValidity())).toBe(true);

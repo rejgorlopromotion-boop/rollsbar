@@ -5,7 +5,7 @@ import apply_client_media_staging as t
 from apply_storefront_ux_staging import verify
 ROOT=Path(__file__).resolve().parents[2]
 BASE='0705edbd44001177fd2d315b716bc7e066d27610'
-DEPLOY_BASE='50dcb9e35479d0ad3ba49d12eea6ceb60b5e4faa'
+DEPLOY_BASE='c2788584d2e1ff741d72f6a801ef4b827bcee214'
 CHANGED=[t.THEME+p for p in ['front-page.php','assets/js/app.js','assets/css/app.css']]+[t.PLUGIN+p for p in ['assets/js/checkout.js','includes/class-rollsbar-vacancy-page.php','includes/class-rollsbar-checkout.php']]
 RECEIPT='$HOME/.rollsbar-client-nov05-release'
 OUT=ROOT/'qa/visual-results/client-nov05'

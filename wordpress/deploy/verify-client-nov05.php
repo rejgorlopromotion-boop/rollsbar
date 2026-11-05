@@ -11,6 +11,7 @@ foreach([['PUT','/wc/store/v1/checkout',true],['POST','/wc/store/v1/cart/update-
  nov05_assert(WC_Validation::is_phone('+7','RU')===$draft,'Draft versus final phone validation');
  nov05_assert(WC_Validation::is_phone('+442079460958','RU'),'Full international phone validation');
  nov05_assert(!WC_Validation::is_phone('letters','RU'),'Malformed phone accepted');
+ nov05_assert(!WC_Validation::is_phone('+7+79781234567','RU'),'Duplicate country prefix accepted');
 }
 // Exercise canonical private persistence without queuing or calling email.
 $fixture=0;$application=0;

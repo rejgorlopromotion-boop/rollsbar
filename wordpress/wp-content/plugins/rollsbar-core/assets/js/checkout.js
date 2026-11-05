@@ -222,9 +222,23 @@
 
 		input.placeholder=prefix+'999 999-99-99';
 		if(String(input.value||'').trim()===prefix.trim())setNativeValue(input,'');
+		var starter=false,pendingPhone=null;
+		function insertFullPhone(event,text){
+			text=String(text||'');
+			if(!starter||input.value.trim()!=='+7'||(!text.trim().startsWith('+')&&text.replace(/\D/g,'').length<=10))return;
+			if(!event.cancelable){pendingPhone=text;return;}
+			event.preventDefault();starter=false;setNativeValue(input,text);input.setSelectionRange(text.length,text.length);
+		}
+		input.addEventListener('beforeinput',function(event){insertFullPhone(event,event.data);});
+		input.addEventListener('paste',function(event){insertFullPhone(event,event.clipboardData&&event.clipboardData.getData('text'));});
+		input.addEventListener('input',function(){
+			if(pendingPhone!==null){var text=pendingPhone;pendingPhone=null;starter=false;setNativeValue(input,text);return;}
+			if(starter&&input.value.startsWith('+7+'))setNativeValue(input,input.value.slice(2));
+			starter=false;
+		});
 		input.addEventListener('focus',function(){
 			if(!String(input.value||'').trim()){
-				setNativeValue(input,'+7');input.setSelectionRange(2,2);
+				setNativeValue(input,'+7');starter=true;input.setSelectionRange(2,2);
 			}
 		});
 		// Native Woo owns the value. Do not reinsert deleted country-code digits.

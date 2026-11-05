@@ -165,7 +165,7 @@ final class RollsBar_Checkout {
 		// Requiredness stays with Woo. A prefix is not a complete contact number.
 		// Woo autosaves while the customer edits a country code. Completeness is
 		// mandatory for the actual checkout POST, not intermediate cart/PUT drafts.
-		return $valid && ( '' === trim( (string) $phone ) || ( ( self::$phone_draft_request || strlen( $digits ) >= 10 ) && strlen( $digits ) <= 15 ) );
+		return $valid && ! str_contains( substr( trim( (string) $phone ), 1 ), '+' ) && ( '' === trim( (string) $phone ) || ( ( self::$phone_draft_request || strlen( $digits ) >= 10 ) && strlen( $digits ) <= 15 ) );
 	}
 
 	/** Same contract is consumed by Blocks countryData and Store API validation. */

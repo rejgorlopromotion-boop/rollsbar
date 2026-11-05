@@ -737,7 +737,16 @@
 			if(available.length===1)location.value=available[0].value;
 		}
 		filterLocations();city.addEventListener('change',filterLocations);
-		phone.addEventListener('focus',function(){if(!phone.value.trim()){phone.value='+7';phone.setSelectionRange(2,2);phone.setCustomValidity('');}});
+		var phoneStarter=false,pendingCareerPhone=null;
+		function insertCareerPhone(event,text){
+			text=String(text||'');if(!phoneStarter||phone.value.trim()!=='+7'||(!text.trim().startsWith('+')&&text.replace(/\D/g,'').length<=10))return;
+			if(!event.cancelable){pendingCareerPhone=text;return;}
+			event.preventDefault();phoneStarter=false;phone.value=text;phone.setSelectionRange(text.length,text.length);phone.dispatchEvent(new Event('input',{bubbles:true}));
+		}
+		phone.addEventListener('beforeinput',function(event){insertCareerPhone(event,event.data);});
+		phone.addEventListener('paste',function(event){insertCareerPhone(event,event.clipboardData&&event.clipboardData.getData('text'));});
+		phone.addEventListener('input',function(){if(pendingCareerPhone!==null){phone.value=pendingCareerPhone;pendingCareerPhone=null;}else if(phoneStarter&&phone.value.startsWith('+7+'))phone.value=phone.value.slice(2);phoneStarter=false;});
+		phone.addEventListener('focus',function(){if(!phone.value.trim()){phone.value='+7';phoneStarter=true;phone.setSelectionRange(2,2);phone.setCustomValidity('');}});
 		function checkPhone(){
 			var raw=phone.value.trim(),digits=raw.replace(/\D/g,'');
 			// A complete domestic paste remains supported; typing/deleting a prefix is unrestricted.
