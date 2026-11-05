@@ -42,9 +42,9 @@ $categories = array(
 $utility_cards = array(
 	'promo' => array(
 		'eyebrow' => 'Rolls Bar',
-		'title'   => 'Хит-меню',
+		'title'   => 'Акции',
 		'text'    => 'Популярные блюда Rolls Bar',
-		'url'     => '#hits',
+		'url'     => home_url( '/aktsii/' ),
 		'image'   => '',
 	),
 	'work' => array(
@@ -88,7 +88,7 @@ foreach ( $promo_posts as $promo_post ) {
 
 	$eyebrow = trim( (string) get_post_meta( $promo_post->ID, '_rollsbar_promo_eyebrow', true ) );
 	$url     = trim( (string) get_post_meta( $promo_post->ID, '_rollsbar_promo_url', true ) );
-	$image   = get_the_post_thumbnail_url( $promo_post->ID, 'large' );
+	$image   = get_the_post_thumbnail_url( $promo_post->ID, 'full' );
 
 	$utility_cards[ $variant ] = array(
 		'eyebrow' => $eyebrow ?: $utility_cards[ $variant ]['eyebrow'],
@@ -99,18 +99,17 @@ foreach ( $promo_posts as $promo_post ) {
 	);
 }
 // This navigation card promises the actual destination, including editable legacy promo posts.
-$utility_cards['promo']['title'] = 'Акции';
-$utility_cards['promo']['text'] = 'Специальные предложения Rolls Bar';
-$utility_cards['promo']['url'] = home_url( '/aktsii/' );
+// Defaults only; titles, images and links stay editable through the native promo records.
+$utility_cards = array_replace( array_flip( array( 'promo', 'delivery', 'work', 'reviews' ) ), $utility_cards );
 
 ?>
 
 <section class="rollsbar-utilities">
 	<div class="rollsbar-shell rollsbar-utilities__track" aria-label="Полезные разделы Rolls Bar">
 		<?php foreach ( $utility_cards as $variant => $card ) : ?>
-			<a class="rollsbar-utility rollsbar-utility--<?php echo esc_attr( $variant ); ?>" href="<?php echo esc_url( $card['url'] ); ?>">
+			<a class="rollsbar-utility<?php echo $card['image'] ? ' rollsbar-utility--artwork' : ''; ?> rollsbar-utility--<?php echo esc_attr( $variant ); ?>" href="<?php echo esc_url( $card['url'] ); ?>">
 				<?php if ( $card['image'] ) : ?>
-					<span class="rollsbar-utility__image" style="background-image:url('<?php echo esc_url( $card['image'] ); ?>')" aria-hidden="true"></span>
+					<img class="rollsbar-utility__artwork" src="<?php echo esc_url( $card['image'] ); ?>" alt="" width="1254" height="1254" decoding="async">
 				<?php elseif ( 'promo' === $variant ) : ?>
 					<span class="rollsbar-utility__art" aria-hidden="true"></span>
 				<?php elseif ( 'work' === $variant ) : ?>
@@ -172,7 +171,7 @@ $utility_cards['promo']['url'] = home_url( '/aktsii/' );
 		usort(
 			$category_products[ $slug ],
 			static function ( $a, $b ) use ( $source_order ) {
-				return ( $source_order[ $a->get_meta( '_rollsbar_source_id', true ) ] ?? PHP_INT_MAX )
+				return ( method_exists( $a, 'get_menu_order' ) && method_exists( $b, 'get_menu_order' ) ? $a->get_menu_order() <=> $b->get_menu_order() : 0 ) ?: ( $source_order[ $a->get_meta( '_rollsbar_source_id', true ) ] ?? PHP_INT_MAX )
 					<=> ( $source_order[ $b->get_meta( '_rollsbar_source_id', true ) ] ?? PHP_INT_MAX );
 			}
 		);
@@ -189,6 +188,8 @@ $utility_cards['promo']['url'] = home_url( '/aktsii/' );
 				$category_products['hits'][] = $products_by_source[ $source_id ];
 			}
 		}
+		// Membership remains the same eight approved hits; Woo sorting is editable.
+		usort( $category_products['hits'], static fn( $a, $b ) => method_exists( $a, 'get_menu_order' ) && method_exists( $b, 'get_menu_order' ) ? $a->get_menu_order() <=> $b->get_menu_order() : 0 );
 	}
 	?>
 	<?php foreach ( $categories as $slug => $label ) : ?>

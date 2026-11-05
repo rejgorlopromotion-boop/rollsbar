@@ -222,20 +222,13 @@
 
 		input.placeholder=prefix+'999 999-99-99';
 		if(String(input.value||'').trim()===prefix.trim())setNativeValue(input,'');
-		input.addEventListener('input',function(){
-			var raw=String(input.value||''),cursor=input.selectionStart;
-			if(/^[78]/.test(raw)){
-				setNativeValue(input,'+7'+raw.slice(1));
-				if(cursor!==null)input.setSelectionRange(cursor+1,cursor+1);
+		input.addEventListener('focus',function(){
+			if(!String(input.value||'').trim()){
+				setNativeValue(input,'+7');input.setSelectionRange(2,2);
 			}
 		});
+		// Native Woo owns the value. Do not reinsert deleted country-code digits.
 
-		input.addEventListener('blur',function(){
-			var raw=String(input.value||'').trim();
-			if(/^8[\s(\-]?\d/.test(raw)){
-				setNativeValue(input,'+7 '+raw.replace(/^8\s*/,''));
-			}
-		});
 	}
 
 	function ensurePanel(){

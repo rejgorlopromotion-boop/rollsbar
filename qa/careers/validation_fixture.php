@@ -7,3 +7,6 @@ if(is_wp_error($data)||$data['phone']!=='+79781234567'||$data['address']!=='Ке
 $cases=[['name'=>''],['phone'=>'00000000000'],['phone'=>'7123'],['phone'=>['bad']],['consent'=>''],['location'=>99999],['city'=>'Москва'],['position'=>'invented'],['birthday'=>'2030-01-01'],['birthday'=>'2000-02-30'],['comment'=>str_repeat('а',3001)]];
 foreach($cases as $case)if(!is_wp_error(RollsBar_Vacancy_Page::validate(array_merge($input,$case))))throw new RuntimeException('Invalid input accepted');
 echo "CAREER_VALIDATION_PASS positive=1 negative=11\n";
+foreach(['+44 20 7946 0958','+380501234567','+1 (202) 555-0123','+995555123456'] as $phone){$data=RollsBar_Vacancy_Page::validate(array_merge($input,['phone'=>$phone]));if(is_wp_error($data)||$data['phone']!==$phone)throw new RuntimeException('International phone changed');}
+foreach(['++442079460958','abc442079460958','+7','+1234567890123456'] as $phone)if(!is_wp_error(RollsBar_Vacancy_Page::validate(array_merge($input,['phone'=>$phone]))))throw new RuntimeException('Malformed phone accepted');
+echo "CAREER_INTERNATIONAL_PASS positive=4 negative=4\n";

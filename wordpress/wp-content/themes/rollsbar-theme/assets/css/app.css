@@ -695,3 +695,13 @@ a.screen-reader-text:focus{position:fixed;top:8px;left:8px;width:auto;height:aut
 @media(max-width:700px){body:not(.home) .rollsbar-header .rollsbar-cart-link{display:none}body:not(.home) .rollsbar-menu-toggle{width:44px;height:44px}}
 
 .rollsbar-home-delivery,.rollsbar-contacts{scroll-margin-top:150px}
+
+/* Client-supplied square artwork; one readable title in the empty lower area. */
+.home .rollsbar-utility--artwork{height:auto;min-height:0;aspect-ratio:1;padding:0;background:#fff}
+.rollsbar-utility--artwork:before,.rollsbar-utility--artwork:after{display:none}
+.rollsbar-utility__artwork{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.rollsbar-utility--artwork .rollsbar-utility__copy{position:absolute;inset:auto 6% 8%;max-width:none;text-align:center}
+.rollsbar-utility--artwork .rollsbar-utility__eyebrow,.rollsbar-utility--artwork .rollsbar-utility__text{display:none}
+.rollsbar-utility--artwork h3{margin:0;color:#252525;font-size:clamp(16px,1.6vw,25px);line-height:1.15;letter-spacing:-.025em}
+.rollsbar-utility--artwork:focus-visible{outline:3px solid #bd1c25;outline-offset:-4px}
+@media(max-width:700px){.home .rollsbar-utility--artwork{min-width:178px}.rollsbar-utility--artwork h3{font-size:16px}}

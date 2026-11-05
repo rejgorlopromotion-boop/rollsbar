@@ -87,18 +87,19 @@ final class RollsBar_Vacancy_Page {
 		$id = absint( $input['location'] ?? 0 );
 		$city = sanitize_text_field( $input['city'] ?? '' );
 		$name = trim( sanitize_text_field( $input['name'] ?? '' ) );
-		$phone = preg_replace( '/\D/', '', (string) ( $input['phone'] ?? '' ) );
-		if ( 11 === strlen( $phone ) && '8' === $phone[0] ) { $phone = '7' . substr( $phone, 1 ); }
-		if ( 10 === strlen( $phone ) ) { $phone = '7' . $phone; }
+		$raw_phone = trim( (string) ( $input['phone'] ?? '' ) );
+		$phone = preg_replace( '/\D/', '', $raw_phone );
+		if ( ! str_starts_with( $raw_phone, '+' ) && 11 === strlen( $phone ) && '8' === $phone[0] ) { $phone = '7' . substr( $phone, 1 ); }
+		if ( ! str_starts_with( $raw_phone, '+' ) && 10 === strlen( $phone ) ) { $phone = '7' . $phone; }
 		$position = sanitize_text_field( $input['position'] ?? '' );
 		$choices = array( 'kitchen' => 'Кухня и касса', 'delivery' => 'Доставка', 'other' => 'Другое / уточнить' );
 		$birthday = sanitize_text_field( $input['birthday'] ?? '' );
 		$day = $birthday ? \DateTimeImmutable::createFromFormat( '!Y-m-d', $birthday ) : false;
-		if ( ! isset( $locations[ $id ] ) || $city !== $locations[ $id ]['city'] || ! isset( $choices[ $position ] ) || '' === $name || mb_strlen( $name ) > 80 || ! preg_match( '/^7[0-9]{10}$/', $phone ) || preg_match( '/^(.)\1{9}$/', substr( $phone, 1 ) ) || '1' !== (string) ( $input['consent'] ?? '' ) || ( $birthday && ( ! $day || $day->format( 'Y-m-d' ) !== $birthday || $birthday < '1900-01-01' || $birthday > current_time( 'Y-m-d' ) ) ) ) { return new WP_Error( 'invalid_application', 'Проверьте город, адрес заведения, направление, имя, телефон и согласие на обработку данных.' ); }
+		if ( ! isset( $locations[ $id ] ) || $city !== $locations[ $id ]['city'] || ! isset( $choices[ $position ] ) || '' === $name || mb_strlen( $name ) > 80 || ! preg_match( '/^\+?[0-9\s().-]+$/', $raw_phone ) || strlen( $phone ) < 10 || strlen( $phone ) > 15 || preg_match( '/^(.)\1+$/', $phone ) || '1' !== (string) ( $input['consent'] ?? '' ) || ( $birthday && ( ! $day || $day->format( 'Y-m-d' ) !== $birthday || $birthday < '1900-01-01' || $birthday > current_time( 'Y-m-d' ) ) ) ) { return new WP_Error( 'invalid_application', 'Проверьте город, адрес заведения, направление, имя, телефон и согласие на обработку данных.' ); }
 		$surname = sanitize_text_field( $input['surname'] ?? '' );
 		$comment = sanitize_textarea_field( $input['comment'] ?? '' );
 		if ( mb_strlen( $surname ) > 100 || mb_strlen( $comment ) > 3000 ) { return new WP_Error( 'invalid_application', 'Сократите фамилию или комментарий.' ); }
-		return array( 'city' => $city, 'address' => $locations[ $id ]['address'], 'position' => $choices[ $position ], 'phone' => '+' . $phone, 'name' => $name, 'surname' => $surname, 'birthday' => $birthday, 'comment' => $comment, 'consent' => 'Да, для рассмотрения анкеты и связи по вопросам трудоустройства', 'received_at' => current_time( 'mysql' ) );
+		return array( 'city' => $city, 'address' => $locations[ $id ]['address'], 'position' => $choices[ $position ], 'phone' => str_starts_with( $raw_phone, '+' ) ? $raw_phone : '+' . $phone, 'name' => $name, 'surname' => $surname, 'birthday' => $birthday, 'comment' => $comment, 'consent' => 'Да, для рассмотрения анкеты и связи по вопросам трудоустройства', 'received_at' => current_time( 'mysql' ) );
 	}
 
 	private static function redirect( string $status ): void {

@@ -683,14 +683,42 @@
 		document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMore();});
 	}
 	var links=Array.from(nav.querySelectorAll('a[href^="#"]'));
-	var sections=links.map(function(link){return document.getElementById(link.getAttribute('href').slice(1));}).filter(Boolean);
-	if(!('IntersectionObserver' in window))return;
-	var observer=new IntersectionObserver(function(entries){
-		var visible=entries.filter(function(entry){return entry.isIntersecting;}).sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;})[0];
-		if(!visible)return;
-		links.forEach(function(link){link.classList.toggle('active',link.getAttribute('href')==='#'+visible.target.id);});
-	},{rootMargin:'-136px 0px -64% 0px',threshold:[0,.2,.55]});
-	sections.forEach(function(section){observer.observe(section);});
+	var sections=links.map(function(link){return document.getElementById(link.getAttribute('href').slice(1));}).filter(function(section){return section&&section.classList.contains('rollsbar-catalog-section');});
+	// Evaluate the whole ordered catalog at one reading line. Observer entries
+	// contain only changed targets and cannot identify the current short section.
+	links=links.filter(function(link){return sections.some(function(section){return link.hash==='#'+section.id;});});
+	var track=nav.querySelector('.rollsbar-category-nav__scroll'),pending=false,current='';
+	function readingLine(){return (parseFloat(getComputedStyle(nav).top)||0)+nav.getBoundingClientRect().height+16;}
+	function heading(section){return section.querySelector('h2')||section;}
+	function updateCategory(){
+		pending=false;if(!sections.length)return;
+		var line=readingLine(),active=sections[0];
+		sections.forEach(function(section){if(heading(section).getBoundingClientRect().top<=line+1)active=section;});
+		if(current===active.id)return;current=active.id;
+		links.forEach(function(link){
+			var selected=link.hash==='#'+current;link.classList.toggle('active',selected);
+			if(selected)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
+			if(selected&&track&&link.parentElement===track){
+				var r=link.getBoundingClientRect(),t=track.getBoundingClientRect();
+				if(r.left<t.left+8||r.right>t.right-8)track.scrollLeft+=r.left-t.left-(t.width-r.width)/2;
+			}
+		});
+	}
+	function schedule(){if(!pending){pending=true;requestAnimationFrame(updateCategory);}}
+	function goToSection(id){
+		var section=sections.find(function(item){return item.id===id;});if(!section)return;
+		window.scrollTo({top:Math.max(0,scrollY+heading(section).getBoundingClientRect().top-readingLine()),behavior:'instant'});schedule();
+	}
+	links.forEach(function(link){link.addEventListener('click',function(event){
+		if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+		event.preventDefault();closeMore();history.pushState(null,'',link.hash);goToSection(link.hash.slice(1));
+	});});
+	window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule);
+	window.addEventListener('hashchange',function(){goToSection(location.hash.slice(1));});
+	window.addEventListener('load',function(){if(location.hash)goToSection(location.hash.slice(1));else schedule();});
+	window.addEventListener('pageshow',schedule);
+	if('ResizeObserver' in window){var sizes=new ResizeObserver(schedule);sections.forEach(function(section){sizes.observe(section);});sizes.observe(nav);}
+	schedule();
 })();
 
 // Careers: fixed layout, editable vacancy content.
@@ -705,11 +733,13 @@
 			if(available.length===1)location.value=available[0].value;
 		}
 		filterLocations();city.addEventListener('change',filterLocations);
+		phone.addEventListener('focus',function(){if(!phone.value.trim()){phone.value='+7';phone.setSelectionRange(2,2);phone.setCustomValidity('');}});
 		function checkPhone(){
-			var digits=phone.value.replace(/\D/g,'');
-			if(digits[0]==='8'||digits[0]==='7'){digits='7'+digits.slice(1);phone.value='+'+digits;}
-			if(digits.length===10&&digits[0]!=='7'){digits='7'+digits;phone.value='+'+digits;}
-			phone.setCustomValidity(/^7\d{10}$/.test(digits)&&! /^(.)\1{9}$/.test(digits.slice(1))?'':'Укажите номер телефона: +7 и 10 цифр.');
+			var raw=phone.value.trim(),digits=raw.replace(/\D/g,'');
+			// A complete domestic paste remains supported; typing/deleting a prefix is unrestricted.
+			if(!raw.startsWith('+')&&/^8\d{10}$/.test(digits)){phone.value='+7'+digits.slice(1);digits='7'+digits.slice(1);}
+			var valid=/^\+?[0-9\s().-]+$/.test(raw)&&digits.length>=10&&digits.length<=15&&!/^(.)\1+$/.test(digits);
+			phone.setCustomValidity(valid?'':'Укажите полный номер телефона, включая код страны.');
 		}
 		function clearError(field){var label=field.closest('label');if(!label)return;label.classList.remove('rb-career-invalid');var error=label.querySelector('.rb-career-error');if(error)error.remove();field.removeAttribute('aria-invalid');field.removeAttribute('aria-describedby');}
 		form.addEventListener('invalid',function(e){
