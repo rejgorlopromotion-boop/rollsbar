@@ -10,6 +10,7 @@ async function run(engine,name){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await context.route('**/wc/store/**/checkout*',r=>{const q=r.request(),method=q.headers()['x-http-method-override']||q.method();return method.toUpperCase()==='POST'?r.abort():r.continue();});
   await context.route('**/wp-admin/admin-post.php*',r=>r.abort());
+  if(process.env.ROLLSBAR_CLIENT_SHADOW==='1')await context.route('**/rollsbar-theme/assets/js/app.js*',r=>r.fulfill({status:200,contentType:'application/javascript',body:readFileSync('wordpress/wp-content/themes/rollsbar-theme/assets/js/app.js','utf8')}));
   await page.addInitScript(()=>localStorage.setItem('rollsbar_cookie_notice','1'));
   await page.goto(base+'/?client-nov05='+report.release_sha,{waitUntil:'domcontentloaded'});
   await expect(page.locator('.rollsbar-product-card')).toHaveCount(126);
@@ -33,6 +34,7 @@ async function run(engine,name){
   // Original video at6s: Sets heading is roughly27px below the sticky bar.
   await page.locator('#sets h2').evaluate(n=>{const nav=document.querySelector('.rollsbar-category-nav');window.scrollTo({top:scrollY+n.getBoundingClientRect().top-(parseFloat(getComputedStyle(nav).top)+nav.offsetHeight+27),behavior:'instant'});});
   await expect(sets).toHaveAttribute('aria-current','location');
+  await page.locator('#sets img').evaluateAll(imgs=>Promise.all(imgs.slice(0,4).map(img=>{img.loading='eager';return img.decode().catch(()=>{});})));await page.mouse.move(width-5,895);
   await page.screenshot({path:`${out}/${name}-${width}-video-replay.png`});
   await combo.click();await expect(combo).toHaveClass('active');
   // Replay the reported down/up transition using wheel movement, then pause in each category.
@@ -41,12 +43,13 @@ async function run(engine,name){
   await page.mouse.wheel(0,Math.max(0,distance));await page.waitForTimeout(150);
   await page.mouse.wheel(0,260);await expect(sets).toHaveAttribute('aria-current','location');
   await page.waitForTimeout(150);await expect(sets).toHaveClass('active');
+  await page.locator('#sets img').evaluateAll(imgs=>Promise.all(imgs.slice(0,4).map(img=>{img.loading='eager';return img.decode().catch(()=>{});})));await page.mouse.move(width-5,895);
   await page.screenshot({path:`${out}/${name}-${width}-sets.png`});
   await page.locator('#combo h2').evaluate(n=>window.scrollTo({top:scrollY+n.getBoundingClientRect().top-80,behavior:'instant'}));
   await expect(combo).toHaveAttribute('aria-current','location');
   await page.mouse.wheel(0,-80);await expect(combo).toHaveClass('active');
   await sets.click();await combo.click();await page.goBack({waitUntil:'domcontentloaded'});await expect(sets).toHaveAttribute('aria-current','location');
-  await page.goto(base+'/#sets',{waitUntil:'load'});await expect(sets).toHaveAttribute('aria-current','location');
+  await page.goto(base+'/#sets',{waitUntil:'domcontentloaded'});await expect(sets).toHaveAttribute('aria-current','location');
   const activeRect=await sets.boundingBox(),navRect=await page.locator('.rollsbar-category-nav__scroll').boundingBox();
   expect(activeRect.x).toBeGreaterThanOrEqual(navRect.x-1);expect(activeRect.x+activeRect.width).toBeLessThanOrEqual(navRect.x+navRect.width+1);
   if(width===390||width===320||width===1440){

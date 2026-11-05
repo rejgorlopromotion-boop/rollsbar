@@ -296,7 +296,7 @@ img{max-width:100%;display:block}
 .home .rollsbar-category-nav{z-index:45;background:rgba(255,255,255,.985);border-bottom:0;box-shadow:0 7px 18px rgba(18,22,26,.035)}
 .home .rollsbar-category-nav__scroll{--rb-shell:min(1180px,calc(100% - 40px));min-height:58px;align-items:center;gap:6px;padding:9px 0}
 .home .rollsbar-category-nav a{font-size:13px;font-weight:800;padding:9px 13px;border-radius:999px;color:#313236}
-.home .rollsbar-category-nav a.active,.home .rollsbar-category-nav a:hover{background:#d92525;color:#fff}
+.home .rollsbar-category-nav a.active{background:#d92525;color:#fff}
 .rollsbar-category-more__toggle{border:0;background:transparent;color:#545454;font:inherit;font-size:13px;font-weight:800;white-space:nowrap;padding:9px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
 .rollsbar-category-more__toggle:hover,.rollsbar-category-more__toggle[aria-expanded="true"]{background:#f3f3f3;color:#171717}
 .rollsbar-category-more__toggle svg{width:12px;height:12px;transition:transform .18s ease}

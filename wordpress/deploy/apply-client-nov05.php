@@ -8,7 +8,7 @@ foreach(wc_get_products(['status'=>'publish','limit'=>-1]) as $product){$source=
 if(count($products)!==118)throw new RuntimeException('Canonical 118 identities required');
 $promos=[];foreach(get_posts(['post_type'=>'rb_promo','post_status'=>'publish','numberposts'=>-1]) as $post){$variant=get_post_meta($post->ID,'_rollsbar_promo_variant',true);if(in_array($variant,['promo','delivery','work','reviews'],true)){if(isset($promos[$variant]))throw new RuntimeException('Duplicate promo variant');$promos[$variant]=$post;}}
 if($mode==='inspect'){
- echo wp_json_encode(['products'=>count($products),'orders'=>array_map(static fn($p)=>$p->get_menu_order(),$products),'promos'=>array_map(static fn($p)=>['id'=>$p->ID,'title'=>$p->post_title,'url'=>get_post_meta($p->ID,'_rollsbar_promo_url',true),'image'=>get_post_thumbnail_id($p->ID)],$promos)],JSON_UNESCAPED_UNICODE)."\n";return;
+ echo wp_json_encode(['products'=>count($products),'orders'=>array_map(static fn($p)=>$p->get_menu_order(),$products),'promos'=>array_map(static fn($p)=>['id'=>$p->ID,'title'=>$p->post_title,'excerpt'=>$p->post_excerpt,'menu_order'=>$p->menu_order,'url'=>get_post_meta($p->ID,'_rollsbar_promo_url',true),'image'=>get_post_thumbnail_id($p->ID)],$promos)],JSON_UNESCAPED_UNICODE)."\n";return;
 }
 if(!in_array($mode,['apply','verify'],true))throw new RuntimeException('Unknown mode');
 if($mode==='apply'){

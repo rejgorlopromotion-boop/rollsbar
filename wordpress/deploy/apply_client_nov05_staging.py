@@ -5,6 +5,7 @@ import apply_client_media_staging as t
 from apply_storefront_ux_staging import verify
 ROOT=Path(__file__).resolve().parents[2]
 BASE='0705edbd44001177fd2d315b716bc7e066d27610'
+DEPLOY_BASE='374b02dd64446741f851d787b8a218f8e7a13dc9'
 CHANGED=[t.THEME+p for p in ['front-page.php','assets/js/app.js','assets/css/app.css']]+[t.PLUGIN+p for p in ['assets/js/checkout.js','includes/class-rollsbar-vacancy-page.php']]
 RECEIPT='$HOME/.rollsbar-client-nov05-release'
 OUT=ROOT/'qa/visual-results/client-nov05'
@@ -20,7 +21,7 @@ git -C "$PROJECT_ROOT" status --porcelain
 cat "$HOME/.rollsbar-staging-deployed-sha"
 cat "{RECEIPT}" 2>/dev/null || true
 wp_cmd core version
-{t.code_hash_guard(sha,before=True,changed=CHANGED,base=BASE)}
+{t.code_hash_guard(sha,before=True,changed=CHANGED,base=DEPLOY_BASE)}
 {verify()}
 [[ ! -e "$HOME/rollsbar-backups/staging/.backup-staging.lock" ]]
 echo CLIENT_NOV05_CURRENT_BYTES_PASS
@@ -32,7 +33,9 @@ def apply(sha):
   copy+=f'install -m 0644 "$PROJECT_ROOT/{path}" "{live}.nov05-new"\nmv -f "{live}.nov05-new" "{live}"\n'
  return inspect(sha)+f'''
 [[ -z "$(git -C "$PROJECT_ROOT" status --porcelain)" ]]
-[[ "$(git -C "$PROJECT_ROOT" rev-parse HEAD)" == {BASE} ]]
+[[ "$(git -C "$PROJECT_ROOT" rev-parse HEAD)" == {DEPLOY_BASE} ]]
+grep -qx 'release={DEPLOY_BASE}' "{RECEIPT}"
+grep -qx 'phase=backend_verified' "{RECEIPT}"
 business_before="$(wp_cmd eval {shlex.quote(BUSINESS)})"
 git -C "$PROJECT_ROOT" fetch --depth=1 origin {sha}
 git -C "$PROJECT_ROOT" checkout --detach {sha}
@@ -44,7 +47,7 @@ tar -czf "$snapshot/client-nov05-code.tar.gz" -C "$WP_PATH" {' '.join(shlex.quot
 tar -tzf "$snapshot/client-nov05-code.tar.gz" >/dev/null
 sha256sum "$snapshot/client-nov05-code.tar.gz" > "$snapshot/client-nov05-code.sha256"
 sha256sum -c "$snapshot/client-nov05-code.sha256"
-printf '%s\n' 'actual_application_before={BASE}' > "$snapshot/client-nov05-actual-code.txt"
+printf '%s\n' 'actual_application_before={DEPLOY_BASE}' > "$snapshot/client-nov05-actual-code.txt"
 wp_cmd eval-file "$PROJECT_ROOT/wordpress/deploy/apply-client-nov05.php" inspect > "$snapshot/client-nov05-content-before.json"
 chmod 600 "$snapshot"/client-nov05-*
 printf '%s\n' 'release={sha}' "backup=$ROLLSBAR_FRESH_BACKUP_SNAPSHOT" 'phase=applying' > "{RECEIPT}"

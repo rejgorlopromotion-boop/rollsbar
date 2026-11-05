@@ -715,7 +715,9 @@
 	});});
 	window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule);
 	window.addEventListener('hashchange',function(){goToSection(location.hash.slice(1));});
-	window.addEventListener('load',function(){if(location.hash)goToSection(location.hash.slice(1));else schedule();});
+	function initialCategory(){if(location.hash)requestAnimationFrame(function(){goToSection(location.hash.slice(1));});else schedule();}
+	if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialCategory,{once:true});else initialCategory();
+	window.addEventListener('load',schedule);
 	window.addEventListener('pageshow',schedule);
 	if('ResizeObserver' in window){var sizes=new ResizeObserver(schedule);sections.forEach(function(section){sizes.observe(section);});sizes.observe(nav);}
 	schedule();
