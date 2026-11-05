@@ -1,0 +1,89 @@
+{
+  "date_moscow": "2026-11-06",
+  "status": "SCOPED_STAGING_PASS",
+  "application_sha": "823832db53d4b88acd2978cfcb229294b851247a",
+  "apply_run": "42115910854",
+  "finalize_run": "42119659066",
+  "backup": "20261105T215007Z",
+  "checks_total": 58,
+  "proofs": {
+    "client-nov05/browser.json": {
+      "status": "PASS",
+      "checks": 24,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "client-nov05/checkout-phone.json": {
+      "status": "PASS",
+      "checks": 3,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "storefront-ux-staging/original-browser.json": {
+      "status": "PASS",
+      "checks": 5,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "storefront-ux-staging/browser.json": {
+      "status": "PASS",
+      "checks": 5,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "storefront-ux-staging/interaction/browser.json": {
+      "status": "PASS",
+      "checks": 6,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "address-complete/evidence.json": {
+      "status": "PASS",
+      "checks": 5,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "mobile-feedback/evidence.json": {
+      "status": "PASS",
+      "checks": 5,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    },
+    "promotions/evidence.json": {
+      "status": "PASS",
+      "checks": 5,
+      "release_sha": "823832db53d4b88acd2978cfcb229294b851247a"
+    }
+  },
+  "product_business_sha256_excluding_only_menu_order_and_modification_time": "5c0b759726a2ab47d18d39fc0c87c281423488134023cca0112bae486fa82eb0",
+  "canonical_products": 118,
+  "hit_representations": 8,
+  "variable_parents": 13,
+  "variations": 26,
+  "submitted_orders": 0,
+  "submitted_applications": 0,
+  "email_tests": "NOT_RUN_OWNER_DEFERRED",
+  "global_accepted_marker": "ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a",
+  "production_access_or_mutation": false,
+  "custom_png_count": 93,
+  "all_png_count": 176,
+  "reviewed_manifest": "4aaf5398079e5195e77cf75b5085269a07ef9d345cc5d33a6fa82d054d71eee0",
+  "sources": [
+    {
+      "name": "RollsBar_Checklist_v2.md",
+      "sha256": "f6f62add9787b776e9d9e8324aab88a9e3d0fef8322e3f5da3032769f475e963"
+    },
+    {
+      "name": "VOICE_TRANSCRIPTS_AND_VIDEO_RECONCILIATION.md",
+      "sha256": "cdfee036925ab288a431a7f576b6ce7ee377dfa955d79ead1d4e4ef8c1814e0b"
+    },
+    {
+      "name": "ChatExport_2026-11-05.rar",
+      "sha256": "3420b1b0fd3ccf466a8c79c7249913495c00227412b6e206c6be80ea2827f985"
+    }
+  ],
+  "limitations": [
+    "No transactional or career email delivery claim; owner excluded email work.",
+    "Legacy protected visual gate retains expected promo-design differences and stale select-based assertions against the existing radio controls; it was stopped after recording those failures. No baseline/mask/threshold changes.",
+    "Uniform or unresolved placeholder product photos remain; no recoloring or invented assets."
+  ],
+  "visual_review": {
+    "contact_sheet_inspected": 63,
+    "inherited_identical_bytes": 112,
+    "same_candidate_bytes": 1
+  },
+  "supplemental_settled_career_phone_pngs": 3
+}

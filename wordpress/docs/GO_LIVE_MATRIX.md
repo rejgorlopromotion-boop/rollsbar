@@ -1,10 +1,16 @@
 # Rolls Bar — current-launch go-live decision matrix
 
+## Current update 2026-11-06 — client checklist on staging
+
+The seven requested non-mail requirements from the November5 client checklist are **SCOPED STAGING PASS** on application `823832db53d4b88acd2978cfcb229294b851247a`: editable phone prefixes/international numbers, existing editable career cities/locations, original square promo artwork and correct links/order, native catalog sorting and stable Combo/Sets navigation. Apply/browser run42115910854:58/58 checks PASS; inspected finalization42119659066:browser_verified. See CLIENT_CHECKLIST_2026-11-05.md and CLIENT_CHECKLIST_EVIDENCE_2026-11-06.json.
+
+The owner explicitly deferred source RB-006/007 (Yandex mail delay and Woo notifications/recipients). No mail tests or settings changes in this batch; RB-031/032 remain open in the register and were not freshly re-diagnosed. The historical global accepted marker stays `ee7dcd5fa90a646419bda611f6ff0cd2d8582f5a`; this batch has its own scoped receipt. The legacy protected visual harness still contains old promo pixels and select-based assertions against the previously released radio choices; no baseline/threshold changes or global full-gate PASS claim. Production/go-live status is unchanged.
+
 ## Current update 2026-11-05 - staging email blocked
 
 Gmail SMTP currently rejects authentication with535 5.7.8 BadCredentials. The older October successful-delivery evidence below is historical, not current readiness. The existing staging secret matches the deployed password after removing display spaces; owner must supply a regenerated application password through the staging GitHub environment secret. See RB-032 and CAREER_FORM_2026-11-05.md. Career form and private storage are deployed and browser verified, but email/final release remain unaccepted. No new order or production operation was performed.
 
-Updated: 2026-10-14
+Updated: 2026-11-06
 
 ## Purpose
 This matrix is the current launch decision layer. It follows the latest explicit owner/client decisions over older TЗ/checkpoint wording when they conflict. Historical implementation evidence remains in `wordpress/docs/CURRENT_STATE.md` and Git/CI history.

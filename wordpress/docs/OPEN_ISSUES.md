@@ -1,9 +1,15 @@
 # RollsBar Issue Register
 
 Status owner: RollsBar Coordinator
-Last updated: 2026-11-05
+Last updated: 2026-11-06
 
 This file is the durable source of truth for unresolved / deferred RollsBar defects and follow-up work. New confirmed issues should be recorded here instead of living only in chat. Do not reopen items marked DONE without new evidence.
+
+## Client checklist update — 2026-11-06
+
+Source checklist IDs are separate from this register's RB IDs. Its seven non-mail items are implemented and scoped-browser-verified on `823832db53d4b88acd2978cfcb229294b851247a`; 58/58 current browser checks PASS, apply42115910854/finalize42119659066. Native phone tests explicitly catch doubled country prefixes during full insertion/paste and verify exact Store API persistence. See CLIENT_CHECKLIST_2026-11-05.md and CLIENT_CHECKLIST_EVIDENCE_2026-11-06.json.
+
+Owner-deferred source RB-006/007 remain NOT RUN. Existing RB-017/RB-025/RB-030/RB-031/RB-032 states are not closed by this batch. Verification follow-up: the old protected Windows visual harness has obsolete select-based B11/B12 assertions against the earlier released radio controls and expected old promo-design pixels. That historical run was stopped after failures were recorded; immutable baselines/masks/tolerances were preserved. Current scoped functional/browser proof is separate from global launch acceptance. Existing unresolved/placeholder product photos remain unchanged; sorting cannot create missing color alternatives.
 
 ## RB-032 - Shared staging Gmail SMTP authentication rejected
 
