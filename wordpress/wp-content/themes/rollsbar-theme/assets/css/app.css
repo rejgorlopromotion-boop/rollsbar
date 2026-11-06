@@ -703,5 +703,7 @@ a.screen-reader-text:focus{position:fixed;top:8px;left:8px;width:auto;height:aut
 .rollsbar-utility--artwork .rollsbar-utility__copy{position:absolute;inset:auto 6% 8%;max-width:none;text-align:center}
 .rollsbar-utility--artwork .rollsbar-utility__eyebrow,.rollsbar-utility--artwork .rollsbar-utility__text{display:none}
 .rollsbar-utility--artwork h3{margin:0;color:#252525;font-size:clamp(16px,1.6vw,25px);line-height:1.15;letter-spacing:-.025em}
+/* The career illustration has red artwork behind its longer editable title. */
+.rollsbar-utility--artwork.rollsbar-utility--work h3{display:inline-block;max-width:100%;padding:4px 8px;border-radius:8px;background:#fff;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .rollsbar-utility--artwork:focus-visible{outline:3px solid #bd1c25;outline-offset:-4px}
 @media(max-width:700px){.home .rollsbar-utility--artwork{min-width:178px}.rollsbar-utility--artwork h3{font-size:16px}}
