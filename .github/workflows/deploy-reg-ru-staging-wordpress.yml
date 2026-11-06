@@ -95,6 +95,7 @@ jobs:
           node qa/node_modules/@playwright/test/cli.js install --with-deps chromium webkit firefox
           node --check qa/visual/promo-title.mjs
       - name: Back up staging and apply CSS only
+        if: inputs.direct_port_phase == 'apply'
         env:
           ISP_MANAGER_URL: ${{ secrets.ISP_MANAGER_URL }}
           ISP_MANAGER_USER: ${{ secrets.ISP_MANAGER_USER }}
@@ -103,7 +104,8 @@ jobs:
         run: python3 wordpress/deploy/apply_promo_title_staging.py
       - name: Verify title contrast and responsive layout
         env:
-          ROLLSBAR_DEPLOY_SHA: ${{ github.sha }}
+          ROLLSBAR_UX_BASE: https://staging.rollsbar.ru
+          ROLLSBAR_DEPLOY_SHA: ${{ inputs.release_sha || github.sha }}
         run: node --import ./qa/visual/staging-browser-diagnostics.mjs qa/visual/promo-title.mjs
       - uses: actions/upload-artifact@v4
         if: always()
